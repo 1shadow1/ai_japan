@@ -1,3 +1,6 @@
+# ⚠️运行前安装依赖
+# conda install opencv-python
+
 import cv2
 import os
 

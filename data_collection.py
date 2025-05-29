@@ -1,3 +1,7 @@
+# ⚠️运行前安装依赖
+# pip install pymodbus pandas
+
+
 import pandas as pd
 from pymodbus.client.serial import ModbusSerialClient as ModbusClient
 import time
@@ -7,7 +11,7 @@ import os
 # 串口配置
 client = ModbusClient(
     method='rtu',
-    port='COM3',         # ⚠️ 替换为你电脑的串口号，如 COM4 或 /dev/ttyUSB0
+    port='COM3',         #替换为你电脑的串口号，如 COM4 或 /dev/ttyUSB0
     baudrate=4800,
     stopbits=1,
     bytesize=8,
