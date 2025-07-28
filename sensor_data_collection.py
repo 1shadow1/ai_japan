@@ -7,6 +7,7 @@ from pymodbus.payload import BinaryPayloadDecoder
 from pymodbus.constants import Endian
 import os
 import struct
+import requests
 # 共享数据字典，存储各传感器最新数据
 sensor_data = {
     'dissolved_oxygen': None,
@@ -20,12 +21,12 @@ csv_file = "./output/sensor/data_collection.csv"
 file_exists = os.path.exists(csv_file)
 
 def read_dissolved_oxygen():
-    client = ModbusClient(port='COM9', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
+    client = ModbusClient(port='COM21', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
     if not client.connect():
         print("溶解氧串口连接失败")
         return
     while True:
-        rr = client.read_holding_registers(0x0002, count=2, slave=0x03)
+        rr = client.read_holding_registers(0x0002, count=2, slave=0x01)
         if not rr.isError():
             registers = rr.registers
             raw = (registers[0] << 16) | registers[1]
@@ -39,7 +40,7 @@ def read_dissolved_oxygen():
         time.sleep(10)
 
 def read_liquid_level():
-    client = ModbusClient(port='COM8', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
+    client = ModbusClient(port='COM3', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
     if not client.connect():
         print("液位串口连接失败")
         return
@@ -54,7 +55,7 @@ def read_liquid_level():
         time.sleep(10)
 
 def read_ph():
-    client = ModbusClient(port='COM10', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
+    client = ModbusClient(port='COM5', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
     if not client.connect():
         print("pH串口连接失败")
         return
@@ -73,7 +74,7 @@ def read_ph():
         time.sleep(10)
 
 def read_turbidity():
-    client = ModbusClient(port='COM7', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
+    client = ModbusClient(port='COM6', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
     if not client.connect():
         print("浊度串口连接失败")
         return
@@ -135,6 +136,31 @@ def main():
             ])
             df.to_csv(csv_file, mode='a', header=not file_exists, index=False)
             file_exists = True
+
+
+            # 构造发送数据
+            send_data = {
+                "type": "传感器数据",
+                "content": {
+                    "时间": timestamp,
+                    "溶解氧饱和度": do_val,
+                    "液位(mm)": level_val,
+                    "PH": ph_val,
+                    "PH温度(°C)": ph_temp,
+                    "浊度(NTU)": turbidity_val,
+                    "浊度温度(°C)": turbidity_temp
+                }
+            }
+
+            try:
+                response = requests.post("http://8.216.33.92:5000/api/transfer_data", json=send_data)
+                if response.status_code == 200:
+                    print(f"数据已成功发送到接口:{response.content}")
+                else:
+                    print(f"发送失败，状态码: {response.status_code}")
+            except Exception as e:
+                print("发送数据异常:", e)
+
 
             time.sleep(5)
 

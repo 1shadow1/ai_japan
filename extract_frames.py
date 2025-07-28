@@ -46,7 +46,7 @@ def extract_frames(video_path, interval_sec):
     print(f"共保存了 {saved_count} 张图片至 {output_folder}")
 
 if __name__ == "__main__":
-    video_path = "WIN_20250604_09_36_15_Pro.mp4"  # 替换为你的视频路径
-    interval_sec = 10  # 每 N 秒抽取一帧
+    video_path = "WIN_20250728_11_30_19_Pro.mp4"  # 替换为你的视频路径
+    interval_sec = 1 # 每 N 秒抽取一帧
 
     extract_frames(video_path, interval_sec)

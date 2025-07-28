@@ -36,7 +36,7 @@ print("开始采集数据，按 Ctrl+C 停止...")
 
 try:
     while True:
-        rr = client.read_holding_registers(0x0002, count=2, slave=0x03)
+        rr = client.read_holding_registers(0x0002, count=2, slave=0x01)
 
         if not rr.isError():
             # decoder = BinaryPayloadDecoder.fromRegisters(rr.registers, byteorder=Endian.BIG, wordorder=Endian.BIG)
