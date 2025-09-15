@@ -83,13 +83,18 @@ class KeyboardCameraController:
             if keyboard.is_pressed('esc'):
                 print("退出程序")
                 break
-
+1
 
 if __name__ == "__main__":
     key_to_camera_map = {
-        'a': 0,  # 按 a 打开摄像头 0
-        's': 1,  # 按 s 打开摄像头 1
+        '0': 0,  # 按 a 打开摄像头 0
+        '1': 1,  # 按 s 打开摄像头 1
+        '2': 2,  # 按 a 打开摄像头 22q344
+        '3': 3,  # 按 s 打开摄像头 1
+        '4': 4,  # 按 a 打开摄像头 0
     }
 
     controller = KeyboardCameraController(key_to_camera_map)
     controller.run()
+
+

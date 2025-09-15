@@ -71,5 +71,5 @@ if __name__ == "__main__":
     print("可用摄像头索引:", Cameras.list_cameras())
 
     # 打开索引为 0 的摄像头并显示
-    cam = Cameras(cam_index=0)
-    cam.show_camera()
+    # cam = Cameras(cam_index=0)
+    # cam.show_camera()

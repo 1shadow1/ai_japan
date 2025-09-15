@@ -21,7 +21,7 @@ csv_file = "./output/sensor/data_collection.csv"
 file_exists = os.path.exists(csv_file)
 
 def read_dissolved_oxygen():
-    client = ModbusClient(port='COM21', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
+    client = ModbusClient(port='COM18', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
     if not client.connect():
         print("溶解氧串口连接失败")
         return
@@ -40,7 +40,7 @@ def read_dissolved_oxygen():
         time.sleep(10)
 
 def read_liquid_level():
-    client = ModbusClient(port='COM3', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
+    client = ModbusClient(port='COM25', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
     if not client.connect():
         print("液位串口连接失败")
         return
@@ -55,13 +55,13 @@ def read_liquid_level():
         time.sleep(10)
 
 def read_ph():
-    client = ModbusClient(port='COM5', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
+    client = ModbusClient(port='COM4', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
     if not client.connect():
         print("pH串口连接失败")
         return
     while True:
         rr = client.read_holding_registers(0x0000, count=2, slave=0x01)
-        if not rr.isError():
+        if not rr.isError(): 
             PH_raw = rr.registers[0]
             temperature_raw = rr.registers[1]
             PH = PH_raw / 100.0
@@ -74,7 +74,7 @@ def read_ph():
         time.sleep(10)
 
 def read_turbidity():
-    client = ModbusClient(port='COM6', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
+    client = ModbusClient(port='COM5', baudrate=4800, stopbits=1, bytesize=8, parity='N', timeout=1)
     if not client.connect():
         print("浊度串口连接失败")
         return
@@ -152,14 +152,14 @@ def main():
                 }
             }
 
-            try:
-                response = requests.post("http://8.216.33.92:5000/api/transfer_data", json=send_data)
-                if response.status_code == 200:
-                    print(f"数据已成功发送到接口:{response.content}")
-                else:
-                    print(f"发送失败，状态码: {response.status_code}")
-            except Exception as e:
-                print("发送数据异常:", e)
+            # try:
+            #     response = requests.post("http://8.216.33.92:5000/api/transfer_data", json=send_data)
+            #     if response.status_code == 200:
+            #         print(f"数据已成功发送到接口:{response.content}")
+            #     else:
+            #         print(f"发送失败，状态码: {response.status_code}")
+            # except Exception as e:
+            #     print("发送数据异常:", e)
 
 
             time.sleep(5)
