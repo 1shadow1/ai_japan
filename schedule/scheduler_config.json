@@ -1,0 +1,41 @@
+{
+    "scheduler": {
+        "max_workers": 10,
+        "check_interval": 1,
+        "enable_monitoring": true,
+        "log_level": "INFO"
+    },
+    "tasks": {
+        "default_timeout": 300,
+        "max_retries": 3,
+        "retry_delay": 5
+    },
+    "logging": {
+        "log_dir": "logs",
+        "log_file": "scheduler.log",
+        "max_log_size": "10MB",
+        "backup_count": 5
+    },
+    "predefined_tasks": {
+        "data_upload": {
+            "enabled": true,
+            "interval_seconds": 3600,
+            "description": "每小时上传一次数据"
+        },
+        "sensor_collection": {
+            "enabled": true,
+            "interval_seconds": 300,
+            "description": "每5分钟采集一次传感器数据"
+        },
+        "heartbeat": {
+            "enabled": true,
+            "interval_seconds": 30,
+            "description": "每30秒发送一次心跳"
+        },
+        "log_cleanup": {
+            "enabled": true,
+            "interval_seconds": 86400,
+            "description": "每天清理一次过期日志"
+        }
+    }
+}
