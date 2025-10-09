@@ -10,7 +10,7 @@
 import os
 import sys
 import logging
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from src.scheduler.task_scheduler import (
     TaskScheduler,
@@ -21,6 +21,7 @@ from src.scheduler.task_scheduler import (
 
 from src.tasks.sensor_data_task import SensorDataTask
 from src.tasks.http_request_task import HttpRequestTask
+from src.tasks.sensor_data_stream_task import SensorDataStreamTask
 from src.services.sensor_data_service import SensorDataService
 
 
@@ -47,6 +48,17 @@ def register_tasks(scheduler: TaskScheduler):
     # 3) 每小时HTTP请求告警任务
     http_task = HttpRequestTask(target_url="http://localhost:5002/api/messages/", sensor_service=sensor_service)
     scheduler.add_task(http_task, ScheduleRule(ScheduleType.INTERVAL, seconds=3600))
+
+    # 4) 持续传感器数据流式上传任务：启动一次，后台线程按固定频率推送
+    stream_task = SensorDataStreamTask(
+        service=sensor_service,
+        # 可由环境变量 AIJ_STREAM_API_URL 指定，或在此处显式设置
+        # target_url="http://8.216.33.92:5000/api/sensor_stream",
+        # interval_seconds=10,
+    )
+    # ONCE 任务需指定 run_at：设为当前时间+1秒，确保立即触发
+    run_time = (datetime.now() + timedelta(seconds=1)).isoformat()
+    scheduler.add_task(stream_task, ScheduleRule(ScheduleType.ONCE, run_at=run_time))
 
 
 def main():

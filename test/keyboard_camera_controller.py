@@ -83,7 +83,7 @@ class KeyboardCameraController:
             if keyboard.is_pressed('esc'):
                 print("退出程序")
                 break
-1
+
 
 if __name__ == "__main__":
     key_to_camera_map = {

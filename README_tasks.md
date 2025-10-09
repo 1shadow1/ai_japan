@@ -5,6 +5,7 @@
 - 调度器：src/scheduler/task_scheduler.py
 - 服务：src/services/sensor_data_service.py（支持模拟模式）
 - 任务：src/tasks/（SensorDataTask、HttpRequestTask）
+- 任务：src/tasks/（SensorDataTask、HttpRequestTask、SensorDataStreamTask）
 - 上传：client/updata.py（支持干运行）
 
 新增特性：
@@ -269,3 +270,19 @@ type logs\scheduler.log
 **开发团队**: AI Japan Project  
 **最后更新**: 2024年12月  
 **文档版本**: v1.3
+### 3. 传感器数据流式上传任务（新增）
+
+- **执行方式**: 启动一次（ScheduleType.ONCE），后台线程持续运行
+- **推送频率**: 默认每10秒（可通过 AIJ_STREAM_INTERVAL 调整）
+- **目标地址**: 默认 http://8.216.33.92:5000/api/updata_sensor_data（可通过 AIJ_STREAM_API_URL 指定）
+- **数据格式**: 与 CSV 表头一致的 JSON：
+  - 时间、溶解氧饱和度、液位(mm)、PH、PH温度(°C)、浊度(NTU)、浊度温度(°C)
+- **干运行支持**: AIJ_UPLOAD_DRY_RUN=1 时仅记录日志，不实际发送
+
+示例环境变量：
+```
+set AIJ_SENSOR_SIMULATE=1
+set AIJ_UPLOAD_DRY_RUN=1
+set AIJ_STREAM_API_URL=http://8.216.33.92:5000/api/updata_sensor_data
+set AIJ_STREAM_INTERVAL=10
+```
