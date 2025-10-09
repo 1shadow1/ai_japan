@@ -5,25 +5,31 @@
 
 import threading
 import time
-import pandas as pd
 from datetime import datetime
-from pymodbus.client.serial import ModbusSerialClient as ModbusClient
 import os
 import struct
 import logging
 from typing import Dict, Optional
 import signal
 import sys
+import random
+import csv
 
 class SensorDataService:
     """传感器数据采集服务类"""
     
-    def __init__(self, output_dir: str = "./output/sensor"):
+    def __init__(self, output_dir: str = "./output/sensor", simulate: Optional[bool] = None):
         self.output_dir = output_dir
         self.csv_file = os.path.join(output_dir, "data_collection.csv")
         self.running = False
         self.threads = []
         self.data_lock = threading.Lock()
+        # 模拟模式：无硬件环境下生成模拟数据
+        if simulate is None:
+            env_val = os.getenv("AIJ_SENSOR_SIMULATE", "0").lower()
+            self.simulate = env_val in ("1", "true", "yes")
+        else:
+            self.simulate = simulate
         
         # 传感器配置
         self.sensor_configs = {
@@ -73,13 +79,29 @@ class SensorDataService:
         
         # 确保输出目录存在
         os.makedirs(output_dir, exist_ok=True)
-        
+
         # 检查CSV文件是否存在
         self.file_exists = os.path.exists(self.csv_file)
-        
+
         # 设置日志
         self._setup_logging()
-        
+
+        # 条件导入第三方库（避免在模拟模式或未安装依赖时失败）
+        self.pd = None
+        self.ModbusClient = None
+        if not self.simulate:
+            try:
+                import pandas as pd  # 延迟导入
+                self.pd = pd
+            except ImportError:
+                self.logger.warning("未检测到pandas，将使用csv模块写入文件")
+            try:
+                from pymodbus.client.serial import ModbusSerialClient as _ModbusClient
+                self.ModbusClient = _ModbusClient
+            except ImportError:
+                self.logger.warning("未检测到pymodbus，自动切换到模拟模式")
+                self.simulate = True
+
         # 注册信号处理
         signal.signal(signal.SIGINT, self._signal_handler)
         signal.signal(signal.SIGTERM, self._signal_handler)
@@ -151,66 +173,100 @@ class SensorDataService:
         """读取单个传感器数据的线程函数"""
         config = self.sensor_configs[sensor_name]
         
-        # 创建Modbus客户端
-        client = ModbusClient(
-            port=config['port'],
-            baudrate=config['baudrate'],
-            stopbits=1,
-            bytesize=8,
-            parity='N',
-            timeout=1
-        )
+        # 在模拟模式下不创建Modbus客户端，直接生成数据
+        client = None
+        if not self.simulate:
+            if self.ModbusClient is None:
+                # 依赖缺失已在__init__中切换到模拟模式，这里双重保护
+                self.logger.warning(f"{sensor_name}未加载Modbus客户端，使用模拟模式")
+            else:
+                client = self.ModbusClient(
+                port=config['port'],
+                baudrate=config['baudrate'],
+                stopbits=1,
+                bytesize=8,
+                parity='N',
+                timeout=1
+                )
         
         connection_retry_count = 0
         max_connection_retries = 5
         
         while self.running:
             try:
-                # 尝试连接
-                if not client.connect():
-                    connection_retry_count += 1
-                    if connection_retry_count <= max_connection_retries:
-                        self.logger.warning(f"{sensor_name}串口连接失败，第{connection_retry_count}次重试...")
-                        time.sleep(5)
-                        continue
-                    else:
-                        self.logger.error(f"{sensor_name}串口连接失败，已达最大重试次数，跳过此传感器")
-                        break
-                
-                # 重置重试计数
-                connection_retry_count = 0
-                
-                # 读取数据
-                while self.running:
-                    try:
-                        rr = client.read_holding_registers(
-                            address=config['address'],
-                            count=config['count'],
-                            slave=config['slave']
-                        )
-                        
-                        if not rr.isError():
-                            # 处理数据
-                            processed_data = config['process_func'](rr.registers)
-                            
+                if self.simulate:
+                    # 模拟数据生成
+                    while self.running:
+                        try:
+                            if sensor_name == 'dissolved_oxygen':
+                                processed_data = {'dissolved_oxygen': round(random.uniform(6.5, 8.2), 3)}
+                            elif sensor_name == 'liquid_level':
+                                processed_data = {'liquid_level': random.randint(900, 1100)}
+                            elif sensor_name == 'ph':
+                                ph = round(random.uniform(6.8, 7.6), 2)
+                                temp = round(random.uniform(24.0, 30.0), 1)
+                                processed_data = {'ph': ph, 'ph_temperature': temp}
+                            elif sensor_name == 'turbidity':
+                                turbidity = round(random.uniform(0.0, 5.0), 1)
+                                temp = round(random.uniform(24.0, 30.0), 1)
+                                processed_data = {'turbidity': turbidity, 'turbidity_temperature': temp}
+                            else:
+                                processed_data = {}
                             # 更新共享数据
                             with self.data_lock:
                                 self.sensor_data.update(processed_data)
+                            time.sleep(10)
+                        except Exception as e:
+                            self.logger.error(f"{sensor_name}模拟数据生成异常: {e}")
+                            time.sleep(5)
+                else:
+                    # 实际设备读取
+                    # 尝试连接
+                    if not client.connect():
+                        connection_retry_count += 1
+                        if connection_retry_count <= max_connection_retries:
+                            self.logger.warning(f"{sensor_name}串口连接失败，第{connection_retry_count}次重试...")
+                            time.sleep(5)
+                            continue
                         else:
-                            self.logger.warning(f"{sensor_name}读取失败: {rr}")
-                        
-                        time.sleep(10)  # 每10秒读取一次
-                        
-                    except Exception as e:
-                        self.logger.error(f"{sensor_name}数据读取异常: {e}")
-                        time.sleep(5)  # 异常后等待5秒再重试
+                            self.logger.error(f"{sensor_name}串口连接失败，已达最大重试次数，跳过此传感器")
+                            break
+                    
+                    # 重置重试计数
+                    connection_retry_count = 0
+                    
+                    # 读取数据
+                    while self.running:
+                        try:
+                            rr = client.read_holding_registers(
+                                address=config['address'],
+                                count=config['count'],
+                                slave=config['slave']
+                            )
+                            
+                            if not rr.isError():
+                                # 处理数据
+                                processed_data = config['process_func'](rr.registers)
+                                
+                                # 更新共享数据
+                                with self.data_lock:
+                                    self.sensor_data.update(processed_data)
+                            else:
+                                self.logger.warning(f"{sensor_name}读取失败: {rr}")
+                            
+                            time.sleep(10)  # 每10秒读取一次
+                            
+                        except Exception as e:
+                            self.logger.error(f"{sensor_name}数据读取异常: {e}")
+                            time.sleep(5)  # 异常后等待5秒再重试
                         
             except Exception as e:
                 self.logger.error(f"{sensor_name}传感器线程异常: {e}")
                 time.sleep(10)  # 等待10秒后重试连接
             finally:
                 try:
-                    client.close()
+                    if client is not None:
+                        client.close()
                 except:
                     pass
         
@@ -231,10 +287,12 @@ class SensorDataService:
                     turbidity_val = self.sensor_data.get('turbidity')
                     turbidity_temp = self.sensor_data.get('turbidity_temperature')
                 
-                # 跳过所有传感器数据为空的轮次
-                if all(val is None for val in [do_val, level_val, ph_val, ph_temp, turbidity_val, turbidity_temp]):
-                    time.sleep(5)
-                    continue
+                # 模拟模式下不跳过空数据，以便持续输出
+                if not self.simulate:
+                    # 跳过所有传感器数据为空的轮次
+                    if all(val is None for val in [do_val, level_val, ph_val, ph_temp, turbidity_val, turbidity_temp]):
+                        time.sleep(5)
+                        continue
                 
                 # 打印当前采集数据
                 self.logger.info(f"[{timestamp}] 溶解氧: {do_val if do_val is not None else 'N/A'} | "
@@ -244,16 +302,25 @@ class SensorDataService:
                                f"浊度: {turbidity_val if turbidity_val is not None else 'N/A'}NTU | "
                                f"浊度温度: {turbidity_temp if turbidity_temp is not None else 'N/A'}°C")
                 
-                # 记录数据到CSV
-                df = pd.DataFrame([[
-                    timestamp, do_val, level_val, ph_val, ph_temp, turbidity_val, turbidity_temp
-                ]], columns=[
-                    "时间", "溶解氧饱和度", "液位(mm)", "PH", "PH温度(°C)", "浊度(NTU)", "浊度温度(°C)"
-                ])
-                
-                df.to_csv(self.csv_file, mode='a', header=not self.file_exists, index=False)
-                self.file_exists = True
-                
+                # 记录数据到CSV（优先使用pandas，缺失时使用csv模块）
+                row = [timestamp, do_val, level_val, ph_val, ph_temp, turbidity_val, turbidity_temp]
+                headers = ["时间", "溶解氧饱和度", "液位(mm)", "PH", "PH温度(°C)", "浊度(NTU)", "浊度温度(°C)"]
+                try:
+                    if self.pd is not None:
+                        df = self.pd.DataFrame([row], columns=headers)
+                        df.to_csv(self.csv_file, mode='a', header=not self.file_exists, index=False)
+                        self.file_exists = True
+                    else:
+                        write_header = not self.file_exists
+                        with open(self.csv_file, mode='a', newline='', encoding='utf-8') as f:
+                            writer = csv.writer(f)
+                            if write_header:
+                                writer.writerow(headers)
+                            writer.writerow(row)
+                        self.file_exists = True
+                except Exception as e:
+                    self.logger.error(f"写入CSV异常: {e}")
+
                 time.sleep(5)  # 每5秒记录一次
                 
             except Exception as e:
@@ -291,7 +358,8 @@ class SensorDataService:
         logging_thread.start()
         self.threads.append(logging_thread)
         
-        self.logger.info(f"传感器服务启动成功，共启动{len(self.threads)}个线程")
+        mode = "模拟模式" if self.simulate else "硬件模式"
+        self.logger.info(f"传感器服务启动成功（{mode}），共启动{len(self.threads)}个线程")
     
     def stop(self):
         """停止传感器数据采集服务"""

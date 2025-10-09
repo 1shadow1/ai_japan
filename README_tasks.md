@@ -1,26 +1,28 @@
-# AI Japan 定时任务系统
+# AI Japan 定时任务系统（更新版）
 
-## 📋 概述
+本版本采用 src/ 目录下的统一入口与调度器：
+- 入口：src/app/main.py（或 start_tasks.bat）
+- 调度器：src/scheduler/task_scheduler.py
+- 服务：src/services/sensor_data_service.py（支持模拟模式）
+- 任务：src/tasks/（SensorDataTask、HttpRequestTask）
+- 上传：client/updata.py（支持干运行）
 
-本系统将 `updata.py` 和 `sensor_data_collection.py` 两个脚本集成为企业级定时任务系统，实现：
-
-- **传感器数据采集**: 后台持续运行，实时采集传感器数据
-- **数据上传任务**: 每日定时执行，自动上传数据到服务器
-- **任务监控**: Web界面实时监控任务状态和系统健康度
-- **错误处理**: 自动重试机制和异常恢复
+新增特性：
+- 传感器模拟模式（AIJ_SENSOR_SIMULATE=1），无硬件也可验证采集与记录
+- 上传干运行（AIJ_UPLOAD_DRY_RUN=1），不发送真实请求但记录执行结果
 
 ## 🏗️ 系统架构
 
 ```
 ai_japan/
-├── scheduled_tasks.py          # 主要定时任务脚本
-├── sensor_data_service.py      # 传感器数据采集服务
-├── task_monitor.py            # Web监控界面
-├── task_scheduler.py          # 任务调度器核心
-├── start_tasks.bat           # 启动定时任务系统
-├── start_monitor.bat         # 启动监控界面
-├── client/updata.py          # 数据上传脚本（已优化）
-└── sensor_data_collection.py # 原传感器脚本（保留）
+├── start_tasks.bat                 # 启动统一入口（默认启用模拟/干运行）
+├── src/
+│   ├── app/main.py                 # 应用入口
+│   ├── scheduler/task_scheduler.py # 调度器与任务工厂
+│   ├── services/sensor_data_service.py # 传感器服务（模拟支持、CSV降级）
+│   └── tasks/                      # 任务定义（SensorDataTask、HttpRequestTask）
+├── client/updata.py                # 数据上传脚本（干运行支持）
+└── legacy/                         # 旧版脚本归档
 ```
 
 ## 🚀 快速开始
@@ -39,21 +41,16 @@ ai_japan/
 
 ### 方式二：命令行启动
 
-1. **启动定时任务系统**
+1. 启动定时任务系统（推荐以包方式运行）
    ```bash
    cd f:/work/singa/ai_japan
-   python scheduled_tasks.py
+   python -m src.app.main
    ```
 
-2. **启动监控界面**
-   ```bash
-   cd f:/work/singa/ai_japan
-   python task_monitor.py
+2. 可选环境变量（建议在批处理脚本或命令行设置）
    ```
-
-3. **访问监控界面**
-   ```
-   浏览器打开: http://localhost:5000
+   AIJ_SENSOR_SIMULATE=1  # 开启传感器模拟模式
+   AIJ_UPLOAD_DRY_RUN=1   # 开启上传脚本干运行
    ```
 
 ## 📊 任务配置详情
@@ -63,7 +60,7 @@ ai_japan/
 - **执行方式**: 后台持续运行
 - **数据采集**: 每10秒读取一次传感器数据
 - **数据记录**: 每5秒记录一次到CSV文件
-- **状态检查**: 每小时检查一次服务状态
+- **状态检查**: 每30秒进行健康检查（默认，可在调度规则中调整）
 - **输出文件**: `./output/sensor/data_collection.csv`
 
 **支持的传感器**:
@@ -74,7 +71,7 @@ ai_japan/
 
 ### 2. 数据上传任务
 
-- **执行频率**: 每日凌晨2点执行
+- **执行频率**: 每10分钟执行一次（默认，可调整）
 - **执行脚本**: `client/updata.py`
 - **超时设置**: 5分钟
 - **重试机制**: 自动重试失败的上传
@@ -125,16 +122,16 @@ self.sensor_configs = {
 
 ### 上传任务配置
 
-在 `scheduled_tasks.py` 中修改上传时间：
+在 `src/app/main.py` 的 register_tasks 中调整调度规则，例如：
 
 ```python
-# 设置每天凌晨2点执行上传任务
-tomorrow_2am = datetime.now().replace(hour=2, minute=0, second=0, microsecond=0)
+upload_task = create_data_upload_task()
+scheduler.add_task(upload_task, ScheduleRule(ScheduleType.INTERVAL, seconds=600))
 ```
 
 ### 调度器配置
 
-使用 `scheduler_config.json` 进行高级配置：
+使用 `src/scheduler/scheduler_config.json` 进行高级配置：
 
 ```json
 {
@@ -158,8 +155,7 @@ tomorrow_2am = datetime.now().replace(hour=2, minute=0, second=0, microsecond=0)
 
 ### 日志文件
 - `./logs/sensor_service.log` - 传感器服务日志
-- `./logs/scheduled_tasks.log` - 定时任务日志
-- `./logs/task_scheduler.log` - 调度器日志
+- `./logs/scheduler.log` - 调度器运行日志
 
 ## 🛠️ 故障排除
 
@@ -184,13 +180,10 @@ tomorrow_2am = datetime.now().replace(hour=2, minute=0, second=0, microsecond=0)
 
 ```bash
 # 查看传感器服务日志
-type logs\sensor_service.log
-
-# 查看定时任务日志
-type logs\scheduled_tasks.log
+type src\services\logs\sensor_service.log
 
 # 查看调度器日志
-type logs\task_scheduler.log
+type logs\scheduler.log
 ```
 
 ## 🔄 系统维护

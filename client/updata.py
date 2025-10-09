@@ -33,6 +33,10 @@ class UploadConfig:
         self.MAX_RETRY_ATTEMPTS = 3  # 最大重试次数
         self.RETRY_DELAY = 2  # 重试间隔(秒)
         
+        # 干运行开关（环境变量控制）：AIJ_UPLOAD_DRY_RUN=1/true/yes 时不实际上传，仅打印与统计
+        env_val = os.getenv("AIJ_UPLOAD_DRY_RUN", "0").lower()
+        self.DRY_RUN = env_val in ("1", "true", "yes")
+        
         # 数据类型映射
         self.DATA_TYPE_CONFIG = {
             "传感器数据": {
@@ -190,6 +194,11 @@ def upload_single_file(filepath: str, data_type: str) -> bool:
     
     logging.info(f"开始上传文件: {filename} (大小: {file_size} bytes, 类型: {data_type})")
     
+    # 干运行模式：不实际发起网络请求，直接模拟成功
+    if config.DRY_RUN:
+        logging.info(f"[DRY-RUN] 模拟上传成功: {filename} -> {config.API_URL}")
+        return True
+    
     try:
         with open(filepath, 'rb') as f:
             files = {'file': (filename, f, mime_type)}
@@ -232,7 +241,7 @@ def upload_data_by_type(data_type: str) -> dict:
     if data_type not in config.DATA_TYPE_CONFIG:
         raise ValueError(f"不支持的数据类型: {data_type}")
     
-    logging.info(f"开始批量上传{data_type}...")
+    logging.info(f"开始批量上传{data_type}...{' (DRY-RUN)' if config.DRY_RUN else ''}")
     
     # 获取配置信息
     type_config = config.DATA_TYPE_CONFIG[data_type]
@@ -302,6 +311,8 @@ def main():
     setup_logging()
     logging.info("=" * 50)
     logging.info("日本养殖项目数据上传任务开始")
+    if config.DRY_RUN:
+        logging.info("当前为干运行模式（不会实际上传，仅打印与统计）。可通过环境变量 AIJ_UPLOAD_DRY_RUN=0 关闭")
     logging.info("=" * 50)
     
     # 验证配置

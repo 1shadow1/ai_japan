@@ -17,7 +17,11 @@ echo ========================================
 
 cd /d "%~dp0"
 
-python scheduled_tasks.py
+rem 启用模拟模式与干运行开关（可根据需要修改为0关闭）
+set AIJ_SENSOR_SIMULATE=1
+set AIJ_UPLOAD_DRY_RUN=1
+
+python src\app\main.py
 
 echo.
 echo 系统已停止，按任意键退出...

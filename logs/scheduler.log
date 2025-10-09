@@ -1,0 +1,328 @@
+2025-10-09 11:32:58,145 - root - INFO - __init__:314 - 任务调度器初始化完成
+2025-10-09 11:32:58,146 - root - INFO - add_task:366 - 任务添加成功: 传感器数据采集服务 (ID: sensor_service)
+2025-10-09 11:32:58,146 - root - INFO - add_task:369 - 下次执行时间: 2025-10-09 11:32:58.146636
+2025-10-09 11:32:58,147 - root - INFO - add_task:366 - 任务添加成功: 数据上传任务 (ID: data_upload)
+2025-10-09 11:32:58,147 - root - INFO - add_task:369 - 下次执行时间: 2025-10-09 11:32:58.147643
+2025-10-09 11:32:58,147 - root - INFO - add_task:366 - 任务添加成功: 每小时HTTP请求发送 (ID: hourly_http_request)
+2025-10-09 11:32:58,147 - root - INFO - add_task:369 - 下次执行时间: 2025-10-09 11:32:58.147643
+2025-10-09 11:32:58,147 - root - INFO - main:59 - 任务已注册，准备启动调度器...
+2025-10-09 11:32:58,148 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第1次)
+2025-10-09 11:32:58,148 - root - INFO - start:414 - 任务调度器启动成功，最大工作线程数: 10
+2025-10-09 11:32:58,149 - SensorDataTask - INFO - execute:37 - 传感器服务未运行，正在启动...
+2025-10-09 11:32:58,149 - root - INFO - _execute_task:476 - 开始执行任务: 数据上传任务 (第1次)
+2025-10-09 11:32:58,150 - SensorDataService - INFO - start:338 - 启动传感器数据采集服务...
+2025-10-09 11:32:58,150 - root - INFO - execute:175 - 执行脚本任务: 数据上传任务 - D:\anaconda3\python.exe client/updata.py
+2025-10-09 11:32:58,150 - root - INFO - _execute_task:476 - 开始执行任务: 每小时HTTP请求发送 (第1次)
+2025-10-09 11:32:58,152 - HttpRequestTask - INFO - execute:264 - 获取传感器数据: {'dissolved_oxygen': 7.614, 'liquid_level': 1041, 'ph': 7.57, 'ph_temperature': 26.2, 'turbidity': 4.9, 'turbidity_temperature': 28.2}
+2025-10-09 11:32:58,153 - SensorDataService - INFO - _data_logging_thread:277 - 数据记录线程启动
+2025-10-09 11:32:58,153 - SensorDataService - INFO - start:362 - 传感器服务启动成功（模拟模式），共启动5个线程
+2025-10-09 11:32:58,153 - HttpRequestTask - INFO - _send_http_request:185 - 发送HTTP请求到 http://localhost:5002/api/messages/ (尝试 1/3)
+2025-10-09 11:32:58,153 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:32:58] 溶解氧: 7.614 | 液位: 1041mm | pH: 7.57 | pH温度: 26.2°C | 浊度: 4.9NTU | 浊度温度: 28.2°C
+2025-10-09 11:32:58,153 - SensorDataTask - INFO - execute:39 - 传感器服务启动完成
+2025-10-09 11:32:58,155 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:32:59,132 - root - INFO - execute:186 - 脚本任务执行成功: 数据上传任务
+2025-10-09 11:32:59,132 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 数据上传任务
+2025-10-09 11:33:02,284 - HttpRequestTask - ERROR - _send_http_request:231 - HTTP连接失败 (尝试 1/3)
+2025-10-09 11:33:03,156 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:33:03] 溶解氧: 7.614 | 液位: 1041mm | pH: 7.57 | pH温度: 26.2°C | 浊度: 4.9NTU | 浊度温度: 28.2°C
+2025-10-09 11:33:03,284 - HttpRequestTask - INFO - _send_http_request:185 - 发送HTTP请求到 http://localhost:5002/api/messages/ (尝试 2/3)
+2025-10-09 11:33:07,371 - HttpRequestTask - ERROR - _send_http_request:231 - HTTP连接失败 (尝试 2/3)
+2025-10-09 11:33:08,158 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:33:08] 溶解氧: 8.183 | 液位: 1003mm | pH: 7.26 | pH温度: 28.1°C | 浊度: 3.4NTU | 浊度温度: 29.6°C
+2025-10-09 11:33:09,373 - HttpRequestTask - INFO - _send_http_request:185 - 发送HTTP请求到 http://localhost:5002/api/messages/ (尝试 3/3)
+2025-10-09 11:33:13,159 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:33:13] 溶解氧: 8.183 | 液位: 1003mm | pH: 7.26 | pH温度: 28.1°C | 浊度: 3.4NTU | 浊度温度: 29.6°C
+2025-10-09 11:33:13,485 - HttpRequestTask - ERROR - _send_http_request:231 - HTTP连接失败 (尝试 3/3)
+2025-10-09 11:33:13,485 - HttpRequestTask - ERROR - execute:282 - HTTP请求任务执行失败: HTTP连接失败
+2025-10-09 11:33:13,486 - root - WARNING - _run_task_with_retry:502 - 任务执行失败，5秒后重试 (第1/3次): 每小时HTTP请求发送
+2025-10-09 11:33:18,160 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:33:18] 溶解氧: 6.501 | 液位: 1019mm | pH: 7.22 | pH温度: 25.1°C | 浊度: 2.0NTU | 浊度温度: 25.7°C
+2025-10-09 11:33:18,487 - HttpRequestTask - INFO - execute:264 - 获取传感器数据: {'dissolved_oxygen': 6.501, 'liquid_level': 1019, 'ph': 7.22, 'ph_temperature': 25.1, 'turbidity': 2.0, 'turbidity_temperature': 25.7}
+2025-10-09 11:33:18,487 - HttpRequestTask - INFO - _send_http_request:185 - 发送HTTP请求到 http://localhost:5002/api/messages/ (尝试 1/3)
+2025-10-09 11:33:22,587 - HttpRequestTask - ERROR - _send_http_request:231 - HTTP连接失败 (尝试 1/3)
+2025-10-09 11:33:23,162 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:33:23] 溶解氧: 6.501 | 液位: 1019mm | pH: 7.22 | pH温度: 25.1°C | 浊度: 2.0NTU | 浊度温度: 25.7°C
+2025-10-09 11:33:23,588 - HttpRequestTask - INFO - _send_http_request:185 - 发送HTTP请求到 http://localhost:5002/api/messages/ (尝试 2/3)
+2025-10-09 11:33:27,691 - HttpRequestTask - ERROR - _send_http_request:231 - HTTP连接失败 (尝试 2/3)
+2025-10-09 11:33:28,163 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:33:28] 溶解氧: 7.131 | 液位: 928mm | pH: 6.8 | pH温度: 27.0°C | 浊度: 0.0NTU | 浊度温度: 29.5°C
+2025-10-09 11:33:28,165 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第3次)
+2025-10-09 11:33:28,165 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 7.131, 'liquid_level': 928, 'ph': 6.8, 'ph_temperature': 27.0, 'turbidity': 0.0, 'turbidity_temperature': 29.5}
+2025-10-09 11:33:28,165 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:33:29,693 - HttpRequestTask - INFO - _send_http_request:185 - 发送HTTP请求到 http://localhost:5002/api/messages/ (尝试 3/3)
+2025-10-09 11:33:33,164 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:33:33] 溶解氧: 7.131 | 液位: 928mm | pH: 6.8 | pH温度: 27.0°C | 浊度: 0.0NTU | 浊度温度: 29.5°C
+2025-10-09 11:33:33,790 - HttpRequestTask - ERROR - _send_http_request:231 - HTTP连接失败 (尝试 3/3)
+2025-10-09 11:33:33,791 - HttpRequestTask - ERROR - execute:282 - HTTP请求任务执行失败: HTTP连接失败
+2025-10-09 11:33:33,791 - root - WARNING - _run_task_with_retry:502 - 任务执行失败，5秒后重试 (第2/3次): 每小时HTTP请求发送
+2025-10-09 11:33:38,165 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:33:38] 溶解氧: 7.605 | 液位: 965mm | pH: 7.51 | pH温度: 29.4°C | 浊度: 2.3NTU | 浊度温度: 27.1°C
+2025-10-09 11:33:38,792 - HttpRequestTask - INFO - execute:264 - 获取传感器数据: {'dissolved_oxygen': 7.605, 'liquid_level': 965, 'ph': 7.51, 'ph_temperature': 29.4, 'turbidity': 2.3, 'turbidity_temperature': 27.1}
+2025-10-09 11:33:38,792 - HttpRequestTask - INFO - _send_http_request:185 - 发送HTTP请求到 http://localhost:5002/api/messages/ (尝试 1/3)
+2025-10-09 11:33:42,858 - HttpRequestTask - ERROR - _send_http_request:231 - HTTP连接失败 (尝试 1/3)
+2025-10-09 11:33:43,166 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:33:43] 溶解氧: 7.605 | 液位: 965mm | pH: 7.51 | pH温度: 29.4°C | 浊度: 2.3NTU | 浊度温度: 27.1°C
+2025-10-09 11:33:43,859 - HttpRequestTask - INFO - _send_http_request:185 - 发送HTTP请求到 http://localhost:5002/api/messages/ (尝试 2/3)
+2025-10-09 11:33:47,957 - HttpRequestTask - ERROR - _send_http_request:231 - HTTP连接失败 (尝试 2/3)
+2025-10-09 11:33:48,168 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:33:48] 溶解氧: 7.331 | 液位: 939mm | pH: 7.54 | pH温度: 29.3°C | 浊度: 2.3NTU | 浊度温度: 29.9°C
+2025-10-09 11:33:49,958 - HttpRequestTask - INFO - _send_http_request:185 - 发送HTTP请求到 http://localhost:5002/api/messages/ (尝试 3/3)
+2025-10-09 11:33:53,169 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:33:53] 溶解氧: 7.331 | 液位: 939mm | pH: 7.54 | pH温度: 29.3°C | 浊度: 2.3NTU | 浊度温度: 29.9°C
+2025-10-09 11:33:54,024 - HttpRequestTask - ERROR - _send_http_request:231 - HTTP连接失败 (尝试 3/3)
+2025-10-09 11:33:54,024 - HttpRequestTask - ERROR - execute:282 - HTTP请求任务执行失败: HTTP连接失败
+2025-10-09 11:33:54,024 - root - WARNING - _run_task_with_retry:502 - 任务执行失败，5秒后重试 (第3/3次): 每小时HTTP请求发送
+2025-10-09 11:33:58,170 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:33:58] 溶解氧: 6.863 | 液位: 995mm | pH: 7.58 | pH温度: 26.9°C | 浊度: 4.0NTU | 浊度温度: 27.6°C
+2025-10-09 11:33:58,176 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第5次)
+2025-10-09 11:33:58,176 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 6.863, 'liquid_level': 995, 'ph': 7.58, 'ph_temperature': 26.9, 'turbidity': 4.0, 'turbidity_temperature': 27.6}
+2025-10-09 11:33:58,176 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:33:59,025 - HttpRequestTask - INFO - execute:264 - 获取传感器数据: {'dissolved_oxygen': 6.863, 'liquid_level': 995, 'ph': 7.58, 'ph_temperature': 26.9, 'turbidity': 4.0, 'turbidity_temperature': 27.6}
+2025-10-09 11:33:59,025 - HttpRequestTask - INFO - _send_http_request:185 - 发送HTTP请求到 http://localhost:5002/api/messages/ (尝试 1/3)
+2025-10-09 11:34:03,125 - HttpRequestTask - ERROR - _send_http_request:231 - HTTP连接失败 (尝试 1/3)
+2025-10-09 11:34:03,185 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:34:03] 溶解氧: 6.863 | 液位: 995mm | pH: 7.58 | pH温度: 26.9°C | 浊度: 4.0NTU | 浊度温度: 27.6°C
+2025-10-09 11:34:04,126 - HttpRequestTask - INFO - _send_http_request:185 - 发送HTTP请求到 http://localhost:5002/api/messages/ (尝试 2/3)
+2025-10-09 11:34:08,186 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:34:08] 溶解氧: 6.67 | 液位: 951mm | pH: 6.87 | pH温度: 27.8°C | 浊度: 1.4NTU | 浊度温度: 28.2°C
+2025-10-09 11:34:08,213 - HttpRequestTask - ERROR - _send_http_request:231 - HTTP连接失败 (尝试 2/3)
+2025-10-09 11:34:10,214 - HttpRequestTask - INFO - _send_http_request:185 - 发送HTTP请求到 http://localhost:5002/api/messages/ (尝试 3/3)
+2025-10-09 11:34:13,187 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:34:13] 溶解氧: 6.67 | 液位: 951mm | pH: 6.87 | pH温度: 27.8°C | 浊度: 1.4NTU | 浊度温度: 28.2°C
+2025-10-09 11:34:14,322 - HttpRequestTask - ERROR - _send_http_request:231 - HTTP连接失败 (尝试 3/3)
+2025-10-09 11:34:14,322 - HttpRequestTask - ERROR - execute:282 - HTTP请求任务执行失败: HTTP连接失败
+2025-10-09 11:34:14,322 - root - ERROR - _run_task_with_retry:507 - 任务执行失败，已达最大重试次数: 每小时HTTP请求发送
+2025-10-09 11:34:18,188 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:34:18] 溶解氧: 6.616 | 液位: 1082mm | pH: 7.32 | pH温度: 29.1°C | 浊度: 4.5NTU | 浊度温度: 26.0°C
+2025-10-09 11:34:23,189 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:34:23] 溶解氧: 6.616 | 液位: 1082mm | pH: 7.32 | pH温度: 29.1°C | 浊度: 4.5NTU | 浊度温度: 26.0°C
+2025-10-09 11:34:28,187 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第7次)
+2025-10-09 11:34:28,187 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 6.817, 'liquid_level': 963, 'ph': 7.04, 'ph_temperature': 27.1, 'turbidity': 2.8, 'turbidity_temperature': 24.0}
+2025-10-09 11:34:28,187 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:34:28,190 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:34:28] 溶解氧: 6.817 | 液位: 963mm | pH: 7.04 | pH温度: 27.1°C | 浊度: 2.8NTU | 浊度温度: 24.0°C
+2025-10-09 11:34:33,191 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:34:33] 溶解氧: 6.817 | 液位: 963mm | pH: 7.04 | pH温度: 27.1°C | 浊度: 2.8NTU | 浊度温度: 24.0°C
+2025-10-09 11:34:38,192 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:34:38] 溶解氧: 7.375 | 液位: 970mm | pH: 6.85 | pH温度: 26.5°C | 浊度: 3.8NTU | 浊度温度: 24.8°C
+2025-10-09 11:34:43,193 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:34:43] 溶解氧: 7.375 | 液位: 970mm | pH: 6.85 | pH温度: 26.5°C | 浊度: 3.8NTU | 浊度温度: 24.8°C
+2025-10-09 11:34:48,194 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:34:48] 溶解氧: 6.813 | 液位: 929mm | pH: 7.49 | pH温度: 27.9°C | 浊度: 0.9NTU | 浊度温度: 24.5°C
+2025-10-09 11:34:53,195 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:34:53] 溶解氧: 6.813 | 液位: 929mm | pH: 7.49 | pH温度: 27.9°C | 浊度: 0.9NTU | 浊度温度: 24.5°C
+2025-10-09 11:34:58,197 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:34:58] 溶解氧: 7.758 | 液位: 994mm | pH: 7.45 | pH温度: 26.0°C | 浊度: 1.7NTU | 浊度温度: 28.6°C
+2025-10-09 11:34:58,198 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第9次)
+2025-10-09 11:34:58,198 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 7.758, 'liquid_level': 994, 'ph': 7.45, 'ph_temperature': 26.0, 'turbidity': 1.7, 'turbidity_temperature': 28.6}
+2025-10-09 11:34:58,198 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:35:03,198 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:35:03] 溶解氧: 7.758 | 液位: 994mm | pH: 7.45 | pH温度: 26.0°C | 浊度: 1.7NTU | 浊度温度: 28.6°C
+2025-10-09 11:35:08,199 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:35:08] 溶解氧: 7.844 | 液位: 983mm | pH: 7.12 | pH温度: 28.4°C | 浊度: 0.1NTU | 浊度温度: 24.1°C
+2025-10-09 11:35:13,200 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:35:13] 溶解氧: 7.844 | 液位: 983mm | pH: 7.12 | pH温度: 28.4°C | 浊度: 0.1NTU | 浊度温度: 24.1°C
+2025-10-09 11:35:18,202 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:35:18] 溶解氧: 7.185 | 液位: 1019mm | pH: 7.15 | pH温度: 29.5°C | 浊度: 2.3NTU | 浊度温度: 28.5°C
+2025-10-09 11:35:23,203 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:35:23] 溶解氧: 7.185 | 液位: 1019mm | pH: 7.15 | pH温度: 29.5°C | 浊度: 2.3NTU | 浊度温度: 28.5°C
+2025-10-09 11:35:28,204 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:35:28] 溶解氧: 7.136 | 液位: 900mm | pH: 7.24 | pH温度: 26.8°C | 浊度: 0.8NTU | 浊度温度: 29.5°C
+2025-10-09 11:35:28,207 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第11次)
+2025-10-09 11:35:28,207 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 7.136, 'liquid_level': 900, 'ph': 7.24, 'ph_temperature': 26.8, 'turbidity': 0.8, 'turbidity_temperature': 29.5}
+2025-10-09 11:35:28,207 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:35:33,205 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:35:33] 溶解氧: 7.136 | 液位: 900mm | pH: 7.24 | pH温度: 26.8°C | 浊度: 0.8NTU | 浊度温度: 29.5°C
+2025-10-09 11:35:38,207 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:35:38] 溶解氧: 6.554 | 液位: 901mm | pH: 7.11 | pH温度: 27.7°C | 浊度: 2.3NTU | 浊度温度: 24.0°C
+2025-10-09 11:35:43,208 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:35:43] 溶解氧: 6.554 | 液位: 901mm | pH: 7.11 | pH温度: 27.7°C | 浊度: 2.3NTU | 浊度温度: 24.0°C
+2025-10-09 11:35:48,209 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:35:48] 溶解氧: 7.731 | 液位: 976mm | pH: 7.44 | pH温度: 27.2°C | 浊度: 4.9NTU | 浊度温度: 29.6°C
+2025-10-09 11:35:53,210 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:35:53] 溶解氧: 7.731 | 液位: 976mm | pH: 7.44 | pH温度: 27.2°C | 浊度: 4.9NTU | 浊度温度: 29.6°C
+2025-10-09 11:35:58,211 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:35:58] 溶解氧: 6.789 | 液位: 907mm | pH: 7.09 | pH温度: 26.3°C | 浊度: 3.9NTU | 浊度温度: 25.3°C
+2025-10-09 11:35:58,217 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第13次)
+2025-10-09 11:35:58,217 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 6.789, 'liquid_level': 907, 'ph': 7.09, 'ph_temperature': 26.3, 'turbidity': 3.9, 'turbidity_temperature': 25.3}
+2025-10-09 11:35:58,217 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:36:03,213 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:36:03] 溶解氧: 6.789 | 液位: 907mm | pH: 7.09 | pH温度: 26.3°C | 浊度: 3.9NTU | 浊度温度: 25.3°C
+2025-10-09 11:36:08,214 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:36:08] 溶解氧: 8.115 | 液位: 1082mm | pH: 7.36 | pH温度: 28.0°C | 浊度: 4.6NTU | 浊度温度: 25.1°C
+2025-10-09 11:36:13,215 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:36:13] 溶解氧: 8.115 | 液位: 1082mm | pH: 7.36 | pH温度: 28.0°C | 浊度: 4.6NTU | 浊度温度: 25.1°C
+2025-10-09 11:36:18,216 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:36:18] 溶解氧: 7.333 | 液位: 1022mm | pH: 7.01 | pH温度: 25.7°C | 浊度: 2.5NTU | 浊度温度: 29.2°C
+2025-10-09 11:36:23,217 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:36:23] 溶解氧: 7.333 | 液位: 1022mm | pH: 7.01 | pH温度: 25.7°C | 浊度: 2.5NTU | 浊度温度: 29.2°C
+2025-10-09 11:36:28,218 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:36:28] 溶解氧: 6.845 | 液位: 938mm | pH: 7.22 | pH温度: 28.0°C | 浊度: 2.2NTU | 浊度温度: 24.6°C
+2025-10-09 11:36:28,227 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第15次)
+2025-10-09 11:36:28,227 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 6.845, 'liquid_level': 938, 'ph': 7.22, 'ph_temperature': 28.0, 'turbidity': 2.2, 'turbidity_temperature': 24.6}
+2025-10-09 11:36:28,227 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:36:33,220 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:36:33] 溶解氧: 6.845 | 液位: 938mm | pH: 7.22 | pH温度: 28.0°C | 浊度: 2.2NTU | 浊度温度: 24.6°C
+2025-10-09 11:36:38,221 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:36:38] 溶解氧: 8.166 | 液位: 984mm | pH: 7.29 | pH温度: 26.0°C | 浊度: 3.4NTU | 浊度温度: 24.8°C
+2025-10-09 11:36:43,222 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:36:43] 溶解氧: 8.166 | 液位: 984mm | pH: 7.29 | pH温度: 26.0°C | 浊度: 3.4NTU | 浊度温度: 24.8°C
+2025-10-09 11:36:48,223 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:36:48] 溶解氧: 6.779 | 液位: 919mm | pH: 7.23 | pH温度: 26.4°C | 浊度: 1.8NTU | 浊度温度: 25.4°C
+2025-10-09 11:36:53,224 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:36:53] 溶解氧: 6.779 | 液位: 919mm | pH: 7.23 | pH温度: 26.4°C | 浊度: 1.8NTU | 浊度温度: 25.4°C
+2025-10-09 11:36:58,225 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:36:58] 溶解氧: 8.11 | 液位: 993mm | pH: 7.14 | pH温度: 26.2°C | 浊度: 3.8NTU | 浊度温度: 27.8°C
+2025-10-09 11:36:58,236 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第17次)
+2025-10-09 11:36:58,236 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 8.11, 'liquid_level': 993, 'ph': 7.14, 'ph_temperature': 26.2, 'turbidity': 3.8, 'turbidity_temperature': 27.8}
+2025-10-09 11:36:58,236 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:37:03,226 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:37:03] 溶解氧: 8.11 | 液位: 993mm | pH: 7.14 | pH温度: 26.2°C | 浊度: 3.8NTU | 浊度温度: 27.8°C
+2025-10-09 11:37:08,227 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:37:08] 溶解氧: 7.485 | 液位: 937mm | pH: 7.49 | pH温度: 24.3°C | 浊度: 1.8NTU | 浊度温度: 28.1°C
+2025-10-09 11:37:13,228 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:37:13] 溶解氧: 7.485 | 液位: 937mm | pH: 7.49 | pH温度: 24.3°C | 浊度: 1.8NTU | 浊度温度: 28.1°C
+2025-10-09 11:37:18,229 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:37:18] 溶解氧: 7.786 | 液位: 972mm | pH: 7.13 | pH温度: 26.7°C | 浊度: 1.4NTU | 浊度温度: 25.8°C
+2025-10-09 11:37:23,231 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:37:23] 溶解氧: 7.786 | 液位: 972mm | pH: 7.13 | pH温度: 26.7°C | 浊度: 1.4NTU | 浊度温度: 25.8°C
+2025-10-09 11:37:28,231 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:37:28] 溶解氧: 6.679 | 液位: 986mm | pH: 7.02 | pH温度: 27.1°C | 浊度: 1.6NTU | 浊度温度: 24.7°C
+2025-10-09 11:37:28,246 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第19次)
+2025-10-09 11:37:28,246 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 6.679, 'liquid_level': 986, 'ph': 7.02, 'ph_temperature': 27.1, 'turbidity': 1.6, 'turbidity_temperature': 24.7}
+2025-10-09 11:37:28,246 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:37:33,233 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:37:33] 溶解氧: 6.679 | 液位: 986mm | pH: 7.02 | pH温度: 27.1°C | 浊度: 1.6NTU | 浊度温度: 24.7°C
+2025-10-09 11:37:38,234 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:37:38] 溶解氧: 6.873 | 液位: 1067mm | pH: 7.45 | pH温度: 25.1°C | 浊度: 1.2NTU | 浊度温度: 25.0°C
+2025-10-09 11:37:43,235 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:37:43] 溶解氧: 6.873 | 液位: 1067mm | pH: 7.45 | pH温度: 25.1°C | 浊度: 1.2NTU | 浊度温度: 25.0°C
+2025-10-09 11:37:48,236 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:37:48] 溶解氧: 7.984 | 液位: 1002mm | pH: 7.02 | pH温度: 28.7°C | 浊度: 2.6NTU | 浊度温度: 25.4°C
+2025-10-09 11:37:53,237 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:37:53] 溶解氧: 7.984 | 液位: 1002mm | pH: 7.02 | pH温度: 28.7°C | 浊度: 2.6NTU | 浊度温度: 25.4°C
+2025-10-09 11:37:58,239 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:37:58] 溶解氧: 6.769 | 液位: 1020mm | pH: 7.0 | pH温度: 27.4°C | 浊度: 2.1NTU | 浊度温度: 27.3°C
+2025-10-09 11:37:58,255 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第21次)
+2025-10-09 11:37:58,255 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 6.769, 'liquid_level': 1020, 'ph': 7.0, 'ph_temperature': 27.4, 'turbidity': 2.1, 'turbidity_temperature': 27.3}
+2025-10-09 11:37:58,255 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:38:03,240 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:38:03] 溶解氧: 6.769 | 液位: 1020mm | pH: 7.0 | pH温度: 27.4°C | 浊度: 2.1NTU | 浊度温度: 27.3°C
+2025-10-09 11:38:08,241 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:38:08] 溶解氧: 7.588 | 液位: 926mm | pH: 7.2 | pH温度: 26.5°C | 浊度: 2.0NTU | 浊度温度: 24.0°C
+2025-10-09 11:38:13,243 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:38:13] 溶解氧: 7.588 | 液位: 926mm | pH: 7.2 | pH温度: 26.5°C | 浊度: 2.0NTU | 浊度温度: 24.0°C
+2025-10-09 11:38:18,244 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:38:18] 溶解氧: 7.394 | 液位: 938mm | pH: 7.19 | pH温度: 29.5°C | 浊度: 2.8NTU | 浊度温度: 25.5°C
+2025-10-09 11:38:23,245 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:38:23] 溶解氧: 7.394 | 液位: 938mm | pH: 7.19 | pH温度: 29.5°C | 浊度: 2.8NTU | 浊度温度: 25.5°C
+2025-10-09 11:38:28,246 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:38:28] 溶解氧: 6.62 | 液位: 1048mm | pH: 7.04 | pH温度: 29.0°C | 浊度: 1.8NTU | 浊度温度: 26.4°C
+2025-10-09 11:38:28,265 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第23次)
+2025-10-09 11:38:28,265 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 6.62, 'liquid_level': 1048, 'ph': 7.04, 'ph_temperature': 29.0, 'turbidity': 1.8, 'turbidity_temperature': 26.4}
+2025-10-09 11:38:28,265 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:38:33,247 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:38:33] 溶解氧: 6.62 | 液位: 1048mm | pH: 7.04 | pH温度: 29.0°C | 浊度: 1.8NTU | 浊度温度: 26.4°C
+2025-10-09 11:38:38,248 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:38:38] 溶解氧: 6.597 | 液位: 1071mm | pH: 7.45 | pH温度: 29.9°C | 浊度: 0.7NTU | 浊度温度: 26.4°C
+2025-10-09 11:38:43,250 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:38:43] 溶解氧: 6.597 | 液位: 1071mm | pH: 7.45 | pH温度: 29.9°C | 浊度: 0.7NTU | 浊度温度: 26.4°C
+2025-10-09 11:38:48,251 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:38:48] 溶解氧: 7.666 | 液位: 1032mm | pH: 7.37 | pH温度: 27.9°C | 浊度: 3.9NTU | 浊度温度: 28.2°C
+2025-10-09 11:38:53,252 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:38:53] 溶解氧: 7.666 | 液位: 1032mm | pH: 7.37 | pH温度: 27.9°C | 浊度: 3.9NTU | 浊度温度: 28.2°C
+2025-10-09 11:38:58,253 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:38:58] 溶解氧: 7.587 | 液位: 1019mm | pH: 7.0 | pH温度: 26.2°C | 浊度: 1.7NTU | 浊度温度: 27.7°C
+2025-10-09 11:38:58,275 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第25次)
+2025-10-09 11:38:58,275 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 7.587, 'liquid_level': 1019, 'ph': 7.0, 'ph_temperature': 26.2, 'turbidity': 1.7, 'turbidity_temperature': 27.7}
+2025-10-09 11:38:58,275 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:39:03,254 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:39:03] 溶解氧: 7.587 | 液位: 1019mm | pH: 7.0 | pH温度: 26.2°C | 浊度: 1.7NTU | 浊度温度: 27.7°C
+2025-10-09 11:39:08,256 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:39:08] 溶解氧: 7.83 | 液位: 939mm | pH: 7.25 | pH温度: 29.4°C | 浊度: 1.6NTU | 浊度温度: 29.6°C
+2025-10-09 11:39:13,256 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:39:13] 溶解氧: 7.83 | 液位: 939mm | pH: 7.25 | pH温度: 29.4°C | 浊度: 1.6NTU | 浊度温度: 29.6°C
+2025-10-09 11:39:18,258 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:39:18] 溶解氧: 7.542 | 液位: 911mm | pH: 6.83 | pH温度: 27.6°C | 浊度: 3.6NTU | 浊度温度: 28.8°C
+2025-10-09 11:39:23,259 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:39:23] 溶解氧: 7.542 | 液位: 911mm | pH: 6.83 | pH温度: 27.6°C | 浊度: 3.6NTU | 浊度温度: 28.8°C
+2025-10-09 11:39:28,260 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:39:28] 溶解氧: 6.929 | 液位: 953mm | pH: 6.83 | pH温度: 26.2°C | 浊度: 0.3NTU | 浊度温度: 24.5°C
+2025-10-09 11:39:28,286 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第27次)
+2025-10-09 11:39:28,286 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 6.929, 'liquid_level': 953, 'ph': 6.83, 'ph_temperature': 26.2, 'turbidity': 0.3, 'turbidity_temperature': 24.5}
+2025-10-09 11:39:28,286 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:39:33,261 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:39:33] 溶解氧: 6.929 | 液位: 953mm | pH: 6.83 | pH温度: 26.2°C | 浊度: 0.3NTU | 浊度温度: 24.5°C
+2025-10-09 11:39:38,262 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:39:38] 溶解氧: 7.475 | 液位: 1057mm | pH: 6.89 | pH温度: 28.8°C | 浊度: 4.6NTU | 浊度温度: 29.7°C
+2025-10-09 11:39:43,264 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:39:43] 溶解氧: 7.475 | 液位: 1057mm | pH: 6.89 | pH温度: 28.8°C | 浊度: 4.6NTU | 浊度温度: 29.7°C
+2025-10-09 11:39:48,265 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:39:48] 溶解氧: 6.967 | 液位: 966mm | pH: 7.08 | pH温度: 25.3°C | 浊度: 2.3NTU | 浊度温度: 29.0°C
+2025-10-09 11:39:53,266 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:39:53] 溶解氧: 6.967 | 液位: 966mm | pH: 7.08 | pH温度: 25.3°C | 浊度: 2.3NTU | 浊度温度: 29.0°C
+2025-10-09 11:39:58,267 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:39:58] 溶解氧: 6.693 | 液位: 920mm | pH: 7.35 | pH温度: 24.5°C | 浊度: 2.8NTU | 浊度温度: 28.4°C
+2025-10-09 11:39:58,296 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第29次)
+2025-10-09 11:39:58,296 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 6.693, 'liquid_level': 920, 'ph': 7.35, 'ph_temperature': 24.5, 'turbidity': 2.8, 'turbidity_temperature': 28.4}
+2025-10-09 11:39:58,296 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:40:03,268 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:40:03] 溶解氧: 6.693 | 液位: 920mm | pH: 7.35 | pH温度: 24.5°C | 浊度: 2.8NTU | 浊度温度: 28.4°C
+2025-10-09 11:40:08,270 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:40:08] 溶解氧: 6.8 | 液位: 1032mm | pH: 7.35 | pH温度: 26.0°C | 浊度: 1.3NTU | 浊度温度: 29.9°C
+2025-10-09 11:40:13,271 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:40:13] 溶解氧: 6.8 | 液位: 1032mm | pH: 7.35 | pH温度: 26.0°C | 浊度: 1.3NTU | 浊度温度: 29.9°C
+2025-10-09 11:40:18,272 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:40:18] 溶解氧: 6.862 | 液位: 925mm | pH: 6.96 | pH温度: 29.5°C | 浊度: 4.6NTU | 浊度温度: 29.2°C
+2025-10-09 11:40:23,273 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:40:23] 溶解氧: 6.862 | 液位: 925mm | pH: 6.96 | pH温度: 29.5°C | 浊度: 4.6NTU | 浊度温度: 29.2°C
+2025-10-09 11:40:28,275 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:40:28] 溶解氧: 7.36 | 液位: 1061mm | pH: 7.09 | pH温度: 24.1°C | 浊度: 0.4NTU | 浊度温度: 25.4°C
+2025-10-09 11:40:28,306 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第31次)
+2025-10-09 11:40:28,306 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 7.36, 'liquid_level': 1061, 'ph': 7.09, 'ph_temperature': 24.1, 'turbidity': 0.4, 'turbidity_temperature': 25.4}
+2025-10-09 11:40:28,306 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:40:33,276 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:40:33] 溶解氧: 7.36 | 液位: 1061mm | pH: 7.09 | pH温度: 24.1°C | 浊度: 0.4NTU | 浊度温度: 25.4°C
+2025-10-09 11:40:38,277 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:40:38] 溶解氧: 7.939 | 液位: 1002mm | pH: 6.82 | pH温度: 24.2°C | 浊度: 0.1NTU | 浊度温度: 25.0°C
+2025-10-09 11:40:43,278 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:40:43] 溶解氧: 7.939 | 液位: 1002mm | pH: 6.82 | pH温度: 24.2°C | 浊度: 0.1NTU | 浊度温度: 25.0°C
+2025-10-09 11:40:48,279 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:40:48] 溶解氧: 6.735 | 液位: 981mm | pH: 7.24 | pH温度: 25.1°C | 浊度: 3.8NTU | 浊度温度: 24.0°C
+2025-10-09 11:40:53,280 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:40:53] 溶解氧: 6.735 | 液位: 981mm | pH: 7.24 | pH温度: 25.1°C | 浊度: 3.8NTU | 浊度温度: 24.0°C
+2025-10-09 11:40:58,281 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:40:58] 溶解氧: 6.855 | 液位: 988mm | pH: 7.59 | pH温度: 28.2°C | 浊度: 3.5NTU | 浊度温度: 27.1°C
+2025-10-09 11:40:58,315 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第33次)
+2025-10-09 11:40:58,315 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 6.855, 'liquid_level': 988, 'ph': 7.59, 'ph_temperature': 28.2, 'turbidity': 3.5, 'turbidity_temperature': 27.1}
+2025-10-09 11:40:58,315 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:41:03,283 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:41:03] 溶解氧: 6.855 | 液位: 988mm | pH: 7.59 | pH温度: 28.2°C | 浊度: 3.5NTU | 浊度温度: 27.1°C
+2025-10-09 11:41:08,284 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:41:08] 溶解氧: 8.102 | 液位: 951mm | pH: 7.11 | pH温度: 25.4°C | 浊度: 4.6NTU | 浊度温度: 28.0°C
+2025-10-09 11:41:13,285 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:41:13] 溶解氧: 8.102 | 液位: 951mm | pH: 7.11 | pH温度: 25.4°C | 浊度: 4.6NTU | 浊度温度: 28.0°C
+2025-10-09 11:41:18,287 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:41:18] 溶解氧: 8.061 | 液位: 1081mm | pH: 7.27 | pH温度: 26.4°C | 浊度: 3.5NTU | 浊度温度: 24.5°C
+2025-10-09 11:41:23,288 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:41:23] 溶解氧: 8.061 | 液位: 1081mm | pH: 7.27 | pH温度: 26.4°C | 浊度: 3.5NTU | 浊度温度: 24.5°C
+2025-10-09 11:41:28,289 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:41:28] 溶解氧: 7.783 | 液位: 1088mm | pH: 7.14 | pH温度: 24.6°C | 浊度: 1.0NTU | 浊度温度: 28.0°C
+2025-10-09 11:41:28,325 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第35次)
+2025-10-09 11:41:28,325 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 7.783, 'liquid_level': 1088, 'ph': 7.14, 'ph_temperature': 24.6, 'turbidity': 1.0, 'turbidity_temperature': 28.0}
+2025-10-09 11:41:28,325 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:41:33,290 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:41:33] 溶解氧: 7.783 | 液位: 1088mm | pH: 7.14 | pH温度: 24.6°C | 浊度: 1.0NTU | 浊度温度: 28.0°C
+2025-10-09 11:41:38,291 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:41:38] 溶解氧: 6.824 | 液位: 1012mm | pH: 7.29 | pH温度: 27.0°C | 浊度: 0.5NTU | 浊度温度: 25.7°C
+2025-10-09 11:41:43,292 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:41:43] 溶解氧: 6.824 | 液位: 1012mm | pH: 7.29 | pH温度: 27.0°C | 浊度: 0.5NTU | 浊度温度: 25.7°C
+2025-10-09 11:41:48,293 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:41:48] 溶解氧: 8.07 | 液位: 1051mm | pH: 7.31 | pH温度: 28.0°C | 浊度: 2.0NTU | 浊度温度: 28.1°C
+2025-10-09 11:41:53,294 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:41:53] 溶解氧: 8.07 | 液位: 1051mm | pH: 7.31 | pH温度: 28.0°C | 浊度: 2.0NTU | 浊度温度: 28.1°C
+2025-10-09 11:41:58,296 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:41:58] 溶解氧: 7.703 | 液位: 1060mm | pH: 7.42 | pH温度: 24.3°C | 浊度: 1.1NTU | 浊度温度: 29.5°C
+2025-10-09 11:41:58,335 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第37次)
+2025-10-09 11:41:58,335 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 7.703, 'liquid_level': 1060, 'ph': 7.42, 'ph_temperature': 24.3, 'turbidity': 1.1, 'turbidity_temperature': 29.5}
+2025-10-09 11:41:58,335 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:42:03,297 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:42:03] 溶解氧: 7.703 | 液位: 1060mm | pH: 7.42 | pH温度: 24.3°C | 浊度: 1.1NTU | 浊度温度: 29.5°C
+2025-10-09 11:42:08,298 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:42:08] 溶解氧: 8.188 | 液位: 1097mm | pH: 6.83 | pH温度: 25.2°C | 浊度: 0.1NTU | 浊度温度: 26.3°C
+2025-10-09 11:42:13,299 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:42:13] 溶解氧: 8.188 | 液位: 1097mm | pH: 6.83 | pH温度: 25.2°C | 浊度: 0.1NTU | 浊度温度: 26.3°C
+2025-10-09 11:42:18,300 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:42:18] 溶解氧: 7.975 | 液位: 925mm | pH: 7.32 | pH温度: 25.8°C | 浊度: 1.1NTU | 浊度温度: 27.4°C
+2025-10-09 11:42:23,301 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:42:23] 溶解氧: 7.975 | 液位: 925mm | pH: 7.32 | pH温度: 25.8°C | 浊度: 1.1NTU | 浊度温度: 27.4°C
+2025-10-09 11:42:23,605 - SensorDataService - INFO - _signal_handler:126 - 接收到信号 2，开始优雅关闭传感器服务...
+2025-10-09 11:42:23,605 - SensorDataService - INFO - stop:369 - 正在停止传感器数据采集服务...
+2025-10-09 11:42:28,169 - SensorDataService - INFO - _read_sensor_data:273 - dissolved_oxygen传感器线程已停止
+2025-10-09 11:42:28,169 - SensorDataService - INFO - _signal_handler:126 - 接收到信号 2，开始优雅关闭传感器服务...
+2025-10-09 11:42:28,170 - SensorDataService - INFO - _read_sensor_data:273 - ph传感器线程已停止
+2025-10-09 11:42:28,170 - SensorDataService - INFO - _read_sensor_data:273 - turbidity传感器线程已停止
+2025-10-09 11:42:28,170 - SensorDataService - INFO - _read_sensor_data:273 - liquid_level传感器线程已停止
+2025-10-09 11:42:28,302 - SensorDataService - INFO - _data_logging_thread:330 - 数据记录线程已停止
+2025-10-09 11:42:28,302 - SensorDataService - INFO - stop:378 - 传感器数据采集服务已停止
+2025-10-09 11:42:28,344 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第39次)
+2025-10-09 11:42:28,344 - SensorDataTask - INFO - execute:37 - 传感器服务未运行，正在启动...
+2025-10-09 11:42:28,344 - SensorDataService - INFO - start:338 - 启动传感器数据采集服务...
+2025-10-09 11:42:28,346 - SensorDataService - INFO - _data_logging_thread:277 - 数据记录线程启动
+2025-10-09 11:42:28,346 - SensorDataService - INFO - start:362 - 传感器服务启动成功（模拟模式），共启动5个线程
+2025-10-09 11:42:28,346 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:42:28] 溶解氧: 7.897 | 液位: 922mm | pH: 6.97 | pH温度: 29.0°C | 浊度: 4.1NTU | 浊度温度: 25.2°C
+2025-10-09 11:42:28,346 - SensorDataTask - INFO - execute:39 - 传感器服务启动完成
+2025-10-09 11:42:28,346 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:42:29,163 - SensorDataService - INFO - _signal_handler:126 - 接收到信号 2，开始优雅关闭传感器服务...
+2025-10-09 11:42:29,163 - SensorDataService - INFO - stop:369 - 正在停止传感器数据采集服务...
+2025-10-09 11:42:33,347 - SensorDataService - INFO - _data_logging_thread:330 - 数据记录线程已停止
+2025-10-09 11:42:34,172 - SensorDataService - INFO - _signal_handler:126 - 接收到信号 2，开始优雅关闭传感器服务...
+2025-10-09 11:42:38,346 - SensorDataService - INFO - _read_sensor_data:273 - dissolved_oxygen传感器线程已停止
+2025-10-09 11:42:38,346 - SensorDataService - INFO - _read_sensor_data:273 - ph传感器线程已停止
+2025-10-09 11:42:38,346 - SensorDataService - INFO - _read_sensor_data:273 - liquid_level传感器线程已停止
+2025-10-09 11:42:38,346 - SensorDataService - INFO - _read_sensor_data:273 - turbidity传感器线程已停止
+2025-10-09 11:42:38,346 - SensorDataService - INFO - stop:378 - 传感器数据采集服务已停止
+2025-10-09 11:42:51,201 - SensorDataService - INFO - _signal_handler:126 - 接收到信号 2，开始优雅关闭传感器服务...
+2025-10-09 11:42:51,560 - SensorDataService - INFO - _signal_handler:126 - 接收到信号 2，开始优雅关闭传感器服务...
+2025-10-09 11:42:51,822 - SensorDataService - INFO - _signal_handler:126 - 接收到信号 2，开始优雅关闭传感器服务...
+2025-10-09 11:42:52,054 - SensorDataService - INFO - _signal_handler:126 - 接收到信号 2，开始优雅关闭传感器服务...
+2025-10-09 11:42:52,253 - SensorDataService - INFO - _signal_handler:126 - 接收到信号 2，开始优雅关闭传感器服务...
+2025-10-09 11:42:52,389 - SensorDataService - INFO - _signal_handler:126 - 接收到信号 2，开始优雅关闭传感器服务...
+2025-10-09 11:42:58,354 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第41次)
+2025-10-09 11:42:58,354 - root - INFO - _execute_task:476 - 开始执行任务: 数据上传任务 (第2次)
+2025-10-09 11:42:58,354 - SensorDataTask - INFO - execute:37 - 传感器服务未运行，正在启动...
+2025-10-09 11:42:58,354 - root - INFO - execute:175 - 执行脚本任务: 数据上传任务 - D:\anaconda3\python.exe client/updata.py
+2025-10-09 11:42:58,354 - SensorDataService - INFO - start:338 - 启动传感器数据采集服务...
+2025-10-09 11:42:58,356 - SensorDataService - INFO - _data_logging_thread:277 - 数据记录线程启动
+2025-10-09 11:42:58,356 - SensorDataService - INFO - start:362 - 传感器服务启动成功（模拟模式），共启动5个线程
+2025-10-09 11:42:58,356 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:42:58] 溶解氧: 7.059 | 液位: 1067mm | pH: 6.94 | pH温度: 28.0°C | 浊度: 4.8NTU | 浊度温度: 27.6°C
+2025-10-09 11:42:58,356 - SensorDataTask - INFO - execute:39 - 传感器服务启动完成
+2025-10-09 11:42:58,356 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:42:59,200 - root - INFO - execute:186 - 脚本任务执行成功: 数据上传任务
+2025-10-09 11:42:59,200 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 数据上传任务
+2025-10-09 11:43:03,357 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:43:03] 溶解氧: 7.059 | 液位: 1067mm | pH: 6.94 | pH温度: 28.0°C | 浊度: 4.8NTU | 浊度温度: 27.6°C
+2025-10-09 11:43:08,358 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:43:08] 溶解氧: 7.332 | 液位: 1064mm | pH: 7.16 | pH温度: 26.4°C | 浊度: 2.6NTU | 浊度温度: 25.8°C
+2025-10-09 11:43:13,359 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:43:13] 溶解氧: 7.332 | 液位: 1064mm | pH: 7.16 | pH温度: 26.4°C | 浊度: 2.6NTU | 浊度温度: 25.8°C
+2025-10-09 11:43:18,360 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:43:18] 溶解氧: 7.866 | 液位: 931mm | pH: 7.4 | pH温度: 24.2°C | 浊度: 4.2NTU | 浊度温度: 24.3°C
+2025-10-09 11:43:23,362 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:43:23] 溶解氧: 7.866 | 液位: 931mm | pH: 7.4 | pH温度: 24.2°C | 浊度: 4.2NTU | 浊度温度: 24.3°C
+2025-10-09 11:43:28,363 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:43:28] 溶解氧: 7.941 | 液位: 902mm | pH: 7.37 | pH温度: 27.1°C | 浊度: 4.1NTU | 浊度温度: 26.5°C
+2025-10-09 11:43:28,365 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第43次)
+2025-10-09 11:43:28,365 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 7.941, 'liquid_level': 902, 'ph': 7.37, 'ph_temperature': 27.1, 'turbidity': 4.1, 'turbidity_temperature': 26.5}
+2025-10-09 11:43:28,365 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:43:33,364 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:43:33] 溶解氧: 7.941 | 液位: 902mm | pH: 7.37 | pH温度: 27.1°C | 浊度: 4.1NTU | 浊度温度: 26.5°C
+2025-10-09 11:43:38,365 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:43:38] 溶解氧: 6.603 | 液位: 1011mm | pH: 7.28 | pH温度: 25.2°C | 浊度: 4.3NTU | 浊度温度: 28.4°C
+2025-10-09 11:43:43,366 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:43:43] 溶解氧: 6.603 | 液位: 1011mm | pH: 7.28 | pH温度: 25.2°C | 浊度: 4.3NTU | 浊度温度: 28.4°C
+2025-10-09 11:43:48,367 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:43:48] 溶解氧: 7.997 | 液位: 941mm | pH: 7.48 | pH温度: 29.2°C | 浊度: 0.9NTU | 浊度温度: 28.9°C
+2025-10-09 11:43:53,368 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:43:53] 溶解氧: 7.997 | 液位: 941mm | pH: 7.48 | pH温度: 29.2°C | 浊度: 0.9NTU | 浊度温度: 28.9°C
+2025-10-09 11:43:58,369 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:43:58] 溶解氧: 7.31 | 液位: 1061mm | pH: 7.48 | pH温度: 28.4°C | 浊度: 1.3NTU | 浊度温度: 25.1°C
+2025-10-09 11:43:58,374 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第45次)
+2025-10-09 11:43:58,374 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 7.31, 'liquid_level': 1061, 'ph': 7.48, 'ph_temperature': 28.4, 'turbidity': 1.3, 'turbidity_temperature': 25.1}
+2025-10-09 11:43:58,374 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:44:03,370 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:44:03] 溶解氧: 7.31 | 液位: 1061mm | pH: 7.48 | pH温度: 28.4°C | 浊度: 1.3NTU | 浊度温度: 25.1°C
+2025-10-09 11:44:08,371 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:44:08] 溶解氧: 7.781 | 液位: 938mm | pH: 7.44 | pH温度: 29.0°C | 浊度: 4.6NTU | 浊度温度: 29.1°C
+2025-10-09 11:44:13,372 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:44:13] 溶解氧: 7.781 | 液位: 938mm | pH: 7.44 | pH温度: 29.0°C | 浊度: 4.6NTU | 浊度温度: 29.1°C
+2025-10-09 11:44:18,373 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:44:18] 溶解氧: 7.822 | 液位: 974mm | pH: 7.04 | pH温度: 27.2°C | 浊度: 1.4NTU | 浊度温度: 28.6°C
+2025-10-09 11:44:23,374 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:44:23] 溶解氧: 7.822 | 液位: 974mm | pH: 7.04 | pH温度: 27.2°C | 浊度: 1.4NTU | 浊度温度: 28.6°C
+2025-10-09 11:44:28,376 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:44:28] 溶解氧: 8.002 | 液位: 1002mm | pH: 7.4 | pH温度: 25.5°C | 浊度: 2.4NTU | 浊度温度: 29.7°C
+2025-10-09 11:44:28,384 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第47次)
+2025-10-09 11:44:28,384 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 8.002, 'liquid_level': 1002, 'ph': 7.4, 'ph_temperature': 25.5, 'turbidity': 2.4, 'turbidity_temperature': 29.7}
+2025-10-09 11:44:28,384 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:44:33,376 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:44:33] 溶解氧: 8.002 | 液位: 1002mm | pH: 7.4 | pH温度: 25.5°C | 浊度: 2.4NTU | 浊度温度: 29.7°C
+2025-10-09 11:44:38,377 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:44:38] 溶解氧: 7.662 | 液位: 1095mm | pH: 6.85 | pH温度: 24.6°C | 浊度: 1.1NTU | 浊度温度: 26.5°C
+2025-10-09 11:44:43,379 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:44:43] 溶解氧: 7.662 | 液位: 1095mm | pH: 6.85 | pH温度: 24.6°C | 浊度: 1.1NTU | 浊度温度: 26.5°C
+2025-10-09 11:44:48,380 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:44:48] 溶解氧: 6.804 | 液位: 1092mm | pH: 7.52 | pH温度: 24.6°C | 浊度: 0.5NTU | 浊度温度: 27.8°C
+2025-10-09 11:44:53,381 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:44:53] 溶解氧: 6.804 | 液位: 1092mm | pH: 7.52 | pH温度: 24.6°C | 浊度: 0.5NTU | 浊度温度: 27.8°C
+2025-10-09 11:44:58,382 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:44:58] 溶解氧: 8.107 | 液位: 939mm | pH: 7.44 | pH温度: 24.1°C | 浊度: 0.1NTU | 浊度温度: 29.5°C
+2025-10-09 11:44:58,395 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第49次)
+2025-10-09 11:44:58,395 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 8.107, 'liquid_level': 939, 'ph': 7.44, 'ph_temperature': 24.1, 'turbidity': 0.1, 'turbidity_temperature': 29.5}
+2025-10-09 11:44:58,395 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:45:03,383 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:45:03] 溶解氧: 8.107 | 液位: 939mm | pH: 7.44 | pH温度: 24.1°C | 浊度: 0.1NTU | 浊度温度: 29.5°C
+2025-10-09 11:45:08,384 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:45:08] 溶解氧: 7.225 | 液位: 984mm | pH: 7.07 | pH温度: 26.3°C | 浊度: 4.6NTU | 浊度温度: 28.1°C
+2025-10-09 11:45:13,385 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:45:13] 溶解氧: 7.225 | 液位: 984mm | pH: 7.07 | pH温度: 26.3°C | 浊度: 4.6NTU | 浊度温度: 28.1°C
+2025-10-09 11:45:18,386 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:45:18] 溶解氧: 7.157 | 液位: 973mm | pH: 7.01 | pH温度: 27.4°C | 浊度: 1.2NTU | 浊度温度: 29.6°C
+2025-10-09 11:45:23,387 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:45:23] 溶解氧: 7.157 | 液位: 973mm | pH: 7.01 | pH温度: 27.4°C | 浊度: 1.2NTU | 浊度温度: 29.6°C
+2025-10-09 11:45:28,388 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:45:28] 溶解氧: 7.611 | 液位: 966mm | pH: 7.06 | pH温度: 27.6°C | 浊度: 1.9NTU | 浊度温度: 26.4°C
+2025-10-09 11:45:28,405 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第51次)
+2025-10-09 11:45:28,405 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 7.611, 'liquid_level': 966, 'ph': 7.06, 'ph_temperature': 27.6, 'turbidity': 1.9, 'turbidity_temperature': 26.4}
+2025-10-09 11:45:28,405 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:45:33,389 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:45:33] 溶解氧: 7.611 | 液位: 966mm | pH: 7.06 | pH温度: 27.6°C | 浊度: 1.9NTU | 浊度温度: 26.4°C
+2025-10-09 11:45:38,390 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:45:38] 溶解氧: 7.576 | 液位: 960mm | pH: 6.98 | pH温度: 27.2°C | 浊度: 0.3NTU | 浊度温度: 24.9°C
+2025-10-09 11:45:43,392 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:45:43] 溶解氧: 7.576 | 液位: 960mm | pH: 6.98 | pH温度: 27.2°C | 浊度: 0.3NTU | 浊度温度: 24.9°C
+2025-10-09 11:45:48,393 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:45:48] 溶解氧: 8.159 | 液位: 1058mm | pH: 7.04 | pH温度: 26.7°C | 浊度: 2.1NTU | 浊度温度: 25.3°C
+2025-10-09 11:45:53,394 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:45:53] 溶解氧: 8.159 | 液位: 1058mm | pH: 7.04 | pH温度: 26.7°C | 浊度: 2.1NTU | 浊度温度: 25.3°C
+2025-10-09 11:45:58,395 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:45:58] 溶解氧: 7.224 | 液位: 907mm | pH: 6.91 | pH温度: 27.2°C | 浊度: 1.3NTU | 浊度温度: 25.7°C
+2025-10-09 11:45:58,415 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第53次)
+2025-10-09 11:45:58,415 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 7.224, 'liquid_level': 907, 'ph': 6.91, 'ph_temperature': 27.2, 'turbidity': 1.3, 'turbidity_temperature': 25.7}
+2025-10-09 11:45:58,415 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-09 11:46:03,397 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:46:03] 溶解氧: 7.224 | 液位: 907mm | pH: 6.91 | pH温度: 27.2°C | 浊度: 1.3NTU | 浊度温度: 25.7°C
+2025-10-09 11:46:08,398 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:46:08] 溶解氧: 7.601 | 液位: 1089mm | pH: 7.42 | pH温度: 27.7°C | 浊度: 4.3NTU | 浊度温度: 25.3°C
+2025-10-09 11:46:13,399 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:46:13] 溶解氧: 7.601 | 液位: 1089mm | pH: 7.42 | pH温度: 27.7°C | 浊度: 4.3NTU | 浊度温度: 25.3°C
+2025-10-09 11:46:18,400 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:46:18] 溶解氧: 7.523 | 液位: 994mm | pH: 7.18 | pH温度: 28.8°C | 浊度: 1.3NTU | 浊度温度: 29.4°C
+2025-10-09 11:46:23,402 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-09 11:46:23] 溶解氧: 7.523 | 液位: 994mm | pH: 7.18 | pH温度: 28.8°C | 浊度: 1.3NTU | 浊度温度: 29.4°C

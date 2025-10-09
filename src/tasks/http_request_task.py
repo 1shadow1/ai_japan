@@ -12,12 +12,8 @@ from datetime import datetime, timezone
 from typing import Dict, Any, Optional
 import logging
 
-# 添加项目路径到sys.path
-project_root = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, project_root)
-
-# 导入调度器相关模块
-from schedule.task_scheduler import BaseTask, TaskStatus
+# 导入调度器相关模块（已迁移到 src/scheduler）
+from src.scheduler.task_scheduler import BaseTask, TaskStatus
 # 注释掉sensor_data_service导入，避免pandas依赖问题
 # from sensor_data_service import SensorDataService
 
@@ -331,7 +327,7 @@ def main():
     result = http_task.execute()
     
     print("执行结果:")
-    print(json.dumps(result, indent=2, ensure_ascii=False))
+    print(result)
 
 if __name__ == "__main__":
     main()
