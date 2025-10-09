@@ -2,4 +2,3 @@ output/
 __pycache__/
 *.csv
 *.mp4
-*.log
