@@ -107,4 +107,4 @@ if __name__ == "__main__":
             dev_id = "98f4abf5481e"
             print(f"devID:{dev_id}")
             feeder.get_device_status(dev_id)
-            feeder.feed(dev_id, 1)  # 喂 5 份
+            # feeder.feed(dev_id, 1)  # 喂 5 份
