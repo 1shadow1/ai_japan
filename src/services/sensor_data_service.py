@@ -18,7 +18,7 @@ import csv
 class SensorDataService:
     """传感器数据采集服务类"""
     
-    def __init__(self, output_dir: str = "./output/sensor", simulate: Optional[bool] = None):
+    def __init__(self, output_dir: str = "./output/sensor", simulate: Optional[bool] = None, register_signals: bool = False):
         self.output_dir = output_dir
         self.csv_file = os.path.join(output_dir, "data_collection.csv")
         self.running = False
@@ -102,9 +102,10 @@ class SensorDataService:
                 self.logger.warning("未检测到pymodbus，自动切换到模拟模式")
                 self.simulate = True
 
-        # 注册信号处理
-        signal.signal(signal.SIGINT, self._signal_handler)
-        signal.signal(signal.SIGTERM, self._signal_handler)
+        # 注册信号处理（默认不注册，避免覆盖应用层的SIGINT/SIGTERM处理）
+        if register_signals:
+            signal.signal(signal.SIGINT, self._signal_handler)
+            signal.signal(signal.SIGTERM, self._signal_handler)
     
     def _setup_logging(self):
         """设置日志系统"""

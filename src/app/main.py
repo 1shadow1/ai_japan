@@ -73,20 +73,18 @@ def main():
 
     # 主线程保持运行直到收到停止信号
     try:
-        while True:
-            # 可选：每60秒打印一次任务状态，但使用短间隔sleep以便及时响应中断
-            for _ in range(60):  # 60次1秒的sleep，总共60秒
-                import time
-                time.sleep(1)
-                # 检查调度器是否还在运行
-                if not scheduler.running:
-                    break
-            
-            # 打印任务状态
-            if scheduler.running:
+        import time
+        counter = 0
+        # 当调度器处于运行状态时保持主线程活跃；SIGINT 信号将由调度器处理并置 running=False
+        while scheduler.running:
+            time.sleep(1)
+            counter += 1
+            # 每60秒打印一次任务状态
+            if counter % 60 == 0:
                 status = scheduler.get_task_status()
                 logging.debug(f"调度器状态: {status}")
     except KeyboardInterrupt:
+        # 如果未覆盖 SIGINT，仍可优雅退出
         logging.info("接收到中断信号，正在停止调度器...")
     finally:
         scheduler.stop()

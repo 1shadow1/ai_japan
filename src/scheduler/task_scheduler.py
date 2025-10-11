@@ -424,7 +424,18 @@ class TaskScheduler:
         # 等待调度线程结束
         if self.scheduler_thread and self.scheduler_thread.is_alive():
             self.scheduler_thread.join(timeout=5)
-        
+
+        # 优雅停止各任务的后台线程/资源（如果任务实现了对应的停止方法）
+        for task in list(self.tasks.values()):
+            for method_name in ("stop_stream", "stop_service", "stop"):
+                try:
+                    method = getattr(task, method_name, None)
+                    if callable(method):
+                        logging.info(f"调用任务清理方法: {task.name}.{method_name}()")
+                        method()
+                except Exception as e:
+                    logging.warning(f"调用 {task.name}.{method_name}() 失败: {e}")
+
         # 关闭线程池
         if self.executor:
             self.executor.shutdown(wait=True)

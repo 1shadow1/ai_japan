@@ -2796,3 +2796,229 @@
 2025-10-11 15:52:35,968 - HttpRequestTask - ERROR - _send_http_request:231 - HTTP连接失败 (尝试 1/3)
 2025-10-11 15:52:36,915 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:52:36] 溶解氧: 8.80061 | 液位: 1000mm | pH: 8.07 | pH温度: 24.6°C | 浊度: 0.4NTU | 浊度温度: 23.6°C
 2025-10-11 15:52:36,969 - HttpRequestTask - INFO - _send_http_request:185 - 发送HTTP请求到 http://localhost:5002/api/messages/ (尝试 2/3)
+2025-10-11 15:18:11,274 - root - INFO - __init__:314 - 任务调度器初始化完成
+2025-10-11 15:18:12,813 - SensorDataService - WARNING - __init__:97 - 未检测到pandas，将使用csv模块写入文件
+2025-10-11 15:18:12,814 - SensorDataService - WARNING - __init__:102 - 未检测到pymodbus，自动切换到模拟模式
+2025-10-11 15:18:12,814 - root - INFO - add_task:366 - 任务添加成功: 传感器数据采集服务 (ID: sensor_service)
+2025-10-11 15:18:12,814 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 15:18:12.814409
+2025-10-11 15:18:12,814 - root - INFO - add_task:366 - 任务添加成功: 数据上传任务 (ID: data_upload)
+2025-10-11 15:18:12,815 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 15:18:12.814409
+2025-10-11 15:18:12,815 - root - INFO - add_task:366 - 任务添加成功: 传感器数据流式上传 (ID: sensor_data_stream)
+2025-10-11 15:18:12,815 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 15:18:13.815906
+2025-10-11 15:18:12,815 - root - INFO - main:71 - 任务已注册，准备启动调度器...
+2025-10-11 15:18:12,816 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第1次)
+2025-10-11 15:18:12,816 - root - INFO - start:414 - 任务调度器启动成功，最大工作线程数: 10
+2025-10-11 15:18:12,817 - SensorDataTask - INFO - execute:37 - 传感器服务未运行，正在启动...
+2025-10-11 15:18:12,817 - root - INFO - _execute_task:476 - 开始执行任务: 数据上传任务 (第1次)
+2025-10-11 15:18:12,817 - SensorDataService - INFO - start:338 - 启动传感器数据采集服务...
+2025-10-11 15:18:12,817 - root - INFO - execute:175 - 执行脚本任务: 数据上传任务 - D:\anaconda3\python.exe client/updata.py
+2025-10-11 15:18:12,818 - SensorDataService - INFO - _data_logging_thread:277 - 数据记录线程启动
+2025-10-11 15:18:12,818 - SensorDataService - INFO - start:362 - 传感器服务启动成功（模拟模式），共启动5个线程
+2025-10-11 15:18:12,819 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:18:12] 溶解氧: 7.735 | 液位: 998mm | pH: 7.57 | pH温度: 26.4°C | 浊度: 2.3NTU | 浊度温度: 28.1°C
+2025-10-11 15:18:12,819 - SensorDataTask - INFO - execute:39 - 传感器服务启动完成
+2025-10-11 15:18:12,819 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-11 15:18:12,885 - SensorDataService - INFO - _signal_handler:126 - 接收到信号 2，开始优雅关闭传感器服务...
+2025-10-11 15:18:12,885 - SensorDataService - INFO - stop:369 - 正在停止传感器数据采集服务...
+2025-10-11 15:18:13,228 - root - ERROR - execute:194 - 脚本执行失败，返回码: 3221225786, 错误信息: Traceback (most recent call last):
+  File "F:\work\singa\ai_japan\client\updata.py", line 14, in <module>
+    import requests
+  File "D:\anaconda3\Lib\site-packages\requests\__init__.py", line 43, in <module>
+    import urllib3
+  File "D:\anaconda3\Lib\site-packages\urllib3\__init__.py", line 18, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "D:\anaconda3\Lib\site-packages\urllib3\connectionpool.py", line 15, in <module>
+    from ._request_methods import RequestMethods
+  File "D:\anaconda3\Lib\site-packages\urllib3\_request_methods.py", line 10, in <module>
+    from .response import BaseHTTPResponse
+  File "D:\anaconda3\Lib\site-packages\urllib3\response.py", line 48, in <module>
+    from .connection import BaseSSLError, HTTPConnection, HTTPException
+  File "D:\anaconda3\Lib\site-packages\urllib3\connection.py", line 24, in <module>
+    from .http2 import probe as http2_probe
+  File "D:\anaconda3\Lib\site-packages\urllib3\http2\__init__.py", line 3, in <module>
+    from importlib.metadata import version
+  File "D:\anaconda3\Lib\importlib\metadata\__init__.py", line 27, in <module>
+    from importlib.abc import MetaPathFinder
+  File "D:\anaconda3\Lib\importlib\abc.py", line 18, in <module>
+    from .resources import abc as _resources_abc
+  File "D:\anaconda3\Lib\importlib\resources\__init__.py", line 3, in <module>
+    from ._common import (
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1087, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1186, in get_data
+KeyboardInterrupt
+
+2025-10-11 15:18:13,228 - root - WARNING - _run_task_with_retry:502 - 任务执行失败，5秒后重试 (第1/3次): 数据上传任务
+2025-10-11 15:18:13,818 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据流式上传 (第1次)
+2025-10-11 15:18:13,818 - SensorDataStreamTask - INFO - _stream_loop:103 - 数据流任务开始运行，目标URL=http://8.216.33.92:5000/api/updata_sensor_data，间隔=10s，dry_run=False
+2025-10-11 15:18:13,819 - SensorDataStreamTask - INFO - execute:149 - 数据流任务线程已启动
+2025-10-11 15:18:13,819 - SensorDataStreamTask - WARNING - _stream_loop:110 - 传感器服务未运行，尝试启动...
+2025-10-11 15:18:13,819 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据流式上传
+2025-10-11 15:18:13,819 - SensorDataService - INFO - start:338 - 启动传感器数据采集服务...
+2025-10-11 15:18:13,821 - SensorDataService - INFO - _data_logging_thread:277 - 数据记录线程启动
+2025-10-11 15:18:13,821 - SensorDataService - INFO - start:362 - 传感器服务启动成功（模拟模式），共启动10个线程
+2025-10-11 15:18:13,821 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:18:13] 溶解氧: 8.103 | 液位: 964mm | pH: 7.42 | pH温度: 26.2°C | 浊度: 1.1NTU | 浊度温度: 26.6°C
+2025-10-11 15:18:13,821 - SensorDataStreamTask - INFO - _stream_loop:113 - 传感器服务已启动
+2025-10-11 15:18:14,654 - SensorDataStreamTask - INFO - _stream_loop:128 - ✓ 数据上传成功
+2025-10-11 15:18:17,822 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:18:17] 溶解氧: 8.103 | 液位: 964mm | pH: 7.42 | pH温度: 26.2°C | 浊度: 1.1NTU | 浊度温度: 26.6°C
+2025-10-11 15:18:17,890 - SensorDataService - INFO - _signal_handler:126 - 接收到信号 2，开始优雅关闭传感器服务...
+2025-10-11 15:18:17,890 - SensorDataService - INFO - stop:369 - 正在停止传感器数据采集服务...
+2025-10-11 15:18:18,229 - root - INFO - execute:175 - 执行脚本任务: 数据上传任务 - D:\anaconda3\python.exe client/updata.py
+2025-10-11 15:18:18,823 - SensorDataService - INFO - _data_logging_thread:330 - 数据记录线程已停止
+2025-10-11 15:18:18,957 - root - ERROR - execute:194 - 脚本执行失败，返回码: 3221225786, 错误信息: Traceback (most recent call last):
+  File "F:\work\singa\ai_japan\client\updata.py", line 14, in <module>
+    import requests
+  File "D:\anaconda3\Lib\site-packages\requests\__init__.py", line 164, in <module>
+    from .api import delete, get, head, options, patch, post, put, request
+  File "D:\anaconda3\Lib\site-packages\requests\api.py", line 11, in <module>
+    from . import sessions
+  File "D:\anaconda3\Lib\site-packages\requests\sessions.py", line 15, in <module>
+    from .adapters import HTTPAdapter
+  File "D:\anaconda3\Lib\site-packages\requests\adapters.py", line 81, in <module>
+    _preloaded_ssl_context.load_verify_locations(
+KeyboardInterrupt
+
+2025-10-11 15:18:18,957 - root - WARNING - _run_task_with_retry:502 - 任务执行失败，5秒后重试 (第2/3次): 数据上传任务
+2025-10-11 15:18:22,818 - SensorDataService - INFO - _read_sensor_data:273 - dissolved_oxygen传感器线程已停止
+2025-10-11 15:18:22,819 - SensorDataService - INFO - _read_sensor_data:273 - liquid_level传感器线程已停止
+2025-10-11 15:18:22,819 - SensorDataService - INFO - _read_sensor_data:273 - ph传感器线程已停止
+2025-10-11 15:18:22,819 - SensorDataService - INFO - _signal_handler:126 - 接收到信号 2，开始优雅关闭传感器服务...
+2025-10-11 15:18:22,819 - SensorDataService - INFO - _read_sensor_data:273 - turbidity传感器线程已停止
+2025-10-11 15:18:22,822 - SensorDataService - INFO - _data_logging_thread:330 - 数据记录线程已停止
+2025-10-11 15:18:23,821 - SensorDataService - INFO - _read_sensor_data:273 - dissolved_oxygen传感器线程已停止
+2025-10-11 15:18:23,821 - SensorDataService - INFO - _read_sensor_data:273 - turbidity传感器线程已停止
+2025-10-11 15:18:23,821 - SensorDataService - INFO - _read_sensor_data:273 - ph传感器线程已停止
+2025-10-11 15:18:23,821 - SensorDataService - INFO - _read_sensor_data:273 - liquid_level传感器线程已停止
+2025-10-11 15:18:23,822 - SensorDataService - INFO - stop:378 - 传感器数据采集服务已停止
+2025-10-11 15:18:23,822 - SensorDataService - INFO - stop:378 - 传感器数据采集服务已停止
+2025-10-11 15:18:23,958 - root - INFO - execute:175 - 执行脚本任务: 数据上传任务 - D:\anaconda3\python.exe client/updata.py
+2025-10-11 15:18:24,655 - SensorDataStreamTask - WARNING - _stream_loop:110 - 传感器服务未运行，尝试启动...
+2025-10-11 15:18:24,655 - SensorDataService - INFO - start:338 - 启动传感器数据采集服务...
+2025-10-11 15:18:24,656 - SensorDataService - INFO - _data_logging_thread:277 - 数据记录线程启动
+2025-10-11 15:18:24,656 - SensorDataService - INFO - start:362 - 传感器服务启动成功（模拟模式），共启动5个线程
+2025-10-11 15:18:24,656 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:18:24] 溶解氧: 7.61 | 液位: 1032mm | pH: 7.29 | pH温度: 26.2°C | 浊度: 1.0NTU | 浊度温度: 24.4°C
+2025-10-11 15:18:24,656 - SensorDataStreamTask - INFO - _stream_loop:113 - 传感器服务已启动
+2025-10-11 15:18:24,711 - root - INFO - execute:186 - 脚本任务执行成功: 数据上传任务
+2025-10-11 15:18:24,712 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 数据上传任务
+2025-10-11 15:18:25,311 - SensorDataStreamTask - INFO - _stream_loop:128 - ✓ 数据上传成功
+2025-10-11 15:18:29,658 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:18:29] 溶解氧: 7.61 | 液位: 1032mm | pH: 7.29 | pH温度: 26.2°C | 浊度: 1.0NTU | 浊度温度: 24.4°C
+2025-10-11 15:18:34,660 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:18:34] 溶解氧: 6.502 | 液位: 941mm | pH: 7.12 | pH温度: 24.4°C | 浊度: 0.6NTU | 浊度温度: 29.5°C
+2025-10-11 15:18:35,917 - SensorDataStreamTask - INFO - _stream_loop:128 - ✓ 数据上传成功
+2025-10-11 15:18:39,661 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:18:39] 溶解氧: 6.502 | 液位: 941mm | pH: 7.12 | pH温度: 24.4°C | 浊度: 0.6NTU | 浊度温度: 29.5°C
+2025-10-11 15:18:44,662 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:18:44] 溶解氧: 6.661 | 液位: 929mm | pH: 6.91 | pH温度: 28.4°C | 浊度: 0.6NTU | 浊度温度: 29.7°C
+2025-10-11 15:18:46,795 - SensorDataStreamTask - INFO - _stream_loop:128 - ✓ 数据上传成功
+2025-10-11 15:18:49,663 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:18:49] 溶解氧: 6.661 | 液位: 929mm | pH: 6.91 | pH温度: 28.4°C | 浊度: 0.6NTU | 浊度温度: 29.7°C
+2025-10-11 15:18:54,664 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:18:54] 溶解氧: 7.157 | 液位: 1069mm | pH: 7.02 | pH温度: 28.8°C | 浊度: 0.6NTU | 浊度温度: 29.1°C
+2025-10-11 15:18:57,455 - SensorDataStreamTask - INFO - _stream_loop:128 - ✓ 数据上传成功
+2025-10-11 15:18:59,665 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:18:59] 溶解氧: 7.157 | 液位: 1069mm | pH: 7.02 | pH温度: 28.8°C | 浊度: 0.6NTU | 浊度温度: 29.1°C
+2025-10-11 15:19:04,667 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:19:04] 溶解氧: 7.647 | 液位: 993mm | pH: 6.99 | pH温度: 28.1°C | 浊度: 3.6NTU | 浊度温度: 26.7°C
+2025-10-11 15:19:08,042 - SensorDataStreamTask - INFO - _stream_loop:128 - ✓ 数据上传成功
+2025-10-11 15:19:09,668 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:19:09] 溶解氧: 7.647 | 液位: 993mm | pH: 6.99 | pH温度: 28.1°C | 浊度: 3.6NTU | 浊度温度: 26.7°C
+2025-10-11 15:19:12,836 - root - INFO - _execute_task:476 - 开始执行任务: 传感器数据采集服务 (第3次)
+2025-10-11 15:19:12,837 - SensorDataTask - INFO - execute:43 - 传感器服务健康检查，当前数据: {'dissolved_oxygen': 7.647, 'liquid_level': 993, 'ph': 6.99, 'ph_temperature': 28.1, 'turbidity': 3.6, 'turbidity_temperature': 26.7}
+2025-10-11 15:19:12,837 - root - INFO - _run_task_with_retry:498 - 任务执行成功: 传感器数据采集服务
+2025-10-11 15:19:14,669 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:19:14] 溶解氧: 7.978 | 液位: 910mm | pH: 7.46 | pH温度: 28.4°C | 浊度: 4.5NTU | 浊度温度: 25.8°C
+2025-10-11 15:19:18,644 - SensorDataStreamTask - INFO - _stream_loop:128 - ✓ 数据上传成功
+2025-10-11 15:19:19,670 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:19:19] 溶解氧: 7.978 | 液位: 910mm | pH: 7.46 | pH温度: 28.4°C | 浊度: 4.5NTU | 浊度温度: 25.8°C
+2025-10-11 15:19:24,671 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:19:24] 溶解氧: 7.719 | 液位: 907mm | pH: 7.04 | pH温度: 27.4°C | 浊度: 0.5NTU | 浊度温度: 27.6°C
+2025-10-11 15:19:29,417 - SensorDataStreamTask - INFO - _stream_loop:128 - ✓ 数据上传成功
+2025-10-11 15:19:29,672 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:19:29] 溶解氧: 7.719 | 液位: 907mm | pH: 7.04 | pH温度: 27.4°C | 浊度: 0.5NTU | 浊度温度: 27.6°C
+2025-10-11 15:19:34,674 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:19:34] 溶解氧: 7.109 | 液位: 1052mm | pH: 7.2 | pH温度: 28.6°C | 浊度: 2.4NTU | 浊度温度: 25.8°C
+2025-10-11 15:19:39,675 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:19:39] 溶解氧: 7.109 | 液位: 1052mm | pH: 7.2 | pH温度: 28.6°C | 浊度: 2.4NTU | 浊度温度: 25.8°C
+2025-10-11 15:19:40,189 - SensorDataStreamTask - INFO - _stream_loop:128 - ✓ 数据上传成功
+2025-10-11 15:19:44,676 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:19:44] 溶解氧: 6.914 | 液位: 1041mm | pH: 7.27 | pH温度: 27.1°C | 浊度: 4.9NTU | 浊度温度: 25.7°C
+2025-10-11 15:19:49,677 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:19:49] 溶解氧: 6.914 | 液位: 1041mm | pH: 7.27 | pH温度: 27.1°C | 浊度: 4.9NTU | 浊度温度: 25.7°C
+2025-10-11 15:19:50,935 - SensorDataStreamTask - INFO - _stream_loop:128 - ✓ 数据上传成功
+2025-10-11 15:19:54,678 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:19:54] 溶解氧: 7.782 | 液位: 1013mm | pH: 7.34 | pH温度: 26.0°C | 浊度: 1.7NTU | 浊度温度: 28.7°C
+2025-10-11 15:19:59,679 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:19:59] 溶解氧: 7.782 | 液位: 1013mm | pH: 7.34 | pH温度: 26.0°C | 浊度: 1.7NTU | 浊度温度: 28.7°C
+2025-10-11 15:20:01,599 - SensorDataStreamTask - INFO - _stream_loop:128 - ✓ 数据上传成功
+2025-10-11 15:20:04,680 - SensorDataService - INFO - _data_logging_thread:298 - [2025-10-11 15:20:04] 溶解氧: 7.482 | 液位: 1037mm | pH: 7.49 | pH温度: 27.5°C | 浊度: 1.9NTU | 浊度温度: 29.0°C
+2025-10-11 15:20:19,915 - root - INFO - __init__:314 - 任务调度器初始化完成
+2025-10-11 15:20:20,036 - SensorDataService - WARNING - __init__:97 - 未检测到pandas，将使用csv模块写入文件
+2025-10-11 15:20:20,037 - SensorDataService - WARNING - __init__:102 - 未检测到pymodbus，自动切换到模拟模式
+2025-10-11 15:20:20,037 - root - INFO - add_task:366 - 任务添加成功: 传感器数据采集服务 (ID: sensor_service)
+2025-10-11 15:20:20,037 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 15:20:20.037592
+2025-10-11 15:20:20,037 - root - INFO - add_task:366 - 任务添加成功: 数据上传任务 (ID: data_upload)
+2025-10-11 15:20:20,037 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 15:20:20.037592
+2025-10-11 15:20:20,038 - root - INFO - add_task:366 - 任务添加成功: 传感器数据流式上传 (ID: sensor_data_stream)
+2025-10-11 15:20:20,038 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 15:20:21.038598
+2025-10-11 15:20:20,038 - root - INFO - main:71 - 任务已注册，准备启动调度器...
+2025-10-11 15:20:20,039 - root - INFO - _execute_task:487 - 开始执行任务: 传感器数据采集服务 (第1次)
+2025-10-11 15:20:20,039 - root - INFO - start:414 - 任务调度器启动成功，最大工作线程数: 10
+2025-10-11 15:20:20,039 - SensorDataTask - INFO - execute:37 - 传感器服务未运行，正在启动...
+2025-10-11 15:20:20,039 - root - INFO - _execute_task:487 - 开始执行任务: 数据上传任务 (第1次)
+2025-10-11 15:20:20,040 - SensorDataService - INFO - start:339 - 启动传感器数据采集服务...
+2025-10-11 15:20:20,040 - root - INFO - execute:175 - 执行脚本任务: 数据上传任务 - D:\anaconda3\python.exe client/updata.py
+2025-10-11 15:20:20,042 - SensorDataService - INFO - _data_logging_thread:278 - 数据记录线程启动
+2025-10-11 15:20:20,042 - SensorDataService - INFO - start:363 - 传感器服务启动成功（模拟模式），共启动5个线程
+2025-10-11 15:20:20,042 - SensorDataService - INFO - _data_logging_thread:299 - [2025-10-11 15:20:20] 溶解氧: 7.064 | 液位: 989mm | pH: 7.47 | pH温度: 24.0°C | 浊度: 1.1NTU | 浊度温度: 26.7°C
+2025-10-11 15:20:20,042 - SensorDataTask - INFO - execute:39 - 传感器服务启动完成
+2025-10-11 15:20:20,042 - root - INFO - _run_task_with_retry:509 - 任务执行成功: 传感器数据采集服务
+2025-10-11 15:20:20,677 - root - INFO - execute:186 - 脚本任务执行成功: 数据上传任务
+2025-10-11 15:20:20,677 - root - INFO - _run_task_with_retry:509 - 任务执行成功: 数据上传任务
+2025-10-11 15:20:20,699 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 15:20:20,700 - root - INFO - stop:421 - 正在停止任务调度器...
+2025-10-11 15:20:21,041 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 15:20:21,041 - root - INFO - stop:434 - 调用任务清理方法: 传感器数据采集服务.stop_service()
+2025-10-11 15:20:21,041 - SensorDataTask - INFO - stop_service:58 - 正在停止传感器服务...
+2025-10-11 15:20:21,041 - SensorDataService - INFO - stop:370 - 正在停止传感器数据采集服务...
+2025-10-11 15:20:25,043 - SensorDataService - INFO - _data_logging_thread:331 - 数据记录线程已停止
+2025-10-11 15:20:26,045 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 15:20:30,041 - SensorDataService - INFO - _read_sensor_data:274 - dissolved_oxygen传感器线程已停止
+2025-10-11 15:20:30,041 - SensorDataService - INFO - _read_sensor_data:274 - liquid_level传感器线程已停止
+2025-10-11 15:20:30,041 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 15:20:30,042 - SensorDataService - INFO - _read_sensor_data:274 - ph传感器线程已停止
+2025-10-11 15:20:30,042 - SensorDataService - INFO - _read_sensor_data:274 - turbidity传感器线程已停止
+2025-10-11 15:20:30,042 - SensorDataService - INFO - stop:379 - 传感器数据采集服务已停止
+2025-10-11 15:20:30,042 - SensorDataTask - INFO - stop_service:60 - 传感器服务已停止
+2025-10-11 15:20:30,042 - root - INFO - stop:434 - 调用任务清理方法: 传感器数据流式上传.stop_stream()
+2025-10-11 15:20:30,042 - root - INFO - stop:449 - 任务调度器已停止
+2025-10-11 15:20:30,043 - root - INFO - main:91 - 调度器已停止
+2025-10-11 15:20:34,765 - root - INFO - __init__:314 - 任务调度器初始化完成
+2025-10-11 15:20:34,882 - SensorDataService - WARNING - __init__:97 - 未检测到pandas，将使用csv模块写入文件
+2025-10-11 15:20:34,882 - SensorDataService - WARNING - __init__:102 - 未检测到pymodbus，自动切换到模拟模式
+2025-10-11 15:20:34,884 - root - INFO - add_task:366 - 任务添加成功: 传感器数据采集服务 (ID: sensor_service)
+2025-10-11 15:20:34,884 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 15:20:34.884225
+2025-10-11 15:20:34,884 - root - INFO - add_task:366 - 任务添加成功: 数据上传任务 (ID: data_upload)
+2025-10-11 15:20:34,884 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 15:20:34.884225
+2025-10-11 15:20:34,885 - root - INFO - add_task:366 - 任务添加成功: 传感器数据流式上传 (ID: sensor_data_stream)
+2025-10-11 15:20:34,885 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 15:20:35.885269
+2025-10-11 15:20:34,885 - root - INFO - main:71 - 任务已注册，准备启动调度器...
+2025-10-11 15:20:34,886 - root - INFO - _execute_task:487 - 开始执行任务: 传感器数据采集服务 (第1次)
+2025-10-11 15:20:34,886 - root - INFO - start:414 - 任务调度器启动成功，最大工作线程数: 10
+2025-10-11 15:20:34,886 - SensorDataTask - INFO - execute:37 - 传感器服务未运行，正在启动...
+2025-10-11 15:20:34,886 - root - INFO - _execute_task:487 - 开始执行任务: 数据上传任务 (第1次)
+2025-10-11 15:20:34,886 - SensorDataService - INFO - start:339 - 启动传感器数据采集服务...
+2025-10-11 15:20:34,887 - root - INFO - execute:175 - 执行脚本任务: 数据上传任务 - D:\anaconda3\python.exe client/updata.py
+2025-10-11 15:20:34,888 - SensorDataService - INFO - _data_logging_thread:278 - 数据记录线程启动
+2025-10-11 15:20:34,888 - SensorDataService - INFO - start:363 - 传感器服务启动成功（模拟模式），共启动5个线程
+2025-10-11 15:20:34,888 - SensorDataService - INFO - _data_logging_thread:299 - [2025-10-11 15:20:34] 溶解氧: 6.61 | 液位: 1052mm | pH: 7.38 | pH温度: 29.7°C | 浊度: 0.8NTU | 浊度温度: 28.1°C
+2025-10-11 15:20:34,888 - SensorDataTask - INFO - execute:39 - 传感器服务启动完成
+2025-10-11 15:20:34,889 - root - INFO - _run_task_with_retry:509 - 任务执行成功: 传感器数据采集服务
+2025-10-11 15:20:35,527 - root - INFO - execute:186 - 脚本任务执行成功: 数据上传任务
+2025-10-11 15:20:35,527 - root - INFO - _run_task_with_retry:509 - 任务执行成功: 数据上传任务
+2025-10-11 15:20:35,888 - root - INFO - _execute_task:487 - 开始执行任务: 传感器数据流式上传 (第1次)
+2025-10-11 15:20:35,888 - SensorDataStreamTask - INFO - _stream_loop:103 - 数据流任务开始运行，目标URL=http://8.216.33.92:5000/api/updata_sensor_data，间隔=10s，dry_run=False
+2025-10-11 15:20:35,889 - SensorDataStreamTask - INFO - execute:149 - 数据流任务线程已启动
+2025-10-11 15:20:35,889 - root - INFO - _run_task_with_retry:509 - 任务执行成功: 传感器数据流式上传
+2025-10-11 15:20:36,455 - SensorDataStreamTask - INFO - _stream_loop:128 - ✓ 数据上传成功
+2025-10-11 15:20:38,829 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 15:20:38,830 - root - INFO - stop:421 - 正在停止任务调度器...
+2025-10-11 15:20:38,890 - root - INFO - stop:434 - 调用任务清理方法: 传感器数据采集服务.stop_service()
+2025-10-11 15:20:38,890 - SensorDataTask - INFO - stop_service:58 - 正在停止传感器服务...
+2025-10-11 15:20:38,890 - SensorDataService - INFO - stop:370 - 正在停止传感器数据采集服务...
+2025-10-11 15:20:39,890 - SensorDataService - INFO - _data_logging_thread:331 - 数据记录线程已停止
+2025-10-11 15:20:44,888 - SensorDataService - INFO - _read_sensor_data:274 - liquid_level传感器线程已停止
+2025-10-11 15:20:44,888 - SensorDataService - INFO - _read_sensor_data:274 - dissolved_oxygen传感器线程已停止
+2025-10-11 15:20:44,888 - SensorDataService - INFO - _read_sensor_data:274 - ph传感器线程已停止
+2025-10-11 15:20:44,888 - SensorDataService - INFO - _read_sensor_data:274 - turbidity传感器线程已停止
+2025-10-11 15:20:44,888 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 15:20:44,889 - SensorDataService - INFO - stop:379 - 传感器数据采集服务已停止
+2025-10-11 15:20:44,889 - SensorDataTask - INFO - stop_service:60 - 传感器服务已停止
+2025-10-11 15:20:44,889 - root - INFO - stop:434 - 调用任务清理方法: 传感器数据流式上传.stop_stream()
+2025-10-11 15:20:46,456 - SensorDataStreamTask - INFO - _stream_loop:137 - 数据流任务线程已停止
+2025-10-11 15:20:46,457 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 15:20:46,457 - root - INFO - stop:449 - 任务调度器已停止
+2025-10-11 15:20:46,457 - root - INFO - main:91 - 调度器已停止
