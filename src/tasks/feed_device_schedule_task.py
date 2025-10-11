@@ -87,14 +87,15 @@ class FeedDeviceScheduleTask(BaseTask):
                 self.logger.error(f"未找到设备 devName='{self.target_dev_name}'")
                 return False
 
-            ok = self.service.feed(dev_id, self.feed_count)
-            if ok:
-                self.logger.info(f"✓ {key} 喂食成功（{self.feed_count} 份）")
-                self._triggered.add(key)
-                return True
-            else:
-                self.logger.error(f"✗ {key} 喂食失败")
-                return False
+            # 实际喂食操作暂时注释
+            # ok = self.service.feed(dev_id, self.feed_count)   
+            # if ok:
+            #     self.logger.info(f"✓ {key} 喂食成功（{self.feed_count} 份）")
+            #     self._triggered.add(key)
+            #     return True
+            # else:
+            #     self.logger.error(f"✗ {key} 喂食失败")
+            #     return False
         except Exception as e:
             self.logger.error(f"执行异常: {e}")
             self.last_error = str(e)
