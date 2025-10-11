@@ -37,7 +37,8 @@ def setup_scheduler() -> TaskScheduler:
 def register_tasks(scheduler: TaskScheduler):
     """注册各类任务到调度器"""
     # 1) 传感器数据采集服务任务：每30秒进行一次健康检查（若未运行则启动）
-    sensor_service = SensorDataService()
+    # 设置采样频率为60秒；日志记录频率跟随采样频率（可通过环境变量 AIJ_SENSOR_LOG_INTERVAL 单独控制）
+    sensor_service = SensorDataService(sample_interval_seconds=60)
     sensor_task = SensorDataTask(service=sensor_service)
     scheduler.add_task(sensor_task, ScheduleRule(ScheduleType.INTERVAL, seconds=60))
 
@@ -54,7 +55,7 @@ def register_tasks(scheduler: TaskScheduler):
         service=sensor_service,
         # 可由环境变量 AIJ_STREAM_API_URL 指定，或在此处显式设置
         # target_url="http://8.216.33.92:5000/api/sensor_stream",
-        # interval_seconds=10,
+        interval_seconds=60,  # 指定数据上传/请求频率为60秒
     )
     # ONCE 任务需指定 run_at：设为当前时间+1秒，确保立即触发
     run_time = (datetime.now() + timedelta(seconds=1)).isoformat()

@@ -18,7 +18,14 @@ import csv
 class SensorDataService:
     """传感器数据采集服务类"""
     
-    def __init__(self, output_dir: str = "./output/sensor", simulate: Optional[bool] = None, register_signals: bool = False):
+    def __init__(
+        self,
+        output_dir: str = "./output/sensor",
+        simulate: Optional[bool] = None,
+        register_signals: bool = False,
+        sample_interval_seconds: Optional[int] = None,
+        logging_interval_seconds: Optional[int] = None,
+    ):
         self.output_dir = output_dir
         self.csv_file = os.path.join(output_dir, "data_collection.csv")
         self.running = False
@@ -31,6 +38,19 @@ class SensorDataService:
         else:
             self.simulate = simulate
         
+        # 采样/记录频率配置
+        try:
+            env_sample = os.getenv("AIJ_SENSOR_SAMPLE_INTERVAL", "").strip()
+            self.sample_interval_seconds = int(sample_interval_seconds or (int(env_sample) if env_sample else 10))
+        except Exception:
+            self.sample_interval_seconds = 10
+
+        try:
+            env_log = os.getenv("AIJ_SENSOR_LOG_INTERVAL", "").strip()
+            self.logging_interval_seconds = int(logging_interval_seconds or (int(env_log) if env_log else max(5, self.sample_interval_seconds)))
+        except Exception:
+            self.logging_interval_seconds = max(5, self.sample_interval_seconds)
+
         # 传感器配置
         self.sensor_configs = {
             'dissolved_oxygen': {
@@ -216,7 +236,7 @@ class SensorDataService:
                             # 更新共享数据
                             with self.data_lock:
                                 self.sensor_data.update(processed_data)
-                            time.sleep(10)
+                            time.sleep(self.sample_interval_seconds)
                         except Exception as e:
                             self.logger.error(f"{sensor_name}模拟数据生成异常: {e}")
                             time.sleep(5)
@@ -255,7 +275,7 @@ class SensorDataService:
                             else:
                                 self.logger.warning(f"{sensor_name}读取失败: {rr}")
                             
-                            time.sleep(10)  # 每10秒读取一次
+                            time.sleep(self.sample_interval_seconds)  # 采样间隔
                             
                         except Exception as e:
                             self.logger.error(f"{sensor_name}数据读取异常: {e}")
@@ -322,7 +342,7 @@ class SensorDataService:
                 except Exception as e:
                     self.logger.error(f"写入CSV异常: {e}")
 
-                time.sleep(5)  # 每5秒记录一次
+                time.sleep(self.logging_interval_seconds)  # 记录间隔
                 
             except Exception as e:
                 self.logger.error(f"数据记录异常: {e}")
