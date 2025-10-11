@@ -18,8 +18,8 @@ echo ========================================
 cd /d "%~dp0"
 
 rem 启用模拟模式与干运行开关（可根据需要修改为0关闭）
-set AIJ_SENSOR_SIMULATE=1
-set AIJ_UPLOAD_DRY_RUN=1
+set AIJ_SENSOR_SIMULATE=0
+set AIJ_UPLOAD_DRY_RUN=0
 rem 配置流式上传目标与间隔（按需覆盖）
 set AIJ_STREAM_API_URL=http://8.216.33.92:5000/api/updata_sensor_data
 set AIJ_STREAM_INTERVAL=10

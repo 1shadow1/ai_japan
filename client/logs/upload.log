@@ -825,3 +825,2080 @@
 2025-10-09 14:24:08,699 - INFO - main:348 - 总体统计 - 成功: 0, 失败: 183, 总计: 183
 2025-10-09 14:24:08,700 - INFO - main:350 - 成功率: 0.0%
 2025-10-09 14:24:08,700 - INFO - main:351 - ==================================================
+2025-10-09 17:14:45,376 - INFO - main:312 - ==================================================
+2025-10-09 17:14:45,376 - INFO - main:313 - 日本养殖项目数据上传任务开始
+2025-10-09 17:14:45,377 - INFO - main:316 - ==================================================
+2025-10-09 17:14:45,377 - INFO - main:334 - 开始执行传感器数据上传任务...
+2025-10-09 17:14:45,377 - INFO - upload_data_by_type:244 - 开始批量上传传感器数据...
+2025-10-09 17:14:45,377 - INFO - get_recent_filenames:169 - 生成传感器数据文件名列表，共61个文件，时间范围：61天
+2025-10-09 17:14:45,377 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.csv
+2025-10-09 17:14:45,378 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.csv
+2025-10-09 17:14:45,378 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.csv
+2025-10-09 17:14:45,378 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.csv
+2025-10-09 17:14:45,378 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.csv
+2025-10-09 17:14:45,378 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.csv
+2025-10-09 17:14:45,379 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_15.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_14.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_13.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_12.csv
+2025-10-09 17:14:45,380 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_11.csv
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_10.csv
+2025-10-09 17:14:45,381 - INFO - upload_data_by_type:274 - 传感器数据上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-09 17:14:45,381 - INFO - main:334 - 开始执行操作日志上传任务...
+2025-10-09 17:14:45,381 - INFO - upload_data_by_type:244 - 开始批量上传操作日志...
+2025-10-09 17:14:45,381 - INFO - get_recent_filenames:169 - 生成操作日志文件名列表，共61个文件，时间范围：61天
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.txt
+2025-10-09 17:14:45,381 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.txt
+2025-10-09 17:14:45,382 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.txt
+2025-10-09 17:14:45,383 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.txt
+2025-10-09 17:14:45,383 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.txt
+2025-10-09 17:14:45,383 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.txt
+2025-10-09 17:14:45,383 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.txt
+2025-10-09 17:14:45,383 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.txt
+2025-10-09 17:14:45,383 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.txt
+2025-10-09 17:14:45,383 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.txt
+2025-10-09 17:14:45,383 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.txt
+2025-10-09 17:14:45,383 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.txt
+2025-10-09 17:14:45,383 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.txt
+2025-10-09 17:14:45,383 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.txt
+2025-10-09 17:14:45,383 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.txt
+2025-10-09 17:14:45,383 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.txt
+2025-10-09 17:14:45,383 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.txt
+2025-10-09 17:14:45,403 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_15.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 17:14:45,500 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_15.txt
+2025-10-09 17:14:45,500 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_14.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 17:14:45,590 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_14.txt
+2025-10-09 17:14:45,590 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_13.txt (大小: 674 bytes, 类型: 操作日志)
+2025-10-09 17:14:45,702 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_13.txt
+2025-10-09 17:14:45,702 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_12.txt (大小: 516 bytes, 类型: 操作日志)
+2025-10-09 17:14:45,794 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_12.txt
+2025-10-09 17:14:45,794 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_11.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 17:14:45,888 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_11.txt
+2025-10-09 17:14:45,889 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_10.txt
+2025-10-09 17:14:45,889 - INFO - upload_data_by_type:274 - 操作日志上传完成 - 成功: 5, 失败: 56, 总计: 61
+2025-10-09 17:14:45,889 - INFO - main:334 - 开始执行采集图像上传任务...
+2025-10-09 17:14:45,889 - INFO - upload_data_by_type:244 - 开始批量上传采集图像...
+2025-10-09 17:14:45,889 - INFO - get_recent_filenames:169 - 生成采集图像文件名列表，共61个文件，时间范围：61天
+2025-10-09 17:14:45,889 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251009.csv
+2025-10-09 17:14:45,889 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251008.csv
+2025-10-09 17:14:45,889 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251007.csv
+2025-10-09 17:14:45,889 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251006.csv
+2025-10-09 17:14:45,889 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251005.csv
+2025-10-09 17:14:45,889 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251004.csv
+2025-10-09 17:14:45,889 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251003.csv
+2025-10-09 17:14:45,889 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251002.csv
+2025-10-09 17:14:45,889 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251001.csv
+2025-10-09 17:14:45,889 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250930.csv
+2025-10-09 17:14:45,889 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250929.csv
+2025-10-09 17:14:45,889 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250928.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250927.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250926.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250925.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250924.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250923.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250922.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250921.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250920.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250919.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250918.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250917.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250916.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250915.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250914.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250913.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250912.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250911.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250910.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250909.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250908.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250907.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250906.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250905.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250904.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250903.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250902.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250901.csv
+2025-10-09 17:14:45,890 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250831.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250830.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250829.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250828.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250827.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250826.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250825.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250824.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250823.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250822.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250821.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250820.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250819.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250818.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250817.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250816.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250815.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250814.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250813.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250812.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250811.csv
+2025-10-09 17:14:45,891 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250810.csv
+2025-10-09 17:14:45,891 - INFO - upload_data_by_type:274 - 采集图像上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-09 17:14:45,891 - INFO - main:346 - ==================================================
+2025-10-09 17:14:45,891 - INFO - main:347 - 所有上传任务完成
+2025-10-09 17:14:45,891 - INFO - main:348 - 总体统计 - 成功: 5, 失败: 178, 总计: 183
+2025-10-09 17:14:45,891 - INFO - main:350 - 成功率: 2.7%
+2025-10-09 17:14:45,891 - INFO - main:351 - ==================================================
+2025-10-09 17:15:39,788 - INFO - main:312 - ==================================================
+2025-10-09 17:15:39,788 - INFO - main:313 - 日本养殖项目数据上传任务开始
+2025-10-09 17:15:39,788 - INFO - main:316 - ==================================================
+2025-10-09 17:15:39,788 - INFO - main:334 - 开始执行传感器数据上传任务...
+2025-10-09 17:15:39,788 - INFO - upload_data_by_type:244 - 开始批量上传传感器数据...
+2025-10-09 17:15:39,788 - INFO - get_recent_filenames:169 - 生成传感器数据文件名列表，共61个文件，时间范围：61天
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.csv
+2025-10-09 17:15:39,789 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.csv
+2025-10-09 17:15:39,790 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.csv
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.csv
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.csv
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.csv
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_15.csv
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_14.csv
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_13.csv
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_12.csv
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_11.csv
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_10.csv
+2025-10-09 17:15:39,791 - INFO - upload_data_by_type:274 - 传感器数据上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-09 17:15:39,791 - INFO - main:334 - 开始执行操作日志上传任务...
+2025-10-09 17:15:39,791 - INFO - upload_data_by_type:244 - 开始批量上传操作日志...
+2025-10-09 17:15:39,791 - INFO - get_recent_filenames:169 - 生成操作日志文件名列表，共61个文件，时间范围：61天
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.txt
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.txt
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.txt
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.txt
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.txt
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.txt
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.txt
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.txt
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.txt
+2025-10-09 17:15:39,791 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.txt
+2025-10-09 17:15:39,792 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.txt
+2025-10-09 17:15:39,793 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.txt
+2025-10-09 17:15:39,810 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_15.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 17:15:39,896 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_15.txt
+2025-10-09 17:15:39,896 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_14.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 17:15:39,964 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_14.txt
+2025-10-09 17:15:39,964 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_13.txt (大小: 674 bytes, 类型: 操作日志)
+2025-10-09 17:15:40,039 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_13.txt
+2025-10-09 17:15:40,039 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_12.txt (大小: 516 bytes, 类型: 操作日志)
+2025-10-09 17:15:40,146 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_12.txt
+2025-10-09 17:15:40,146 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_11.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 17:15:40,232 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_11.txt
+2025-10-09 17:15:40,232 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_10.txt
+2025-10-09 17:15:40,232 - INFO - upload_data_by_type:274 - 操作日志上传完成 - 成功: 5, 失败: 56, 总计: 61
+2025-10-09 17:15:40,232 - INFO - main:334 - 开始执行采集图像上传任务...
+2025-10-09 17:15:40,232 - INFO - upload_data_by_type:244 - 开始批量上传采集图像...
+2025-10-09 17:15:40,232 - INFO - get_recent_filenames:169 - 生成采集图像文件名列表，共61个文件，时间范围：61天
+2025-10-09 17:15:40,232 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251009.csv
+2025-10-09 17:15:40,232 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251008.csv
+2025-10-09 17:15:40,232 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251007.csv
+2025-10-09 17:15:40,232 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251006.csv
+2025-10-09 17:15:40,232 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251005.csv
+2025-10-09 17:15:40,232 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251004.csv
+2025-10-09 17:15:40,232 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251003.csv
+2025-10-09 17:15:40,232 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251002.csv
+2025-10-09 17:15:40,232 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251001.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250930.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250929.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250928.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250927.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250926.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250925.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250924.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250923.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250922.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250921.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250920.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250919.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250918.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250917.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250916.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250915.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250914.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250913.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250912.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250911.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250910.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250909.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250908.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250907.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250906.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250905.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250904.csv
+2025-10-09 17:15:40,233 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250903.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250902.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250901.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250831.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250830.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250829.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250828.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250827.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250826.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250825.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250824.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250823.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250822.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250821.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250820.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250819.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250818.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250817.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250816.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250815.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250814.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250813.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250812.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250811.csv
+2025-10-09 17:15:40,234 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250810.csv
+2025-10-09 17:15:40,234 - INFO - upload_data_by_type:274 - 采集图像上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-09 17:15:40,234 - INFO - main:346 - ==================================================
+2025-10-09 17:15:40,234 - INFO - main:347 - 所有上传任务完成
+2025-10-09 17:15:40,234 - INFO - main:348 - 总体统计 - 成功: 5, 失败: 178, 总计: 183
+2025-10-09 17:15:40,235 - INFO - main:350 - 成功率: 2.7%
+2025-10-09 17:15:40,235 - INFO - main:351 - ==================================================
+2025-10-09 17:20:06,719 - INFO - main:312 - ==================================================
+2025-10-09 17:20:06,719 - INFO - main:313 - 日本养殖项目数据上传任务开始
+2025-10-09 17:20:06,720 - INFO - main:316 - ==================================================
+2025-10-09 17:20:06,720 - INFO - main:334 - 开始执行传感器数据上传任务...
+2025-10-09 17:20:06,720 - INFO - upload_data_by_type:244 - 开始批量上传传感器数据...
+2025-10-09 17:20:06,720 - INFO - get_recent_filenames:169 - 生成传感器数据文件名列表，共61个文件，时间范围：61天
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.csv
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.csv
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.csv
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.csv
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.csv
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.csv
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.csv
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.csv
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.csv
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.csv
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.csv
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.csv
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.csv
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.csv
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.csv
+2025-10-09 17:20:06,720 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.csv
+2025-10-09 17:20:06,721 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_15.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_14.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_13.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_12.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_11.csv
+2025-10-09 17:20:06,722 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_10.csv
+2025-10-09 17:20:06,722 - INFO - upload_data_by_type:274 - 传感器数据上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-09 17:20:06,722 - INFO - main:334 - 开始执行操作日志上传任务...
+2025-10-09 17:20:06,722 - INFO - upload_data_by_type:244 - 开始批量上传操作日志...
+2025-10-09 17:20:06,722 - INFO - get_recent_filenames:169 - 生成操作日志文件名列表，共61个文件，时间范围：61天
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.txt
+2025-10-09 17:20:06,723 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.txt
+2025-10-09 17:20:06,724 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.txt
+2025-10-09 17:20:06,744 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_15.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 17:20:06,843 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_15.txt
+2025-10-09 17:20:06,843 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_14.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 17:20:06,943 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_14.txt
+2025-10-09 17:20:06,943 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_13.txt (大小: 674 bytes, 类型: 操作日志)
+2025-10-09 17:20:07,027 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_13.txt
+2025-10-09 17:20:07,028 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_12.txt (大小: 516 bytes, 类型: 操作日志)
+2025-10-09 17:20:07,308 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_12.txt
+2025-10-09 17:20:07,308 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_11.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 17:20:07,439 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_11.txt
+2025-10-09 17:20:07,440 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_10.txt
+2025-10-09 17:20:07,440 - INFO - upload_data_by_type:274 - 操作日志上传完成 - 成功: 5, 失败: 56, 总计: 61
+2025-10-09 17:20:07,440 - INFO - main:334 - 开始执行采集图像上传任务...
+2025-10-09 17:20:07,440 - INFO - upload_data_by_type:244 - 开始批量上传采集图像...
+2025-10-09 17:20:07,440 - INFO - get_recent_filenames:169 - 生成采集图像文件名列表，共61个文件，时间范围：61天
+2025-10-09 17:20:07,440 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251009.csv
+2025-10-09 17:20:07,440 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251008.csv
+2025-10-09 17:20:07,440 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251007.csv
+2025-10-09 17:20:07,440 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251006.csv
+2025-10-09 17:20:07,440 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251005.csv
+2025-10-09 17:20:07,440 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251004.csv
+2025-10-09 17:20:07,440 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251003.csv
+2025-10-09 17:20:07,440 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251002.csv
+2025-10-09 17:20:07,440 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251001.csv
+2025-10-09 17:20:07,440 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250930.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250929.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250928.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250927.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250926.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250925.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250924.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250923.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250922.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250921.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250920.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250919.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250918.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250917.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250916.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250915.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250914.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250913.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250912.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250911.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250910.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250909.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250908.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250907.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250906.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250905.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250904.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250903.csv
+2025-10-09 17:20:07,441 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250902.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250901.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250831.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250830.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250829.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250828.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250827.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250826.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250825.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250824.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250823.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250822.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250821.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250820.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250819.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250818.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250817.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250816.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250815.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250814.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250813.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250812.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250811.csv
+2025-10-09 17:20:07,442 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250810.csv
+2025-10-09 17:20:07,442 - INFO - upload_data_by_type:274 - 采集图像上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-09 17:20:07,442 - INFO - main:346 - ==================================================
+2025-10-09 17:20:07,442 - INFO - main:347 - 所有上传任务完成
+2025-10-09 17:20:07,442 - INFO - main:348 - 总体统计 - 成功: 5, 失败: 178, 总计: 183
+2025-10-09 17:20:07,442 - INFO - main:350 - 成功率: 2.7%
+2025-10-09 17:20:07,442 - INFO - main:351 - ==================================================
+2025-10-09 19:17:41,488 - INFO - main:312 - ==================================================
+2025-10-09 19:17:41,489 - INFO - main:313 - 日本养殖项目数据上传任务开始
+2025-10-09 19:17:41,489 - INFO - main:316 - ==================================================
+2025-10-09 19:17:41,489 - INFO - main:334 - 开始执行传感器数据上传任务...
+2025-10-09 19:17:41,489 - INFO - upload_data_by_type:244 - 开始批量上传传感器数据...
+2025-10-09 19:17:41,489 - INFO - get_recent_filenames:169 - 生成传感器数据文件名列表，共61个文件，时间范围：61天
+2025-10-09 19:17:41,489 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.csv
+2025-10-09 19:17:41,489 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.csv
+2025-10-09 19:17:41,489 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.csv
+2025-10-09 19:17:41,489 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.csv
+2025-10-09 19:17:41,489 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.csv
+2025-10-09 19:17:41,489 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.csv
+2025-10-09 19:17:41,489 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.csv
+2025-10-09 19:17:41,489 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.csv
+2025-10-09 19:17:41,489 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.csv
+2025-10-09 19:17:41,489 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.csv
+2025-10-09 19:17:41,489 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.csv
+2025-10-09 19:17:41,490 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_15.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_14.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_13.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_12.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_11.csv
+2025-10-09 19:17:41,491 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_10.csv
+2025-10-09 19:17:41,491 - INFO - upload_data_by_type:274 - 传感器数据上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-09 19:17:41,491 - INFO - main:334 - 开始执行操作日志上传任务...
+2025-10-09 19:17:41,491 - INFO - upload_data_by_type:244 - 开始批量上传操作日志...
+2025-10-09 19:17:41,492 - INFO - get_recent_filenames:169 - 生成操作日志文件名列表，共61个文件，时间范围：61天
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.txt
+2025-10-09 19:17:41,492 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.txt
+2025-10-09 19:17:41,493 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.txt
+2025-10-09 19:17:41,494 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.txt
+2025-10-09 19:17:41,494 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.txt
+2025-10-09 19:17:41,494 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.txt
+2025-10-09 19:17:41,494 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.txt
+2025-10-09 19:17:41,494 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.txt
+2025-10-09 19:17:41,513 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_15.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 19:17:41,591 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_15.txt
+2025-10-09 19:17:41,591 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_14.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 19:17:41,658 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_14.txt
+2025-10-09 19:17:41,658 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_13.txt (大小: 674 bytes, 类型: 操作日志)
+2025-10-09 19:17:41,751 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_13.txt
+2025-10-09 19:17:41,751 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_12.txt (大小: 516 bytes, 类型: 操作日志)
+2025-10-09 19:17:41,862 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_12.txt
+2025-10-09 19:17:41,863 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_11.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 19:17:42,042 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_11.txt
+2025-10-09 19:17:42,042 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_10.txt
+2025-10-09 19:17:42,043 - INFO - upload_data_by_type:274 - 操作日志上传完成 - 成功: 5, 失败: 56, 总计: 61
+2025-10-09 19:17:42,043 - INFO - main:334 - 开始执行采集图像上传任务...
+2025-10-09 19:17:42,043 - INFO - upload_data_by_type:244 - 开始批量上传采集图像...
+2025-10-09 19:17:42,043 - INFO - get_recent_filenames:169 - 生成采集图像文件名列表，共61个文件，时间范围：61天
+2025-10-09 19:17:42,043 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251009.csv
+2025-10-09 19:17:42,043 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251008.csv
+2025-10-09 19:17:42,043 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251007.csv
+2025-10-09 19:17:42,043 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251006.csv
+2025-10-09 19:17:42,043 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251005.csv
+2025-10-09 19:17:42,043 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251004.csv
+2025-10-09 19:17:42,043 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251003.csv
+2025-10-09 19:17:42,043 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251002.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251001.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250930.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250929.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250928.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250927.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250926.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250925.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250924.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250923.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250922.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250921.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250920.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250919.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250918.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250917.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250916.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250915.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250914.csv
+2025-10-09 19:17:42,044 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250913.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250912.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250911.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250910.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250909.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250908.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250907.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250906.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250905.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250904.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250903.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250902.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250901.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250831.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250830.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250829.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250828.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250827.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250826.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250825.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250824.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250823.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250822.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250821.csv
+2025-10-09 19:17:42,045 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250820.csv
+2025-10-09 19:17:42,046 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250819.csv
+2025-10-09 19:17:42,046 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250818.csv
+2025-10-09 19:17:42,046 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250817.csv
+2025-10-09 19:17:42,046 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250816.csv
+2025-10-09 19:17:42,046 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250815.csv
+2025-10-09 19:17:42,046 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250814.csv
+2025-10-09 19:17:42,046 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250813.csv
+2025-10-09 19:17:42,046 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250812.csv
+2025-10-09 19:17:42,046 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250811.csv
+2025-10-09 19:17:42,046 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250810.csv
+2025-10-09 19:17:42,046 - INFO - upload_data_by_type:274 - 采集图像上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-09 19:17:42,046 - INFO - main:346 - ==================================================
+2025-10-09 19:17:42,046 - INFO - main:347 - 所有上传任务完成
+2025-10-09 19:17:42,046 - INFO - main:348 - 总体统计 - 成功: 5, 失败: 178, 总计: 183
+2025-10-09 19:17:42,046 - INFO - main:350 - 成功率: 2.7%
+2025-10-09 19:17:42,046 - INFO - main:351 - ==================================================
+2025-10-09 19:27:41,750 - INFO - main:312 - ==================================================
+2025-10-09 19:27:41,750 - INFO - main:313 - 日本养殖项目数据上传任务开始
+2025-10-09 19:27:41,750 - INFO - main:316 - ==================================================
+2025-10-09 19:27:41,750 - INFO - main:334 - 开始执行传感器数据上传任务...
+2025-10-09 19:27:41,750 - INFO - upload_data_by_type:244 - 开始批量上传传感器数据...
+2025-10-09 19:27:41,751 - INFO - get_recent_filenames:169 - 生成传感器数据文件名列表，共61个文件，时间范围：61天
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.csv
+2025-10-09 19:27:41,751 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.csv
+2025-10-09 19:27:41,752 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.csv
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.csv
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.csv
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.csv
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.csv
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.csv
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.csv
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.csv
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_15.csv
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_14.csv
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_13.csv
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_12.csv
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_11.csv
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_10.csv
+2025-10-09 19:27:41,753 - INFO - upload_data_by_type:274 - 传感器数据上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-09 19:27:41,753 - INFO - main:334 - 开始执行操作日志上传任务...
+2025-10-09 19:27:41,753 - INFO - upload_data_by_type:244 - 开始批量上传操作日志...
+2025-10-09 19:27:41,753 - INFO - get_recent_filenames:169 - 生成操作日志文件名列表，共61个文件，时间范围：61天
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.txt
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.txt
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.txt
+2025-10-09 19:27:41,753 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.txt
+2025-10-09 19:27:41,754 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.txt
+2025-10-09 19:27:41,755 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.txt
+2025-10-09 19:27:41,756 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.txt
+2025-10-09 19:27:41,756 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.txt
+2025-10-09 19:27:41,756 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.txt
+2025-10-09 19:27:41,756 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.txt
+2025-10-09 19:27:41,775 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_15.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 19:27:41,876 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_15.txt
+2025-10-09 19:27:41,876 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_14.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 19:27:42,012 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_14.txt
+2025-10-09 19:27:42,013 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_13.txt (大小: 674 bytes, 类型: 操作日志)
+2025-10-09 19:27:42,131 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_13.txt
+2025-10-09 19:27:42,132 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_12.txt (大小: 516 bytes, 类型: 操作日志)
+2025-10-09 19:27:42,240 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_12.txt
+2025-10-09 19:27:42,240 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_11.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 19:27:42,326 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_11.txt
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_10.txt
+2025-10-09 19:27:42,327 - INFO - upload_data_by_type:274 - 操作日志上传完成 - 成功: 5, 失败: 56, 总计: 61
+2025-10-09 19:27:42,327 - INFO - main:334 - 开始执行采集图像上传任务...
+2025-10-09 19:27:42,327 - INFO - upload_data_by_type:244 - 开始批量上传采集图像...
+2025-10-09 19:27:42,327 - INFO - get_recent_filenames:169 - 生成采集图像文件名列表，共61个文件，时间范围：61天
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251009.csv
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251008.csv
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251007.csv
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251006.csv
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251005.csv
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251004.csv
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251003.csv
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251002.csv
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251001.csv
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250930.csv
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250929.csv
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250928.csv
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250927.csv
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250926.csv
+2025-10-09 19:27:42,327 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250925.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250924.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250923.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250922.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250921.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250920.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250919.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250918.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250917.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250916.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250915.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250914.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250913.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250912.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250911.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250910.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250909.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250908.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250907.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250906.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250905.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250904.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250903.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250902.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250901.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250831.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250830.csv
+2025-10-09 19:27:42,328 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250829.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250828.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250827.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250826.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250825.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250824.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250823.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250822.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250821.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250820.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250819.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250818.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250817.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250816.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250815.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250814.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250813.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250812.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250811.csv
+2025-10-09 19:27:42,329 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250810.csv
+2025-10-09 19:27:42,329 - INFO - upload_data_by_type:274 - 采集图像上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-09 19:27:42,329 - INFO - main:346 - ==================================================
+2025-10-09 19:27:42,329 - INFO - main:347 - 所有上传任务完成
+2025-10-09 19:27:42,329 - INFO - main:348 - 总体统计 - 成功: 5, 失败: 178, 总计: 183
+2025-10-09 19:27:42,329 - INFO - main:350 - 成功率: 2.7%
+2025-10-09 19:27:42,329 - INFO - main:351 - ==================================================
+2025-10-09 19:37:41,988 - INFO - main:312 - ==================================================
+2025-10-09 19:37:41,988 - INFO - main:313 - 日本养殖项目数据上传任务开始
+2025-10-09 19:37:41,988 - INFO - main:316 - ==================================================
+2025-10-09 19:37:41,988 - INFO - main:334 - 开始执行传感器数据上传任务...
+2025-10-09 19:37:41,988 - INFO - upload_data_by_type:244 - 开始批量上传传感器数据...
+2025-10-09 19:37:41,989 - INFO - get_recent_filenames:169 - 生成传感器数据文件名列表，共61个文件，时间范围：61天
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.csv
+2025-10-09 19:37:41,989 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.csv
+2025-10-09 19:37:41,990 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.csv
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.csv
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.csv
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.csv
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.csv
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.csv
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_15.csv
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_14.csv
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_13.csv
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_12.csv
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_11.csv
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_10.csv
+2025-10-09 19:37:41,991 - INFO - upload_data_by_type:274 - 传感器数据上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-09 19:37:41,991 - INFO - main:334 - 开始执行操作日志上传任务...
+2025-10-09 19:37:41,991 - INFO - upload_data_by_type:244 - 开始批量上传操作日志...
+2025-10-09 19:37:41,991 - INFO - get_recent_filenames:169 - 生成操作日志文件名列表，共61个文件，时间范围：61天
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.txt
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.txt
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.txt
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.txt
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.txt
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.txt
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.txt
+2025-10-09 19:37:41,991 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.txt
+2025-10-09 19:37:41,992 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.txt
+2025-10-09 19:37:41,993 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.txt
+2025-10-09 19:37:41,994 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.txt
+2025-10-09 19:37:41,994 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.txt
+2025-10-09 19:37:41,994 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.txt
+2025-10-09 19:37:42,012 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_15.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 19:37:42,097 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_15.txt
+2025-10-09 19:37:42,098 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_14.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 19:37:42,185 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_14.txt
+2025-10-09 19:37:42,185 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_13.txt (大小: 674 bytes, 类型: 操作日志)
+2025-10-09 19:37:42,262 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_13.txt
+2025-10-09 19:37:42,262 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_12.txt (大小: 516 bytes, 类型: 操作日志)
+2025-10-09 19:37:42,337 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_12.txt
+2025-10-09 19:37:42,337 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_11.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 19:37:42,428 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_11.txt
+2025-10-09 19:37:42,429 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_10.txt
+2025-10-09 19:37:42,429 - INFO - upload_data_by_type:274 - 操作日志上传完成 - 成功: 5, 失败: 56, 总计: 61
+2025-10-09 19:37:42,429 - INFO - main:334 - 开始执行采集图像上传任务...
+2025-10-09 19:37:42,429 - INFO - upload_data_by_type:244 - 开始批量上传采集图像...
+2025-10-09 19:37:42,430 - INFO - get_recent_filenames:169 - 生成采集图像文件名列表，共61个文件，时间范围：61天
+2025-10-09 19:37:42,430 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251009.csv
+2025-10-09 19:37:42,430 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251008.csv
+2025-10-09 19:37:42,430 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251007.csv
+2025-10-09 19:37:42,430 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251006.csv
+2025-10-09 19:37:42,430 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251005.csv
+2025-10-09 19:37:42,430 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251004.csv
+2025-10-09 19:37:42,430 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251003.csv
+2025-10-09 19:37:42,430 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251002.csv
+2025-10-09 19:37:42,430 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251001.csv
+2025-10-09 19:37:42,430 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250930.csv
+2025-10-09 19:37:42,430 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250929.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250928.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250927.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250926.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250925.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250924.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250923.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250922.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250921.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250920.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250919.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250918.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250917.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250916.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250915.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250914.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250913.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250912.csv
+2025-10-09 19:37:42,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250911.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250910.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250909.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250908.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250907.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250906.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250905.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250904.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250903.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250902.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250901.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250831.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250830.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250829.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250828.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250827.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250826.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250825.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250824.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250823.csv
+2025-10-09 19:37:42,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250822.csv
+2025-10-09 19:37:42,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250821.csv
+2025-10-09 19:37:42,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250820.csv
+2025-10-09 19:37:42,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250819.csv
+2025-10-09 19:37:42,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250818.csv
+2025-10-09 19:37:42,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250817.csv
+2025-10-09 19:37:42,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250816.csv
+2025-10-09 19:37:42,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250815.csv
+2025-10-09 19:37:42,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250814.csv
+2025-10-09 19:37:42,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250813.csv
+2025-10-09 19:37:42,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250812.csv
+2025-10-09 19:37:42,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250811.csv
+2025-10-09 19:37:42,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250810.csv
+2025-10-09 19:37:42,433 - INFO - upload_data_by_type:274 - 采集图像上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-09 19:37:42,433 - INFO - main:346 - ==================================================
+2025-10-09 19:37:42,433 - INFO - main:347 - 所有上传任务完成
+2025-10-09 19:37:42,433 - INFO - main:348 - 总体统计 - 成功: 5, 失败: 178, 总计: 183
+2025-10-09 19:37:42,433 - INFO - main:350 - 成功率: 2.7%
+2025-10-09 19:37:42,433 - INFO - main:351 - ==================================================
+2025-10-09 19:47:42,190 - INFO - main:312 - ==================================================
+2025-10-09 19:47:42,190 - INFO - main:313 - 日本养殖项目数据上传任务开始
+2025-10-09 19:47:42,190 - INFO - main:316 - ==================================================
+2025-10-09 19:47:42,190 - INFO - main:334 - 开始执行传感器数据上传任务...
+2025-10-09 19:47:42,190 - INFO - upload_data_by_type:244 - 开始批量上传传感器数据...
+2025-10-09 19:47:42,190 - INFO - get_recent_filenames:169 - 生成传感器数据文件名列表，共61个文件，时间范围：61天
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.csv
+2025-10-09 19:47:42,190 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_15.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_14.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_13.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_12.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_11.csv
+2025-10-09 19:47:42,191 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_10.csv
+2025-10-09 19:47:42,191 - INFO - upload_data_by_type:274 - 传感器数据上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-09 19:47:42,193 - INFO - main:334 - 开始执行操作日志上传任务...
+2025-10-09 19:47:42,193 - INFO - upload_data_by_type:244 - 开始批量上传操作日志...
+2025-10-09 19:47:42,193 - INFO - get_recent_filenames:169 - 生成操作日志文件名列表，共61个文件，时间范围：61天
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.txt
+2025-10-09 19:47:42,193 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.txt
+2025-10-09 19:47:42,194 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.txt
+2025-10-09 19:47:42,214 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_15.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 19:47:42,312 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_15.txt
+2025-10-09 19:47:42,313 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_14.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 19:47:42,414 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_14.txt
+2025-10-09 19:47:42,414 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_13.txt (大小: 674 bytes, 类型: 操作日志)
+2025-10-09 19:47:42,491 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_13.txt
+2025-10-09 19:47:42,492 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_12.txt (大小: 516 bytes, 类型: 操作日志)
+2025-10-09 19:47:42,570 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_12.txt
+2025-10-09 19:47:42,570 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_11.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-09 19:47:42,681 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_11.txt
+2025-10-09 19:47:42,682 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_10.txt
+2025-10-09 19:47:42,682 - INFO - upload_data_by_type:274 - 操作日志上传完成 - 成功: 5, 失败: 56, 总计: 61
+2025-10-09 19:47:42,682 - INFO - main:334 - 开始执行采集图像上传任务...
+2025-10-09 19:47:42,682 - INFO - upload_data_by_type:244 - 开始批量上传采集图像...
+2025-10-09 19:47:42,682 - INFO - get_recent_filenames:169 - 生成采集图像文件名列表，共61个文件，时间范围：61天
+2025-10-09 19:47:42,682 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251009.csv
+2025-10-09 19:47:42,682 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251008.csv
+2025-10-09 19:47:42,682 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251007.csv
+2025-10-09 19:47:42,682 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251006.csv
+2025-10-09 19:47:42,682 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251005.csv
+2025-10-09 19:47:42,682 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251004.csv
+2025-10-09 19:47:42,682 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251003.csv
+2025-10-09 19:47:42,682 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251002.csv
+2025-10-09 19:47:42,682 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251001.csv
+2025-10-09 19:47:42,682 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250930.csv
+2025-10-09 19:47:42,682 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250929.csv
+2025-10-09 19:47:42,682 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250928.csv
+2025-10-09 19:47:42,682 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250927.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250926.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250925.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250924.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250923.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250922.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250921.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250920.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250919.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250918.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250917.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250916.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250915.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250914.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250913.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250912.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250911.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250910.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250909.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250908.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250907.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250906.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250905.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250904.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250903.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250902.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250901.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250831.csv
+2025-10-09 19:47:42,683 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250830.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250829.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250828.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250827.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250826.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250825.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250824.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250823.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250822.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250821.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250820.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250819.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250818.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250817.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250816.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250815.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250814.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250813.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250812.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250811.csv
+2025-10-09 19:47:42,684 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250810.csv
+2025-10-09 19:47:42,684 - INFO - upload_data_by_type:274 - 采集图像上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-09 19:47:42,684 - INFO - main:346 - ==================================================
+2025-10-09 19:47:42,684 - INFO - main:347 - 所有上传任务完成
+2025-10-09 19:47:42,684 - INFO - main:348 - 总体统计 - 成功: 5, 失败: 178, 总计: 183
+2025-10-09 19:47:42,684 - INFO - main:350 - 成功率: 2.7%
+2025-10-09 19:47:42,684 - INFO - main:351 - ==================================================
+2025-10-11 14:40:12,428 - INFO - main:312 - ==================================================
+2025-10-11 14:40:12,429 - INFO - main:313 - 日本养殖项目数据上传任务开始
+2025-10-11 14:40:12,429 - INFO - main:316 - ==================================================
+2025-10-11 14:40:12,429 - INFO - main:334 - 开始执行传感器数据上传任务...
+2025-10-11 14:40:12,429 - INFO - upload_data_by_type:244 - 开始批量上传传感器数据...
+2025-10-11 14:40:12,430 - INFO - get_recent_filenames:169 - 生成传感器数据文件名列表，共61个文件，时间范围：61天
+2025-10-11 14:40:12,430 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_11.csv
+2025-10-11 14:40:12,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_10.csv
+2025-10-11 14:40:12,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.csv
+2025-10-11 14:40:12,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.csv
+2025-10-11 14:40:12,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.csv
+2025-10-11 14:40:12,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.csv
+2025-10-11 14:40:12,431 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.csv
+2025-10-11 14:40:12,432 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.csv
+2025-10-11 14:40:12,433 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.csv
+2025-10-11 14:40:12,434 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.csv
+2025-10-11 14:40:12,434 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.csv
+2025-10-11 14:40:12,434 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.csv
+2025-10-11 14:40:12,434 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.csv
+2025-10-11 14:40:12,434 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.csv
+2025-10-11 14:40:12,434 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_15.csv
+2025-10-11 14:40:12,434 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_14.csv
+2025-10-11 14:40:12,434 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_13.csv
+2025-10-11 14:40:12,434 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_12.csv
+2025-10-11 14:40:12,434 - INFO - upload_data_by_type:274 - 传感器数据上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-11 14:40:12,434 - INFO - main:334 - 开始执行操作日志上传任务...
+2025-10-11 14:40:12,434 - INFO - upload_data_by_type:244 - 开始批量上传操作日志...
+2025-10-11 14:40:12,434 - INFO - get_recent_filenames:169 - 生成操作日志文件名列表，共61个文件，时间范围：61天
+2025-10-11 14:40:12,434 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_11.txt
+2025-10-11 14:40:12,434 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_10.txt
+2025-10-11 14:40:12,434 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.txt
+2025-10-11 14:40:12,434 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.txt
+2025-10-11 14:40:12,434 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.txt
+2025-10-11 14:40:12,435 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.txt
+2025-10-11 14:40:12,436 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.txt
+2025-10-11 14:40:12,437 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.txt
+2025-10-11 14:40:12,437 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.txt
+2025-10-11 14:40:12,437 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.txt
+2025-10-11 14:40:12,437 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.txt
+2025-10-11 14:40:12,437 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.txt
+2025-10-11 14:40:12,483 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_15.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-11 14:40:12,574 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_15.txt
+2025-10-11 14:40:12,574 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_14.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-11 14:40:12,653 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_14.txt
+2025-10-11 14:40:12,654 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_13.txt (大小: 674 bytes, 类型: 操作日志)
+2025-10-11 14:40:12,759 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_13.txt
+2025-10-11 14:40:12,760 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_12.txt (大小: 516 bytes, 类型: 操作日志)
+2025-10-11 14:40:12,907 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_12.txt
+2025-10-11 14:40:12,907 - INFO - upload_data_by_type:274 - 操作日志上传完成 - 成功: 4, 失败: 57, 总计: 61
+2025-10-11 14:40:12,907 - INFO - main:334 - 开始执行采集图像上传任务...
+2025-10-11 14:40:12,907 - INFO - upload_data_by_type:244 - 开始批量上传采集图像...
+2025-10-11 14:40:12,907 - INFO - get_recent_filenames:169 - 生成采集图像文件名列表，共61个文件，时间范围：61天
+2025-10-11 14:40:12,907 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251011.csv
+2025-10-11 14:40:12,907 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251010.csv
+2025-10-11 14:40:12,907 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251009.csv
+2025-10-11 14:40:12,907 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251008.csv
+2025-10-11 14:40:12,907 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251007.csv
+2025-10-11 14:40:12,907 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251006.csv
+2025-10-11 14:40:12,907 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251005.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251004.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251003.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251002.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251001.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250930.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250929.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250928.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250927.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250926.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250925.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250924.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250923.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250922.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250921.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250920.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250919.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250918.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250917.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250916.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250915.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250914.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250913.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250912.csv
+2025-10-11 14:40:12,908 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250911.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250910.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250909.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250908.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250907.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250906.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250905.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250904.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250903.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250902.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250901.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250831.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250830.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250829.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250828.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250827.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250826.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250825.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250824.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250823.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250822.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250821.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250820.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250819.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250818.csv
+2025-10-11 14:40:12,909 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250817.csv
+2025-10-11 14:40:12,910 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250816.csv
+2025-10-11 14:40:12,910 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250815.csv
+2025-10-11 14:40:12,910 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250814.csv
+2025-10-11 14:40:12,910 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250813.csv
+2025-10-11 14:40:12,910 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250812.csv
+2025-10-11 14:40:12,910 - INFO - upload_data_by_type:274 - 采集图像上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-11 14:40:12,910 - INFO - main:346 - ==================================================
+2025-10-11 14:40:12,910 - INFO - main:347 - 所有上传任务完成
+2025-10-11 14:40:12,910 - INFO - main:348 - 总体统计 - 成功: 4, 失败: 179, 总计: 183
+2025-10-11 14:40:12,910 - INFO - main:350 - 成功率: 2.2%
+2025-10-11 14:40:12,910 - INFO - main:351 - ==================================================
+2025-10-11 14:54:00,913 - INFO - main:312 - ==================================================
+2025-10-11 14:54:00,913 - INFO - main:313 - 日本养殖项目数据上传任务开始
+2025-10-11 14:54:00,913 - INFO - main:316 - ==================================================
+2025-10-11 14:54:00,913 - INFO - main:334 - 开始执行传感器数据上传任务...
+2025-10-11 14:54:00,913 - INFO - upload_data_by_type:244 - 开始批量上传传感器数据...
+2025-10-11 14:54:00,913 - INFO - get_recent_filenames:169 - 生成传感器数据文件名列表，共61个文件，时间范围：61天
+2025-10-11 14:54:00,913 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_11.csv
+2025-10-11 14:54:00,913 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_10.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.csv
+2025-10-11 14:54:00,914 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.csv
+2025-10-11 14:54:00,915 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.csv
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_15.csv
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_14.csv
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_13.csv
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_12.csv
+2025-10-11 14:54:00,916 - INFO - upload_data_by_type:274 - 传感器数据上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-11 14:54:00,916 - INFO - main:334 - 开始执行操作日志上传任务...
+2025-10-11 14:54:00,916 - INFO - upload_data_by_type:244 - 开始批量上传操作日志...
+2025-10-11 14:54:00,916 - INFO - get_recent_filenames:169 - 生成操作日志文件名列表，共61个文件，时间范围：61天
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_11.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_10.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.txt
+2025-10-11 14:54:00,916 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.txt
+2025-10-11 14:54:00,918 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.txt
+2025-10-11 14:54:00,919 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.txt
+2025-10-11 14:54:00,919 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.txt
+2025-10-11 14:54:00,919 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.txt
+2025-10-11 14:54:00,919 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.txt
+2025-10-11 14:54:00,919 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.txt
+2025-10-11 14:54:00,919 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.txt
+2025-10-11 14:54:00,919 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.txt
+2025-10-11 14:54:00,919 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.txt
+2025-10-11 14:54:00,919 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.txt
+2025-10-11 14:54:00,919 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.txt
+2025-10-11 14:54:00,919 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.txt
+2025-10-11 14:54:00,919 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.txt
+2025-10-11 14:54:00,919 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.txt
+2025-10-11 14:54:00,939 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_15.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-11 14:54:01,027 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_15.txt
+2025-10-11 14:54:01,028 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_14.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-11 14:54:01,099 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_14.txt
+2025-10-11 14:54:01,099 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_13.txt (大小: 674 bytes, 类型: 操作日志)
+2025-10-11 14:54:01,188 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_13.txt
+2025-10-11 14:54:01,188 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_12.txt (大小: 516 bytes, 类型: 操作日志)
+2025-10-11 14:54:01,283 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_12.txt
+2025-10-11 14:54:01,284 - INFO - upload_data_by_type:274 - 操作日志上传完成 - 成功: 4, 失败: 57, 总计: 61
+2025-10-11 14:54:01,284 - INFO - main:334 - 开始执行采集图像上传任务...
+2025-10-11 14:54:01,284 - INFO - upload_data_by_type:244 - 开始批量上传采集图像...
+2025-10-11 14:54:01,284 - INFO - get_recent_filenames:169 - 生成采集图像文件名列表，共61个文件，时间范围：61天
+2025-10-11 14:54:01,284 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251011.csv
+2025-10-11 14:54:01,284 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251010.csv
+2025-10-11 14:54:01,284 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251009.csv
+2025-10-11 14:54:01,284 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251008.csv
+2025-10-11 14:54:01,284 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251007.csv
+2025-10-11 14:54:01,284 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251006.csv
+2025-10-11 14:54:01,284 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251005.csv
+2025-10-11 14:54:01,284 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251004.csv
+2025-10-11 14:54:01,284 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251003.csv
+2025-10-11 14:54:01,284 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251002.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251001.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250930.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250929.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250928.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250927.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250926.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250925.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250924.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250923.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250922.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250921.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250920.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250919.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250918.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250917.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250916.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250915.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250914.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250913.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250912.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250911.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250910.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250909.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250908.csv
+2025-10-11 14:54:01,285 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250907.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250906.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250905.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250904.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250903.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250902.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250901.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250831.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250830.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250829.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250828.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250827.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250826.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250825.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250824.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250823.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250822.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250821.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250820.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250819.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250818.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250817.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250816.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250815.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250814.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250813.csv
+2025-10-11 14:54:01,286 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250812.csv
+2025-10-11 14:54:01,287 - INFO - upload_data_by_type:274 - 采集图像上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-11 14:54:01,287 - INFO - main:346 - ==================================================
+2025-10-11 14:54:01,287 - INFO - main:347 - 所有上传任务完成
+2025-10-11 14:54:01,287 - INFO - main:348 - 总体统计 - 成功: 4, 失败: 179, 总计: 183
+2025-10-11 14:54:01,287 - INFO - main:350 - 成功率: 2.2%
+2025-10-11 14:54:01,287 - INFO - main:351 - ==================================================
+2025-10-11 15:52:32,244 - INFO - main:312 - ==================================================
+2025-10-11 15:52:32,244 - INFO - main:313 - 日本养殖项目数据上传任务开始
+2025-10-11 15:52:32,244 - INFO - main:316 - ==================================================
+2025-10-11 15:52:32,244 - INFO - main:334 - 开始执行传感器数据上传任务...
+2025-10-11 15:52:32,244 - INFO - upload_data_by_type:244 - 开始批量上传传感器数据...
+2025-10-11 15:52:32,245 - INFO - get_recent_filenames:169 - 生成传感器数据文件名列表，共61个文件，时间范围：61天
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_11.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_10.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.csv
+2025-10-11 15:52:32,245 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.csv
+2025-10-11 15:52:32,246 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_15.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_14.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_13.csv
+2025-10-11 15:52:32,247 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_12.csv
+2025-10-11 15:52:32,247 - INFO - upload_data_by_type:274 - 传感器数据上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-11 15:52:32,247 - INFO - main:334 - 开始执行操作日志上传任务...
+2025-10-11 15:52:32,247 - INFO - upload_data_by_type:244 - 开始批量上传操作日志...
+2025-10-11 15:52:32,248 - INFO - get_recent_filenames:169 - 生成操作日志文件名列表，共61个文件，时间范围：61天
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_11.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_10.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_09.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_08.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_07.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_06.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_05.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_04.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_03.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_02.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_10_01.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_30.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_29.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_28.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_27.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_26.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_25.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_24.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_23.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_22.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_21.txt
+2025-10-11 15:52:32,248 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_20.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_19.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_18.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_17.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_16.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_15.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_14.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_13.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_12.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_11.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_10.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_09.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_08.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_07.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_06.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_05.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_04.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_03.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_02.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_09_01.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_31.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_30.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_29.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_28.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_27.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_26.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_25.txt
+2025-10-11 15:52:32,249 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_24.txt
+2025-10-11 15:52:32,250 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_23.txt
+2025-10-11 15:52:32,250 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_22.txt
+2025-10-11 15:52:32,250 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_21.txt
+2025-10-11 15:52:32,250 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_20.txt
+2025-10-11 15:52:32,250 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_19.txt
+2025-10-11 15:52:32,250 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_18.txt
+2025-10-11 15:52:32,250 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_17.txt
+2025-10-11 15:52:32,250 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: 2025_08_16.txt
+2025-10-11 15:52:32,269 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_15.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-11 15:52:32,367 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_15.txt
+2025-10-11 15:52:32,367 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_14.txt (大小: 515 bytes, 类型: 操作日志)
+2025-10-11 15:52:32,438 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_14.txt
+2025-10-11 15:52:32,438 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_13.txt (大小: 674 bytes, 类型: 操作日志)
+2025-10-11 15:52:32,526 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_13.txt
+2025-10-11 15:52:32,526 - INFO - upload_single_file:195 - 开始上传文件: 2025_08_12.txt (大小: 516 bytes, 类型: 操作日志)
+2025-10-11 15:52:32,603 - INFO - upload_single_file:215 - ✓ 文件上传成功: 2025_08_12.txt
+2025-10-11 15:52:32,603 - INFO - upload_data_by_type:274 - 操作日志上传完成 - 成功: 4, 失败: 57, 总计: 61
+2025-10-11 15:52:32,603 - INFO - main:334 - 开始执行采集图像上传任务...
+2025-10-11 15:52:32,603 - INFO - upload_data_by_type:244 - 开始批量上传采集图像...
+2025-10-11 15:52:32,603 - INFO - get_recent_filenames:169 - 生成采集图像文件名列表，共61个文件，时间范围：61天
+2025-10-11 15:52:32,603 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251011.csv
+2025-10-11 15:52:32,603 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251010.csv
+2025-10-11 15:52:32,603 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251009.csv
+2025-10-11 15:52:32,603 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251008.csv
+2025-10-11 15:52:32,604 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251007.csv
+2025-10-11 15:52:32,604 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251006.csv
+2025-10-11 15:52:32,604 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251005.csv
+2025-10-11 15:52:32,604 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251004.csv
+2025-10-11 15:52:32,604 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251003.csv
+2025-10-11 15:52:32,604 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251002.csv
+2025-10-11 15:52:32,604 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20251001.csv
+2025-10-11 15:52:32,604 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250930.csv
+2025-10-11 15:52:32,604 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250929.csv
+2025-10-11 15:52:32,604 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250928.csv
+2025-10-11 15:52:32,604 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250927.csv
+2025-10-11 15:52:32,604 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250926.csv
+2025-10-11 15:52:32,604 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250925.csv
+2025-10-11 15:52:32,604 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250924.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250923.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250922.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250921.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250920.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250919.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250918.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250917.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250916.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250915.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250914.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250913.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250912.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250911.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250910.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250909.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250908.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250907.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250906.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250905.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250904.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250903.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250902.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250901.csv
+2025-10-11 15:52:32,605 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250831.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250830.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250829.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250828.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250827.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250826.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250825.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250824.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250823.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250822.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250821.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250820.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250819.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250818.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250817.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250816.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250815.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250814.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250813.csv
+2025-10-11 15:52:32,606 - WARNING - upload_data_by_type:260 - ⚠ 文件不存在，跳过: image_20250812.csv
+2025-10-11 15:52:32,606 - INFO - upload_data_by_type:274 - 采集图像上传完成 - 成功: 0, 失败: 61, 总计: 61
+2025-10-11 15:52:32,606 - INFO - main:346 - ==================================================
+2025-10-11 15:52:32,606 - INFO - main:347 - 所有上传任务完成
+2025-10-11 15:52:32,606 - INFO - main:348 - 总体统计 - 成功: 4, 失败: 179, 总计: 183
+2025-10-11 15:52:32,606 - INFO - main:350 - 成功率: 2.2%
+2025-10-11 15:52:32,606 - INFO - main:351 - ==================================================

@@ -39,15 +39,15 @@ def register_tasks(scheduler: TaskScheduler):
     # 1) 传感器数据采集服务任务：每30秒进行一次健康检查（若未运行则启动）
     sensor_service = SensorDataService()
     sensor_task = SensorDataTask(service=sensor_service)
-    scheduler.add_task(sensor_task, ScheduleRule(ScheduleType.INTERVAL, seconds=30))
+    scheduler.add_task(sensor_task, ScheduleRule(ScheduleType.INTERVAL, seconds=60))
 
     # 2) 数据上传任务：每10分钟执行一次（后续可在配置文件或环境变量中调整）
     upload_task = create_data_upload_task()
     scheduler.add_task(upload_task, ScheduleRule(ScheduleType.INTERVAL, seconds=600))
 
     # 3) 每小时HTTP请求告警任务
-    http_task = HttpRequestTask(target_url="http://localhost:5002/api/messages/", sensor_service=sensor_service)
-    scheduler.add_task(http_task, ScheduleRule(ScheduleType.INTERVAL, seconds=3600))
+    # http_task = HttpRequestTask(target_url="http://localhost:5002/api/messages/", sensor_service=sensor_service)
+    # scheduler.add_task(http_task, ScheduleRule(ScheduleType.INTERVAL, seconds=3600))
 
     # 4) 持续传感器数据流式上传任务：启动一次，后台线程按固定频率推送
     stream_task = SensorDataStreamTask(
@@ -74,11 +74,18 @@ def main():
     # 主线程保持运行直到收到停止信号
     try:
         while True:
-            # 可选：每60秒打印一次任务状态
-            status = scheduler.get_task_status()
-            logging.debug(f"调度器状态: {status}")
-            import time
-            time.sleep(60)
+            # 可选：每60秒打印一次任务状态，但使用短间隔sleep以便及时响应中断
+            for _ in range(60):  # 60次1秒的sleep，总共60秒
+                import time
+                time.sleep(1)
+                # 检查调度器是否还在运行
+                if not scheduler.running:
+                    break
+            
+            # 打印任务状态
+            if scheduler.running:
+                status = scheduler.get_task_status()
+                logging.debug(f"调度器状态: {status}")
     except KeyboardInterrupt:
         logging.info("接收到中断信号，正在停止调度器...")
     finally:
