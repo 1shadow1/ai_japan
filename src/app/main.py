@@ -25,6 +25,7 @@ from src.tasks.sensor_data_stream_task import SensorDataStreamTask
 from src.services.sensor_data_service import SensorDataService
 from src.tasks.feed_device_status_task import FeedDeviceStatusTask
 from src.tasks.feed_device_schedule_task import FeedDeviceScheduleTask
+from src.tasks.camera_controller_task import CameraControllerTask
 
 
 def setup_scheduler() -> TaskScheduler:
@@ -78,6 +79,11 @@ def register_tasks(scheduler: TaskScheduler):
         schedule_check_interval = 60
     feed_schedule_task = FeedDeviceScheduleTask()
     scheduler.add_task(feed_schedule_task, ScheduleRule(ScheduleType.INTERVAL, seconds=schedule_check_interval))
+
+    # 7) 摄像头键盘控制服务：一次性任务启动持续后台线程
+    cam_task = CameraControllerTask()
+    run_time_cam = (datetime.now() + timedelta(seconds=1)).isoformat()
+    scheduler.add_task(cam_task, ScheduleRule(ScheduleType.ONCE, run_at=run_time_cam))
 
 
 def main():

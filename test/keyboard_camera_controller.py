@@ -87,11 +87,11 @@ class KeyboardCameraController:
 
 if __name__ == "__main__":
     key_to_camera_map = {
-        '0': 0,  # 按 a 打开摄像头 0
-        '1': 1,  # 按 s 打开摄像头 1
-        '2': 2,  # 按 a 打开摄像头 22q344
-        '3': 3,  # 按 s 打开摄像头 1
-        '4': 4,  # 按 a 打开摄像头 0
+        '0': 0,  # 按 0 打开摄像头 0
+        '1': 1,  # 按 1 打开摄像头 1
+        '2': 2,  # 按 2 打开摄像头 2
+        '3': 3,  # 按 3 打开摄像头 3
+        '4': 4,  # 按 4 打开摄像头 4
     }
 
     controller = KeyboardCameraController(key_to_camera_map)
