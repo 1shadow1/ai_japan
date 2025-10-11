@@ -53,9 +53,12 @@ class CameraControllerService:
         self.target_fps: int = self._get_int_env("AIJ_CAMERA_RECORD_FPS", 30)
         self.output_dir: str = os.getenv("AIJ_CAMERA_OUTPUT_DIR", os.path.join("logs", "videos")).strip()
         self.status_url: str = os.getenv("AIJ_CAMERA_STATUS_URL", "http://8.216.33.92:5000/api/camera_device_status").strip()
+        # 网络超时可配置，便于在退出时避免长时间阻塞
+        self.status_timeout: int = self._get_int_env("AIJ_CAMERA_STATUS_TIMEOUT", 10)
         self.extract_interval: int = self._get_int_env("AIJ_EXTRACT_INTERVAL_SEC", 1)
         self.extract_output_root: str = os.getenv("AIJ_EXTRACT_OUTPUT_DIR", "output").strip()
         self.upload_url: str = os.getenv("AIJ_CAMERA_UPLOAD_URL", "http://8.216.33.92:5000/api/updata_camera_data").strip()
+        self.upload_timeout: int = self._get_int_env("AIJ_CAMERA_UPLOAD_TIMEOUT", 15)
         self.upload_dry_run: bool = self._get_bool_env("AIJ_CAMERA_UPLOAD_DRY_RUN", False)
         self.show_window: bool = self._get_bool_env("AIJ_CAMERA_SHOW", False)
 
@@ -113,9 +116,33 @@ class CameraControllerService:
         self.logger.info("CameraControllerService 已启动")
 
     def stop(self):
+        # 停止循环
         self._running = False
+        # 释放键盘钩子与窗口资源
+        try:
+            if keyboard:
+                try:
+                    keyboard.unhook_all_hotkeys()
+                except Exception:
+                    pass
+                try:
+                    keyboard.unhook_all()
+                except Exception:
+                    pass
+            if self.show_window and cv2:
+                try:
+                    cv2.destroyAllWindows()
+                except Exception:
+                    pass
+        except Exception as e:
+            self.logger.warning(f"停止服务时释放资源异常: {e}")
+
+        # 等待线程退出
         if self._thread:
-            self._thread.join(timeout=3)
+            try:
+                self._thread.join(timeout=3)
+            except Exception:
+                pass
         self.logger.info("CameraControllerService 已停止")
 
     def is_running(self) -> bool:
@@ -147,7 +174,7 @@ class CameraControllerService:
             self.logger.warning("requests 不可用，跳过网络请求")
             return None
         try:
-            resp = self._session.post(url, json=payload, timeout=15)
+            resp = self._session.post(url, json=payload, timeout=self.status_timeout)
             return resp.status_code
         except Exception as e:
             self.logger.error(f"POST {url} 失败: {e}")
@@ -188,6 +215,10 @@ class CameraControllerService:
             last_frame = None
 
             for i in range(total_frames):
+                # 支持 Ctrl+C 停止：若服务被要求停止，立刻结束录制循环
+                if not self._running:
+                    self.logger.info("收到停止信号，提前结束录制循环")
+                    break
                 ret, frame = cap.read()
                 if ret:
                     last_frame = frame
@@ -205,6 +236,9 @@ class CameraControllerService:
                             break
                     except Exception:
                         pass
+                # 若服务已停止则不再等待
+                if not self._running:
+                    break
                 time.sleep(1 / max(target_fps, 1))
 
             cap.release()
@@ -297,7 +331,7 @@ class CameraControllerService:
                         'video_name': video_name,
                         'timestamp': datetime.now().isoformat(),
                     }
-                    resp = self._session.post(self.upload_url, files=files, data=data, timeout=30)
+                    resp = self._session.post(self.upload_url, files=files, data=data, timeout=self.upload_timeout)
                     if resp.status_code in (200, 201):
                         self.logger.info(f"上传成功: {p}")
                     else:

@@ -3022,3 +3022,198 @@ KeyboardInterrupt
 2025-10-11 15:20:46,457 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
 2025-10-11 15:20:46,457 - root - INFO - stop:449 - 任务调度器已停止
 2025-10-11 15:20:46,457 - root - INFO - main:91 - 调度器已停止
+2025-10-11 18:23:13,517 - root - INFO - __init__:314 - 任务调度器初始化完成
+2025-10-11 18:23:13,679 - SensorDataService - WARNING - __init__:117 - 未检测到pandas，将使用csv模块写入文件
+2025-10-11 18:23:13,679 - SensorDataService - WARNING - __init__:122 - 未检测到pymodbus，自动切换到模拟模式
+2025-10-11 18:23:13,680 - root - INFO - add_task:366 - 任务添加成功: 传感器数据采集服务 (ID: sensor_service)
+2025-10-11 18:23:13,680 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 18:23:13.679749
+2025-10-11 18:23:13,680 - root - INFO - add_task:366 - 任务添加成功: 数据上传任务 (ID: data_upload)
+2025-10-11 18:23:13,680 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 18:23:13.680267
+2025-10-11 18:23:13,680 - root - INFO - add_task:366 - 任务添加成功: 传感器数据流式上传 (ID: sensor_data_stream)
+2025-10-11 18:23:13,681 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 18:23:14.680782
+2025-10-11 18:23:13,681 - FeederService - WARNING - __init__:61 - FeederService: 未提供用户凭证（AIJ_FEEDER_USER/AIJ_FEEDER_PASS），后续调用可能失败
+2025-10-11 18:23:13,681 - root - INFO - add_task:366 - 任务添加成功: 喂食机状态上报 (ID: feed_device_status)
+2025-10-11 18:23:13,681 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 18:23:13.681296
+2025-10-11 18:23:13,681 - FeederService - WARNING - __init__:61 - FeederService: 未提供用户凭证（AIJ_FEEDER_USER/AIJ_FEEDER_PASS），后续调用可能失败
+2025-10-11 18:23:13,681 - root - INFO - add_task:366 - 任务添加成功: 喂食机定时投喂 (ID: feed_device_schedule)
+2025-10-11 18:23:13,681 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 18:23:13.681296
+2025-10-11 18:23:13,683 - CameraControllerService - ERROR - __init__:71 - keyboard 库不可用，无法进行按键监听
+2025-10-11 18:23:13,683 - root - INFO - add_task:366 - 任务添加成功: 摄像头键盘控制服务 (ID: camera_controller)
+2025-10-11 18:23:13,683 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 18:23:14.683252
+2025-10-11 18:23:13,683 - root - INFO - main:96 - 任务已注册，准备启动调度器...
+2025-10-11 18:23:13,684 - root - INFO - _execute_task:487 - 开始执行任务: 传感器数据采集服务 (第1次)
+2025-10-11 18:23:13,684 - root - INFO - start:414 - 任务调度器启动成功，最大工作线程数: 10
+2025-10-11 18:23:13,685 - SensorDataTask - INFO - execute:37 - 传感器服务未运行，正在启动...
+2025-10-11 18:23:13,685 - root - INFO - _execute_task:487 - 开始执行任务: 数据上传任务 (第1次)
+2025-10-11 18:23:13,685 - SensorDataService - INFO - start:359 - 启动传感器数据采集服务...
+2025-10-11 18:23:13,685 - root - INFO - execute:175 - 执行脚本任务: 数据上传任务 - D:\anaconda3\python.exe client/updata.py
+2025-10-11 18:23:13,685 - root - INFO - _execute_task:487 - 开始执行任务: 喂食机状态上报 (第1次)
+2025-10-11 18:23:13,686 - root - INFO - _execute_task:487 - 开始执行任务: 喂食机定时投喂 (第1次)
+2025-10-11 18:23:13,686 - SensorDataService - INFO - _data_logging_thread:298 - 数据记录线程启动
+2025-10-11 18:23:13,686 - SensorDataService - INFO - start:383 - 传感器服务启动成功（模拟模式），共启动5个线程
+2025-10-11 18:23:13,688 - root - INFO - _run_task_with_retry:509 - 任务执行成功: 喂食机定时投喂
+2025-10-11 18:23:13,688 - SensorDataService - INFO - _data_logging_thread:319 - [2025-10-11 18:23:13] 溶解氧: 7.62 | 液位: 900mm | pH: 6.92 | pH温度: 26.7°C | 浊度: 2.5NTU | 浊度温度: 29.3°C
+2025-10-11 18:23:13,688 - SensorDataTask - INFO - execute:39 - 传感器服务启动完成
+2025-10-11 18:23:13,689 - root - INFO - _run_task_with_retry:509 - 任务执行成功: 传感器数据采集服务
+2025-10-11 18:23:14,376 - root - INFO - execute:186 - 脚本任务执行成功: 数据上传任务
+2025-10-11 18:23:14,376 - root - INFO - _run_task_with_retry:509 - 任务执行成功: 数据上传任务
+2025-10-11 18:23:14,688 - root - INFO - _execute_task:487 - 开始执行任务: 传感器数据流式上传 (第1次)
+2025-10-11 18:23:14,689 - root - INFO - _execute_task:487 - 开始执行任务: 摄像头键盘控制服务 (第1次)
+2025-10-11 18:23:14,689 - SensorDataStreamTask - INFO - _stream_loop:103 - 数据流任务开始运行，目标URL=http://8.216.33.92:5000/api/updata_sensor_data，间隔=60s，dry_run=False
+2025-10-11 18:23:14,689 - SensorDataStreamTask - INFO - execute:149 - 数据流任务线程已启动
+2025-10-11 18:23:14,690 - CameraControllerService - ERROR - _run_loop:150 - 缺少必要依赖，退出摄像头服务循环
+2025-10-11 18:23:14,690 - CameraControllerService - INFO - start:113 - CameraControllerService 已启动
+2025-10-11 18:23:14,690 - root - INFO - _run_task_with_retry:509 - 任务执行成功: 传感器数据流式上传
+2025-10-11 18:23:14,692 - CameraControllerTask - INFO - execute:29 - 摄像头控制服务已启动
+2025-10-11 18:23:14,692 - root - INFO - _run_task_with_retry:509 - 任务执行成功: 摄像头键盘控制服务
+2025-10-11 18:23:15,263 - SensorDataStreamTask - INFO - _stream_loop:128 - ✓ 数据上传成功
+2025-10-11 18:23:15,298 - FeederService - ERROR - login:94 - [登录失败] {'data': [], 'msgType': 1000, 'status': 2}
+2025-10-11 18:23:15,299 - FeedDeviceStatusTask - ERROR - execute:45 - 未找到设备 devName='AI'
+2025-10-11 18:23:15,299 - root - WARNING - _run_task_with_retry:513 - 任务执行失败，5秒后重试 (第1/3次): 喂食机状态上报
+2025-10-11 18:23:18,739 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 18:23:18,739 - root - INFO - stop:421 - 正在停止任务调度器...
+2025-10-11 18:23:19,692 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 18:23:19,692 - root - INFO - stop:434 - 调用任务清理方法: 传感器数据采集服务.stop_service()
+2025-10-11 18:23:19,692 - SensorDataTask - INFO - stop_service:58 - 正在停止传感器服务...
+2025-10-11 18:23:19,693 - SensorDataService - INFO - stop:390 - 正在停止传感器数据采集服务...
+2025-10-11 18:23:21,572 - FeederService - ERROR - login:94 - [登录失败] {'data': [], 'msgType': 1000, 'status': 2}
+2025-10-11 18:23:21,573 - FeedDeviceStatusTask - ERROR - execute:45 - 未找到设备 devName='AI'
+2025-10-11 18:23:21,573 - root - WARNING - _run_task_with_retry:513 - 任务执行失败，5秒后重试 (第2/3次): 喂食机状态上报
+2025-10-11 18:23:24,703 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 18:23:27,862 - FeederService - ERROR - login:94 - [登录失败] {'data': [], 'msgType': 1000, 'status': 2}
+2025-10-11 18:23:27,862 - FeedDeviceStatusTask - ERROR - execute:45 - 未找到设备 devName='AI'
+2025-10-11 18:23:27,863 - root - WARNING - _run_task_with_retry:513 - 任务执行失败，5秒后重试 (第3/3次): 喂食机状态上报
+2025-10-11 18:23:29,711 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 18:23:34,245 - FeederService - ERROR - login:94 - [登录失败] {'data': [], 'msgType': 1000, 'status': 2}
+2025-10-11 18:23:34,246 - FeedDeviceStatusTask - ERROR - execute:45 - 未找到设备 devName='AI'
+2025-10-11 18:23:34,246 - root - ERROR - _run_task_with_retry:518 - 任务执行失败，已达最大重试次数: 喂食机状态上报
+2025-10-11 18:23:34,722 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 18:24:23,299 - root - INFO - __init__:314 - 任务调度器初始化完成
+2025-10-11 18:24:23,353 - SensorDataService - WARNING - __init__:117 - 未检测到pandas，将使用csv模块写入文件
+2025-10-11 18:24:23,353 - SensorDataService - WARNING - __init__:122 - 未检测到pymodbus，自动切换到模拟模式
+2025-10-11 18:24:23,353 - root - INFO - add_task:366 - 任务添加成功: 传感器数据采集服务 (ID: sensor_service)
+2025-10-11 18:24:23,354 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 18:24:23.353853
+2025-10-11 18:24:23,354 - root - INFO - add_task:366 - 任务添加成功: 数据上传任务 (ID: data_upload)
+2025-10-11 18:24:23,354 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 18:24:23.354858
+2025-10-11 18:24:23,354 - root - INFO - add_task:366 - 任务添加成功: 传感器数据流式上传 (ID: sensor_data_stream)
+2025-10-11 18:24:23,354 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 18:24:24.354858
+2025-10-11 18:24:23,355 - FeederService - WARNING - __init__:61 - FeederService: 未提供用户凭证（AIJ_FEEDER_USER/AIJ_FEEDER_PASS），后续调用可能失败
+2025-10-11 18:24:23,355 - root - INFO - add_task:366 - 任务添加成功: 喂食机状态上报 (ID: feed_device_status)
+2025-10-11 18:24:23,355 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 18:24:23.355857
+2025-10-11 18:24:23,355 - FeederService - WARNING - __init__:61 - FeederService: 未提供用户凭证（AIJ_FEEDER_USER/AIJ_FEEDER_PASS），后续调用可能失败
+2025-10-11 18:24:23,355 - root - INFO - add_task:366 - 任务添加成功: 喂食机定时投喂 (ID: feed_device_schedule)
+2025-10-11 18:24:23,355 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 18:24:23.355857
+2025-10-11 18:24:23,357 - CameraControllerService - ERROR - __init__:71 - keyboard 库不可用，无法进行按键监听
+2025-10-11 18:24:23,357 - root - INFO - add_task:366 - 任务添加成功: 摄像头键盘控制服务 (ID: camera_controller)
+2025-10-11 18:24:23,357 - root - INFO - add_task:369 - 下次执行时间: 2025-10-11 18:24:24.357328
+2025-10-11 18:24:23,357 - root - INFO - main:96 - 任务已注册，准备启动调度器...
+2025-10-11 18:24:23,358 - root - INFO - _execute_task:487 - 开始执行任务: 传感器数据采集服务 (第1次)
+2025-10-11 18:24:23,358 - root - INFO - start:414 - 任务调度器启动成功，最大工作线程数: 10
+2025-10-11 18:24:23,359 - SensorDataTask - INFO - execute:37 - 传感器服务未运行，正在启动...
+2025-10-11 18:24:23,359 - root - INFO - _execute_task:487 - 开始执行任务: 数据上传任务 (第1次)
+2025-10-11 18:24:23,359 - SensorDataService - INFO - start:359 - 启动传感器数据采集服务...
+2025-10-11 18:24:23,360 - root - INFO - execute:175 - 执行脚本任务: 数据上传任务 - D:\anaconda3\python.exe client/updata.py
+2025-10-11 18:24:23,360 - root - INFO - _execute_task:487 - 开始执行任务: 喂食机状态上报 (第1次)
+2025-10-11 18:24:23,360 - root - INFO - _execute_task:487 - 开始执行任务: 喂食机定时投喂 (第1次)
+2025-10-11 18:24:23,361 - SensorDataService - INFO - _data_logging_thread:298 - 数据记录线程启动
+2025-10-11 18:24:23,361 - SensorDataService - INFO - start:383 - 传感器服务启动成功（模拟模式），共启动5个线程
+2025-10-11 18:24:23,362 - root - INFO - _run_task_with_retry:509 - 任务执行成功: 喂食机定时投喂
+2025-10-11 18:24:23,362 - SensorDataService - INFO - _data_logging_thread:319 - [2025-10-11 18:24:23] 溶解氧: 7.905 | 液位: 1083mm | pH: 6.94 | pH温度: 28.4°C | 浊度: 2.2NTU | 浊度温度: 26.3°C
+2025-10-11 18:24:23,362 - SensorDataTask - INFO - execute:39 - 传感器服务启动完成
+2025-10-11 18:24:23,364 - root - INFO - _run_task_with_retry:509 - 任务执行成功: 传感器数据采集服务
+2025-10-11 18:24:24,030 - root - INFO - execute:186 - 脚本任务执行成功: 数据上传任务
+2025-10-11 18:24:24,031 - root - INFO - _run_task_with_retry:509 - 任务执行成功: 数据上传任务
+2025-10-11 18:24:24,125 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 18:24:24,126 - root - INFO - stop:421 - 正在停止任务调度器...
+2025-10-11 18:24:24,363 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 18:24:24,363 - root - INFO - stop:434 - 调用任务清理方法: 传感器数据采集服务.stop_service()
+2025-10-11 18:24:24,363 - SensorDataTask - INFO - stop_service:58 - 正在停止传感器服务...
+2025-10-11 18:24:24,364 - SensorDataService - INFO - stop:390 - 正在停止传感器数据采集服务...
+2025-10-11 18:24:24,678 - FeederService - ERROR - login:94 - [登录失败] {'data': [], 'msgType': 1000, 'status': 2}
+2025-10-11 18:24:24,679 - FeedDeviceStatusTask - ERROR - execute:45 - 未找到设备 devName='AI'
+2025-10-11 18:24:24,679 - root - WARNING - _run_task_with_retry:513 - 任务执行失败，5秒后重试 (第1/3次): 喂食机状态上报
+2025-10-11 18:24:29,371 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 18:24:31,023 - FeederService - ERROR - login:94 - [登录失败] {'data': [], 'msgType': 1000, 'status': 2}
+2025-10-11 18:24:31,023 - FeedDeviceStatusTask - ERROR - execute:45 - 未找到设备 devName='AI'
+2025-10-11 18:24:31,023 - root - WARNING - _run_task_with_retry:513 - 任务执行失败，5秒后重试 (第2/3次): 喂食机状态上报
+2025-10-11 18:24:34,373 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 18:24:49,399 - SensorDataService - INFO - stop:399 - 传感器数据采集服务已停止
+2025-10-11 18:24:49,400 - SensorDataTask - INFO - stop_service:60 - 传感器服务已停止
+2025-10-11 18:24:49,400 - root - INFO - stop:434 - 调用任务清理方法: 传感器数据流式上传.stop_stream()
+2025-10-11 18:24:49,400 - root - INFO - stop:434 - 调用任务清理方法: 摄像头键盘控制服务.stop()
+2025-10-11 18:24:49,400 - CameraControllerService - INFO - stop:143 - CameraControllerService 已停止
+2025-10-11 18:24:49,401 - CameraControllerTask - INFO - stop:42 - 摄像头控制服务已停止
+2025-10-11 18:24:51,053 - FeederService - ERROR - login:83 - 登录请求失败: HTTPSConnectionPool(host='ffish.huaeran.cn', port=8081): Read timed out. (read timeout=15)
+2025-10-11 18:24:51,053 - FeedDeviceStatusTask - ERROR - execute:45 - 未找到设备 devName='AI'
+2025-10-11 18:24:51,053 - root - WARNING - _run_task_with_retry:513 - 任务执行失败，5秒后重试 (第3/3次): 喂食机状态上报
+2025-10-11 18:24:57,315 - FeederService - ERROR - login:94 - [登录失败] {'data': [], 'msgType': 1000, 'status': 2}
+2025-10-11 18:24:57,316 - FeedDeviceStatusTask - ERROR - execute:45 - 未找到设备 devName='AI'
+2025-10-11 18:24:57,316 - root - ERROR - _run_task_with_retry:518 - 任务执行失败，已达最大重试次数: 喂食机状态上报
+2025-10-11 18:24:57,317 - root - INFO - _signal_handler:345 - 接收到信号 2，开始优雅关闭...
+2025-10-11 18:24:57,317 - root - INFO - stop:449 - 任务调度器已停止
+2025-10-11 18:24:57,317 - root - INFO - main:116 - 调度器已停止
+2025-10-11 18:27:30,485 - root - INFO - __init__:316 - 任务调度器初始化完成
+2025-10-11 18:27:30,551 - SensorDataService - WARNING - __init__:117 - 未检测到pandas，将使用csv模块写入文件
+2025-10-11 18:27:30,552 - SensorDataService - WARNING - __init__:122 - 未检测到pymodbus，自动切换到模拟模式
+2025-10-11 18:27:30,552 - root - INFO - add_task:368 - 任务添加成功: 传感器数据采集服务 (ID: sensor_service)
+2025-10-11 18:27:30,552 - root - INFO - add_task:371 - 下次执行时间: 2025-10-11 18:27:30.552185
+2025-10-11 18:27:30,552 - root - INFO - add_task:368 - 任务添加成功: 数据上传任务 (ID: data_upload)
+2025-10-11 18:27:30,552 - root - INFO - add_task:371 - 下次执行时间: 2025-10-11 18:27:30.552185
+2025-10-11 18:27:30,553 - root - INFO - add_task:368 - 任务添加成功: 传感器数据流式上传 (ID: sensor_data_stream)
+2025-10-11 18:27:30,553 - root - INFO - add_task:371 - 下次执行时间: 2025-10-11 18:27:31.553189
+2025-10-11 18:27:30,553 - FeederService - WARNING - __init__:61 - FeederService: 未提供用户凭证（AIJ_FEEDER_USER/AIJ_FEEDER_PASS），后续调用可能失败
+2025-10-11 18:27:30,554 - root - INFO - add_task:368 - 任务添加成功: 喂食机状态上报 (ID: feed_device_status)
+2025-10-11 18:27:30,554 - root - INFO - add_task:371 - 下次执行时间: 2025-10-11 18:27:30.554231
+2025-10-11 18:27:30,554 - FeederService - WARNING - __init__:61 - FeederService: 未提供用户凭证（AIJ_FEEDER_USER/AIJ_FEEDER_PASS），后续调用可能失败
+2025-10-11 18:27:30,554 - root - INFO - add_task:368 - 任务添加成功: 喂食机定时投喂 (ID: feed_device_schedule)
+2025-10-11 18:27:30,555 - root - INFO - add_task:371 - 下次执行时间: 2025-10-11 18:27:30.554231
+2025-10-11 18:27:30,555 - CameraControllerService - ERROR - __init__:74 - keyboard 库不可用，无法进行按键监听
+2025-10-11 18:27:30,556 - root - INFO - add_task:368 - 任务添加成功: 摄像头键盘控制服务 (ID: camera_controller)
+2025-10-11 18:27:30,556 - root - INFO - add_task:371 - 下次执行时间: 2025-10-11 18:27:31.555236
+2025-10-11 18:27:30,556 - root - INFO - main:96 - 任务已注册，准备启动调度器...
+2025-10-11 18:27:30,558 - root - INFO - _execute_task:504 - 开始执行任务: 传感器数据采集服务 (第1次)
+2025-10-11 18:27:30,558 - root - INFO - start:418 - 任务调度器启动成功，最大工作线程数: 10
+2025-10-11 18:27:30,560 - SensorDataTask - INFO - execute:37 - 传感器服务未运行，正在启动...
+2025-10-11 18:27:30,560 - root - INFO - _execute_task:504 - 开始执行任务: 数据上传任务 (第1次)
+2025-10-11 18:27:30,560 - SensorDataService - INFO - start:359 - 启动传感器数据采集服务...
+2025-10-11 18:27:30,561 - root - INFO - execute:175 - 执行脚本任务: 数据上传任务 - D:\anaconda3\python.exe client/updata.py
+2025-10-11 18:27:30,561 - root - INFO - _execute_task:504 - 开始执行任务: 喂食机状态上报 (第1次)
+2025-10-11 18:27:30,562 - root - INFO - _execute_task:504 - 开始执行任务: 喂食机定时投喂 (第1次)
+2025-10-11 18:27:30,563 - SensorDataService - INFO - _data_logging_thread:298 - 数据记录线程启动
+2025-10-11 18:27:30,563 - SensorDataService - INFO - start:383 - 传感器服务启动成功（模拟模式），共启动5个线程
+2025-10-11 18:27:30,563 - SensorDataService - INFO - _data_logging_thread:319 - [2025-10-11 18:27:30] 溶解氧: 8.041 | 液位: 1046mm | pH: 7.3 | pH温度: 26.7°C | 浊度: 3.1NTU | 浊度温度: 25.8°C
+2025-10-11 18:27:30,564 - root - INFO - _run_task_with_retry:532 - 任务执行成功: 喂食机定时投喂
+2025-10-11 18:27:30,564 - SensorDataTask - INFO - execute:39 - 传感器服务启动完成
+2025-10-11 18:27:30,566 - root - INFO - _run_task_with_retry:532 - 任务执行成功: 传感器数据采集服务
+2025-10-11 18:27:31,293 - root - INFO - execute:186 - 脚本任务执行成功: 数据上传任务
+2025-10-11 18:27:31,294 - root - INFO - _run_task_with_retry:532 - 任务执行成功: 数据上传任务
+2025-10-11 18:27:31,564 - root - INFO - _execute_task:504 - 开始执行任务: 传感器数据流式上传 (第1次)
+2025-10-11 18:27:31,564 - root - INFO - _execute_task:504 - 开始执行任务: 摄像头键盘控制服务 (第1次)
+2025-10-11 18:27:31,564 - SensorDataStreamTask - INFO - _stream_loop:103 - 数据流任务开始运行，目标URL=http://8.216.33.92:5000/api/updata_sensor_data，间隔=60s，dry_run=False
+2025-10-11 18:27:31,565 - SensorDataStreamTask - INFO - execute:149 - 数据流任务线程已启动
+2025-10-11 18:27:31,565 - CameraControllerService - ERROR - _run_loop:153 - 缺少必要依赖，退出摄像头服务循环
+2025-10-11 18:27:31,565 - CameraControllerService - INFO - start:116 - CameraControllerService 已启动
+2025-10-11 18:27:31,566 - root - INFO - _run_task_with_retry:532 - 任务执行成功: 传感器数据流式上传
+2025-10-11 18:27:31,567 - CameraControllerTask - INFO - execute:29 - 摄像头控制服务已启动
+2025-10-11 18:27:31,567 - root - INFO - _run_task_with_retry:532 - 任务执行成功: 摄像头键盘控制服务
+2025-10-11 18:27:31,966 - FeederService - ERROR - login:94 - [登录失败] {'data': [], 'msgType': 1000, 'status': 2}
+2025-10-11 18:27:31,966 - FeedDeviceStatusTask - ERROR - execute:45 - 未找到设备 devName='AI'
+2025-10-11 18:27:31,966 - root - WARNING - _run_task_with_retry:536 - 任务执行失败，5秒后重试 (第1/3次): 喂食机状态上报
+2025-10-11 18:27:31,997 - root - INFO - _signal_handler:347 - 接收到信号 2，开始优雅关闭...
+2025-10-11 18:27:31,998 - root - INFO - stop:425 - 正在停止任务调度器...
+2025-10-11 18:27:31,998 - root - INFO - _run_task_with_retry:523 - 停止重试并中止任务: 喂食机状态上报
+2025-10-11 18:27:32,141 - SensorDataStreamTask - INFO - _stream_loop:128 - ✓ 数据上传成功
+2025-10-11 18:27:32,565 - root - INFO - _signal_handler:347 - 接收到信号 2，开始优雅关闭...
+2025-10-11 18:27:32,565 - root - INFO - stop:443 - 调用任务清理方法: 传感器数据采集服务.stop_service()
+2025-10-11 18:27:32,565 - SensorDataTask - INFO - stop_service:58 - 正在停止传感器服务...
+2025-10-11 18:27:32,565 - SensorDataService - INFO - stop:390 - 正在停止传感器数据采集服务...
+2025-10-11 18:27:37,575 - root - INFO - _signal_handler:347 - 接收到信号 2，开始优雅关闭...
+2025-10-11 18:27:42,588 - root - INFO - _signal_handler:347 - 接收到信号 2，开始优雅关闭...
+2025-10-11 18:27:57,613 - SensorDataService - INFO - stop:399 - 传感器数据采集服务已停止
+2025-10-11 18:27:57,613 - SensorDataTask - INFO - stop_service:60 - 传感器服务已停止
+2025-10-11 18:27:57,613 - root - INFO - stop:443 - 调用任务清理方法: 传感器数据流式上传.stop_stream()
+2025-10-11 18:28:02,622 - root - INFO - stop:443 - 调用任务清理方法: 摄像头键盘控制服务.stop()
+2025-10-11 18:28:02,623 - CameraControllerService - INFO - stop:146 - CameraControllerService 已停止
+2025-10-11 18:28:02,624 - CameraControllerTask - INFO - stop:42 - 摄像头控制服务已停止
+2025-10-11 18:28:02,624 - root - INFO - stop:466 - 任务调度器已停止
+2025-10-11 18:28:02,624 - root - INFO - main:116 - 调度器已停止

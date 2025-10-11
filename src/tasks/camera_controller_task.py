@@ -34,3 +34,11 @@ class CameraControllerTask(BaseTask):
             self.logger.error(f"启动摄像头控制服务异常: {e}")
             self.last_error = str(e)
             return False
+
+    # 供调度器优雅停止时调用
+    def stop(self):
+        try:
+            self.service.stop()
+            self.logger.info("摄像头控制服务已停止")
+        except Exception as e:
+            self.logger.warning(f"停止摄像头控制服务异常: {e}")

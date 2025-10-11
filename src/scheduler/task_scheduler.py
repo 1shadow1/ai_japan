@@ -303,6 +303,8 @@ class TaskScheduler:
         self.executor = None
         self.scheduler_thread = None
         self.futures: Dict[str, Future] = {}
+        # 停止事件，用于在退出时打断重试等待，提升优雅关闭速度
+        self.stop_event: threading.Event = threading.Event()
         
         # 设置日志
         self._setup_logging()
@@ -404,6 +406,8 @@ class TaskScheduler:
             return
         
         self.running = True
+        # 清除停止事件，进入运行状态
+        self.stop_event.clear()
         max_workers = self.config.get('scheduler.max_workers', 10)
         self.executor = ThreadPoolExecutor(max_workers=max_workers)
         
@@ -420,6 +424,11 @@ class TaskScheduler:
         
         logging.info("正在停止任务调度器...")
         self.running = False
+        # 触发停止事件以打断任务重试/睡眠
+        try:
+            self.stop_event.set()
+        except Exception:
+            pass
         
         # 等待调度线程结束
         if self.scheduler_thread and self.scheduler_thread.is_alive():
@@ -438,7 +447,15 @@ class TaskScheduler:
 
         # 关闭线程池
         if self.executor:
-            self.executor.shutdown(wait=True)
+            try:
+                import sys
+                if sys.version_info >= (3, 9):
+                    self.executor.shutdown(wait=True, cancel_futures=True)
+                else:
+                    self.executor.shutdown(wait=True)
+            except TypeError:
+                # 兼容旧版本不支持 cancel_futures 参数
+                self.executor.shutdown(wait=True)
         
         # 更新所有运行中任务的状态
         for task in self.tasks.values():
@@ -499,6 +516,12 @@ class TaskScheduler:
         retry_delay = self.config.get('tasks.retry_delay', 5)
         
         for attempt in range(max_retries + 1):
+            # 如果已经收到停止信号，直接结束任务
+            if not self.running or (hasattr(self, 'stop_event') and self.stop_event.is_set()):
+                task.status = TaskStatus.STOPPED
+                task.updated_at = datetime.now()
+                logging.info(f"停止重试并中止任务: {task.name}")
+                return
             try:
                 success = task.execute()
                 
@@ -511,7 +534,11 @@ class TaskScheduler:
                 else:
                     if attempt < max_retries:
                         logging.warning(f"任务执行失败，{retry_delay}秒后重试 (第{attempt + 1}/{max_retries}次): {task.name}")
-                        time.sleep(retry_delay)
+                        # 使用事件等待以便在停止时立即打断
+                        if hasattr(self, 'stop_event'):
+                            self.stop_event.wait(retry_delay)
+                        else:
+                            time.sleep(retry_delay)
                     else:
                         task.status = TaskStatus.FAILED
                         task.failure_count += 1
@@ -523,7 +550,11 @@ class TaskScheduler:
                 
                 if attempt < max_retries:
                     logging.warning(f"{error_msg}，{retry_delay}秒后重试 (第{attempt + 1}/{max_retries}次): {task.name}")
-                    time.sleep(retry_delay)
+                    # 使用事件等待以便在停止时立即打断
+                    if hasattr(self, 'stop_event'):
+                        self.stop_event.wait(retry_delay)
+                    else:
+                        time.sleep(retry_delay)
                 else:
                     task.status = TaskStatus.FAILED
                     task.failure_count += 1

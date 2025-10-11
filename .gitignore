@@ -1,4 +1,5 @@
 output/
+logs/
 __pycache__/
 *.csv
 *.mp4
