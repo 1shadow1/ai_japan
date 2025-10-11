@@ -23,6 +23,8 @@ from src.tasks.sensor_data_task import SensorDataTask
 from src.tasks.http_request_task import HttpRequestTask
 from src.tasks.sensor_data_stream_task import SensorDataStreamTask
 from src.services.sensor_data_service import SensorDataService
+from src.tasks.feed_device_status_task import FeedDeviceStatusTask
+from src.tasks.feed_device_schedule_task import FeedDeviceScheduleTask
 
 
 def setup_scheduler() -> TaskScheduler:
@@ -60,6 +62,22 @@ def register_tasks(scheduler: TaskScheduler):
     # ONCE 任务需指定 run_at：设为当前时间+1秒，确保立即触发
     run_time = (datetime.now() + timedelta(seconds=1)).isoformat()
     scheduler.add_task(stream_task, ScheduleRule(ScheduleType.ONCE, run_at=run_time))
+
+    # 5) 喂食机状态上报任务：默认每10分钟执行一次（可通过环境变量 AIJ_FEED_STATUS_INTERVAL 秒数覆盖）
+    try:
+        status_interval = int(os.getenv("AIJ_FEED_STATUS_INTERVAL", "600"))
+    except Exception:
+        status_interval = 600
+    feed_status_task = FeedDeviceStatusTask()
+    scheduler.add_task(feed_status_task, ScheduleRule(ScheduleType.INTERVAL, seconds=status_interval))
+
+    # 6) 喂食机定时投喂任务：以固定间隔检查是否到达指定时间点（默认每60秒检查一次）
+    try:
+        schedule_check_interval = int(os.getenv("AIJ_FEED_SCHEDULE_CHECK_INTERVAL", "60"))
+    except Exception:
+        schedule_check_interval = 60
+    feed_schedule_task = FeedDeviceScheduleTask()
+    scheduler.add_task(feed_schedule_task, ScheduleRule(ScheduleType.INTERVAL, seconds=schedule_check_interval))
 
 
 def main():
