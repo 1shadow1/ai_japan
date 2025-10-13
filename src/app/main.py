@@ -39,30 +39,30 @@ def setup_scheduler() -> TaskScheduler:
 
 def register_tasks(scheduler: TaskScheduler):
     """注册各类任务到调度器"""
-    # 1) 传感器数据采集服务任务：每30秒进行一次健康检查（若未运行则启动）
-    # 设置采样频率为60秒；日志记录频率跟随采样频率（可通过环境变量 AIJ_SENSOR_LOG_INTERVAL 单独控制）
-    sensor_service = SensorDataService(sample_interval_seconds=60)
-    sensor_task = SensorDataTask(service=sensor_service)
-    scheduler.add_task(sensor_task, ScheduleRule(ScheduleType.INTERVAL, seconds=60))
+    # # 1) 传感器数据采集服务任务：每30秒进行一次健康检查（若未运行则启动）
+    # # 设置采样频率为60秒；日志记录频率跟随采样频率（可通过环境变量 AIJ_SENSOR_LOG_INTERVAL 单独控制）
+    # sensor_service = SensorDataService(sample_interval_seconds=60)
+    # sensor_task = SensorDataTask(service=sensor_service)
+    # scheduler.add_task(sensor_task, ScheduleRule(ScheduleType.INTERVAL, seconds=60))
 
-    # 2) 数据上传任务：每10分钟执行一次（后续可在配置文件或环境变量中调整）
-    upload_task = create_data_upload_task()
-    scheduler.add_task(upload_task, ScheduleRule(ScheduleType.INTERVAL, seconds=600))
+    # # 2) 数据上传任务：每10分钟执行一次（后续可在配置文件或环境变量中调整）
+    # upload_task = create_data_upload_task()
+    # scheduler.add_task(upload_task, ScheduleRule(ScheduleType.INTERVAL, seconds=600))
 
-    # 3) 每小时HTTP请求告警任务
-    # http_task = HttpRequestTask(target_url="http://localhost:5002/api/messages/", sensor_service=sensor_service)
-    # scheduler.add_task(http_task, ScheduleRule(ScheduleType.INTERVAL, seconds=3600))
+    # # # 3) 每小时HTTP请求告警任务
+    # # http_task = HttpRequestTask(target_url="http://localhost:5002/api/messages/", sensor_service=sensor_service)
+    # # scheduler.add_task(http_task, ScheduleRule(ScheduleType.INTERVAL, seconds=3600))
 
-    # 4) 持续传感器数据流式上传任务：启动一次，后台线程按固定频率推送
-    stream_task = SensorDataStreamTask(
-        service=sensor_service,
-        # 可由环境变量 AIJ_STREAM_API_URL 指定，或在此处显式设置
-        # target_url="http://8.216.33.92:5000/api/sensor_stream",
-        interval_seconds=60,  # 指定数据上传/请求频率为60秒
-    )
-    # ONCE 任务需指定 run_at：设为当前时间+1秒，确保立即触发
-    run_time = (datetime.now() + timedelta(seconds=1)).isoformat()
-    scheduler.add_task(stream_task, ScheduleRule(ScheduleType.ONCE, run_at=run_time))
+    # # 4) 持续传感器数据流式上传任务：启动一次，后台线程按固定频率推送
+    # stream_task = SensorDataStreamTask(
+    #     service=sensor_service,
+    #     # 可由环境变量 AIJ_STREAM_API_URL 指定，或在此处显式设置
+    #     # target_url="http://8.216.33.92:5000/api/sensor_stream",
+    #     interval_seconds=60,  # 指定数据上传/请求频率为60秒
+    # )
+    # # ONCE 任务需指定 run_at：设为当前时间+1秒，确保立即触发
+    # run_time = (datetime.now() + timedelta(seconds=1)).isoformat()
+    # scheduler.add_task(stream_task, ScheduleRule(ScheduleType.ONCE, run_at=run_time))
 
     # 5) 喂食机状态上报任务：默认每10分钟执行一次（可通过环境变量 AIJ_FEED_STATUS_INTERVAL 秒数覆盖）
     try:
@@ -72,18 +72,18 @@ def register_tasks(scheduler: TaskScheduler):
     feed_status_task = FeedDeviceStatusTask()
     scheduler.add_task(feed_status_task, ScheduleRule(ScheduleType.INTERVAL, seconds=status_interval))
 
-    # 6) 喂食机定时投喂任务：以固定间隔检查是否到达指定时间点（默认每60秒检查一次）
-    try:
-        schedule_check_interval = int(os.getenv("AIJ_FEED_SCHEDULE_CHECK_INTERVAL", "60"))
-    except Exception:
-        schedule_check_interval = 60
-    feed_schedule_task = FeedDeviceScheduleTask()
-    scheduler.add_task(feed_schedule_task, ScheduleRule(ScheduleType.INTERVAL, seconds=schedule_check_interval))
+    # # 6) 喂食机定时投喂任务：以固定间隔检查是否到达指定时间点（默认每60秒检查一次）
+    # try:
+    #     schedule_check_interval = int(os.getenv("AIJ_FEED_SCHEDULE_CHECK_INTERVAL", "60"))
+    # except Exception:
+    #     schedule_check_interval = 60
+    # feed_schedule_task = FeedDeviceScheduleTask()
+    # scheduler.add_task(feed_schedule_task, ScheduleRule(ScheduleType.INTERVAL, seconds=schedule_check_interval))
 
-    # 7) 摄像头键盘控制服务：一次性任务启动持续后台线程
-    cam_task = CameraControllerTask()
-    run_time_cam = (datetime.now() + timedelta(seconds=1)).isoformat()
-    scheduler.add_task(cam_task, ScheduleRule(ScheduleType.ONCE, run_at=run_time_cam))
+    # # 7) 摄像头键盘控制服务：一次性任务启动持续后台线程
+    # cam_task = CameraControllerTask()
+    # run_time_cam = (datetime.now() + timedelta(seconds=1)).isoformat()
+    # scheduler.add_task(cam_task, ScheduleRule(ScheduleType.ONCE, run_at=run_time_cam))
 
 
 def main():
