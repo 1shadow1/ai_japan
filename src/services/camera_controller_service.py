@@ -301,7 +301,7 @@ class CameraControllerService:
             if not ret:
                 break
             if frame_count % frame_interval == 0:
-                image_filename = os.path.join(output_folder, f"frame_{len(saved_paths):04d}.jpg")
+                image_filename = os.path.join(output_folder, f"{video_name}_{interval_sec}_frame_{len(saved_paths):04d}.jpg")
                 try:
                     cv2.imwrite(image_filename, frame)
                     saved_paths.append(image_filename)
