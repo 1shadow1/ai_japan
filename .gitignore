@@ -4,3 +4,4 @@ __pycache__/
 *.csv
 *.mp4
 *.log
+client/logs/upload.log
