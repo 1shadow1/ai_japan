@@ -41,7 +41,7 @@ def register_tasks(scheduler: TaskScheduler):
     """注册各类任务到调度器"""
     # 1) 传感器数据采集服务任务：每30秒进行一次健康检查（若未运行则启动）
     # 设置采样频率为60秒；日志记录频率跟随采样频率（可通过环境变量 AIJ_SENSOR_LOG_INTERVAL 单独控制）
-    sensor_service = SensorDataService(sample_interval_seconds=60)
+    sensor_service = SensorDataService(sample_interval_seconds=600)
     sensor_task = SensorDataTask(service=sensor_service)
     scheduler.add_task(sensor_task, ScheduleRule(ScheduleType.INTERVAL, seconds=60))
 
@@ -58,7 +58,7 @@ def register_tasks(scheduler: TaskScheduler):
         service=sensor_service,
         # 可由环境变量 AIJ_STREAM_API_URL 指定，或在此处显式设置
         # target_url="http://8.216.33.92:5000/api/sensor_stream",
-        interval_seconds=60,  # 指定数据上传/请求频率为60秒
+        interval_seconds=600,  # 指定数据上传/请求频率为60秒
     )
     # ONCE 任务需指定 run_at：设为当前时间+1秒，确保立即触发
     run_time = (datetime.now() + timedelta(seconds=1)).isoformat()
@@ -77,8 +77,26 @@ def register_tasks(scheduler: TaskScheduler):
         schedule_check_interval = int(os.getenv("AIJ_FEED_SCHEDULE_CHECK_INTERVAL", "60"))
     except Exception:
         schedule_check_interval = 60
-    feed_schedule_task = FeedDeviceScheduleTask()
-    scheduler.add_task(feed_schedule_task, ScheduleRule(ScheduleType.INTERVAL, seconds=schedule_check_interval))
+
+    feed_task_test = FeedDeviceScheduleTask()
+    feed_task_test.task_id = "feed_device_schedule_test"
+    feed_task_test.feed_count = 1
+    feed_task_test.times = ["16:12"]
+    scheduler.add_task(feed_task_test, ScheduleRule(ScheduleType.INTERVAL, seconds=schedule_check_interval))
+
+    # 高份量：04:00 和 22:00 各喂 4 份（约 68g）
+    feed_task_high = FeedDeviceScheduleTask()
+    feed_task_high.task_id = "feed_device_schedule_high"
+    feed_task_high.feed_count = 4
+    feed_task_high.times = ["04:00", "22:00"]
+    scheduler.add_task(feed_task_high, ScheduleRule(ScheduleType.INTERVAL, seconds=schedule_check_interval))
+
+    # 低份量：10:00 和 16:00 各喂 2 份（约 34g）
+    feed_task_low = FeedDeviceScheduleTask()
+    feed_task_low.task_id = "feed_device_schedule_low"
+    feed_task_low.feed_count = 2
+    feed_task_low.times = ["10:00", "16:00"]
+    scheduler.add_task(feed_task_low, ScheduleRule(ScheduleType.INTERVAL, seconds=schedule_check_interval))
 
     # 7) 摄像头键盘控制服务：一次性任务启动持续后台线程
     cam_task = CameraControllerTask()
