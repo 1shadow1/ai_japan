@@ -106,7 +106,7 @@ class SensorDataService:
     def _load_sensor_configs(self) -> Dict:
         """从配置文件加载传感器配置"""
         sensor_configs = {}
-        devices = self.config.get_sensor_configs()
+        devices = self.config.get_sensor_devices()
         
         for device in devices:
             sensor_type = device.get('type')
