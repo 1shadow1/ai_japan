@@ -3,6 +3,6 @@
 统一管理客户端配置
 """
 
-from .config_manager import ConfigManager
+from .config_manager import ConfigManager, config_manager, get_config
 
-__all__ = ['ConfigManager']
+__all__ = ['ConfigManager', 'config_manager', 'get_config']

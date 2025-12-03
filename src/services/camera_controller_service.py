@@ -56,7 +56,7 @@ class CameraControllerService:
         
         # 从配置获取API设置
         api_config = config_manager.get_api_config()
-        self.upload_timeout: int = api_config.get('timeout', 15)
+        self.upload_timeout: int = api_config.get('timeout_seconds', 15)
         self.upload_dry_run: bool = config_manager.is_camera_upload_dry_run()
         
         # 显示窗口（从环境变量读取，保持兼容性）

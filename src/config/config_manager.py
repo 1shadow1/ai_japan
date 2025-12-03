@@ -90,7 +90,7 @@ class ConfigManager:
                     "camera_data": "/api/data/cameras",
                     "camera_status": "/api/camera_device_status"
                 },
-                "timeout_seconds": 15,
+                "timeout": 15,
                 "retry_attempts": 3,
                 "retry_delay_seconds": 2
             },
@@ -199,6 +199,10 @@ class ConfigManager:
             return f"{base_url.rstrip('/')}{endpoint_path}"
         return f"{base_url.rstrip('/')}/{endpoint_path}"
     
+    def get_api_url(self, endpoint_key: str) -> str:
+        """获取完整的API URL（兼容方法）"""
+        return self.get_api_endpoint(endpoint_key)
+    
     def get_upload_config(self) -> Dict[str, Any]:
         """获取上传配置"""
         return self.get('upload', {})
@@ -210,6 +214,10 @@ class ConfigManager:
     def get_paths_config(self) -> Dict[str, Any]:
         """获取路径配置"""
         return self.get('paths', {})
+    
+    def get_path(self, path_key: str) -> str:
+        """获取路径配置"""
+        return self.get(f"paths.{path_key}", "")
     
     def get_simulation_config(self) -> Dict[str, Any]:
         """获取模拟配置"""
@@ -236,204 +244,30 @@ class ConfigManager:
             return True
         return self.get('simulation.camera_upload_dry_run', False)
     
-    def reload(self):
-        """重新加载配置"""
-        self._load_config()
-    
-    def get_full_config(self) -> Dict[str, Any]:
-        """获取完整配置（用于调试）"""
-        return self._config.copy() if self._config else {}
-
-
-# 全局配置管理器实例
-config_manager = ConfigManager()
-
-    def get_api_url(self, endpoint_key: str) -> str:
-        """获取完整的API URL"""
-        api_config = self.get_api_config()
-        base_url = api_config.get("base_url", "")
-        endpoints = api_config.get("endpoints", {})
-        endpoint = endpoints.get(endpoint_key, "")
-        return f"{base_url.rstrip('/')}{endpoint}"
-    
-    def get_path(self, path_key: str) -> str:
-        """获取路径配置"""
-        return self.get(f"paths.{path_key}", "")
-    
     def is_simulation_mode(self, mode: str = "sensor") -> bool:
         """检查是否为模拟模式"""
         if mode == "sensor":
-            return self.get("simulation.sensor_simulate", False)
+            return self.is_sensor_simulate()
         elif mode == "upload":
-            return self.get("simulation.upload_dry_run", False)
+            return self.is_upload_dry_run()
         elif mode == "camera_upload":
-            return self.get("simulation.camera_upload_dry_run", False)
+            return self.is_camera_upload_dry_run()
         return False
+    
+    def reload(self):
+        """重新加载配置"""
+        self._load_config()
+    
+    def get_full_config(self) -> Dict[str, Any]:
+        """获取完整配置（用于调试）"""
+        return self._config.copy() if self._config else {}
 
 
-# 全局配置实例
-_config_manager: Optional[ConfigManager] = None
+# 全局配置管理器实例
+config_manager = ConfigManager()
 
 
+# 兼容函数（用于向后兼容）
 def get_config() -> ConfigManager:
     """获取全局配置管理器实例"""
-    global _config_manager
-    if _config_manager is None:
-        _config_manager = ConfigManager()
-    return _config_manager
-
-
-        env_val = os.getenv('AIJ_CAMERA_UPLOAD_DRY_RUN', '').lower()
-        if env_val in ('1', 'true', 'yes'):
-            return True
-        return self.get('simulation.camera_upload_dry_run', False)
-    
-    def reload(self):
-        """重新加载配置"""
-        self._load_config()
-    
-    def get_full_config(self) -> Dict[str, Any]:
-        """获取完整配置（用于调试）"""
-        return self._config.copy() if self._config else {}
-
-
-# 全局配置管理器实例
-config_manager = ConfigManager()
-
-        env_val = os.getenv('AIJ_CAMERA_UPLOAD_DRY_RUN', '').lower()
-        if env_val in ('1', 'true', 'yes'):
-            return True
-        return self.get('simulation.camera_upload_dry_run', False)
-    
-    def reload(self):
-        """重新加载配置"""
-        self._load_config()
-    
-    def get_full_config(self) -> Dict[str, Any]:
-        """获取完整配置（用于调试）"""
-        return self._config.copy() if self._config else {}
-
-
-# 全局配置管理器实例
-config_manager = ConfigManager()
-
-    def get_api_url(self, endpoint_key: str) -> str:
-        """获取完整的API URL"""
-        api_config = self.get_api_config()
-        base_url = api_config.get("base_url", "")
-        endpoints = api_config.get("endpoints", {})
-        endpoint = endpoints.get(endpoint_key, "")
-        return f"{base_url.rstrip('/')}{endpoint}"
-    
-    def get_path(self, path_key: str) -> str:
-        """获取路径配置"""
-        return self.get(f"paths.{path_key}", "")
-    
-    def is_simulation_mode(self, mode: str = "sensor") -> bool:
-        """检查是否为模拟模式"""
-        if mode == "sensor":
-            return self.get("simulation.sensor_simulate", False)
-        elif mode == "upload":
-            return self.get("simulation.upload_dry_run", False)
-        elif mode == "camera_upload":
-            return self.get("simulation.camera_upload_dry_run", False)
-        return False
-
-
-# 全局配置实例
-_config_manager: Optional[ConfigManager] = None
-
-
-def get_config() -> ConfigManager:
-    """获取全局配置管理器实例"""
-    global _config_manager
-    if _config_manager is None:
-        _config_manager = ConfigManager()
-    return _config_manager
-
-
-        env_val = os.getenv('AIJ_CAMERA_UPLOAD_DRY_RUN', '').lower()
-        if env_val in ('1', 'true', 'yes'):
-            return True
-        return self.get('simulation.camera_upload_dry_run', False)
-    
-    def reload(self):
-        """重新加载配置"""
-        self._load_config()
-    
-    def get_full_config(self) -> Dict[str, Any]:
-        """获取完整配置（用于调试）"""
-        return self._config.copy() if self._config else {}
-
-
-# 全局配置管理器实例
-config_manager = ConfigManager()
-
-        env_val = os.getenv('AIJ_CAMERA_UPLOAD_DRY_RUN', '').lower()
-        if env_val in ('1', 'true', 'yes'):
-            return True
-        return self.get('simulation.camera_upload_dry_run', False)
-    
-    def reload(self):
-        """重新加载配置"""
-        self._load_config()
-    
-    def get_full_config(self) -> Dict[str, Any]:
-        """获取完整配置（用于调试）"""
-        return self._config.copy() if self._config else {}
-
-
-# 全局配置管理器实例
-config_manager = ConfigManager()
-
-    def get_api_url(self, endpoint_key: str) -> str:
-        """获取完整的API URL"""
-        api_config = self.get_api_config()
-        base_url = api_config.get("base_url", "")
-        endpoints = api_config.get("endpoints", {})
-        endpoint = endpoints.get(endpoint_key, "")
-        return f"{base_url.rstrip('/')}{endpoint}"
-    
-    def get_path(self, path_key: str) -> str:
-        """获取路径配置"""
-        return self.get(f"paths.{path_key}", "")
-    
-    def is_simulation_mode(self, mode: str = "sensor") -> bool:
-        """检查是否为模拟模式"""
-        if mode == "sensor":
-            return self.get("simulation.sensor_simulate", False)
-        elif mode == "upload":
-            return self.get("simulation.upload_dry_run", False)
-        elif mode == "camera_upload":
-            return self.get("simulation.camera_upload_dry_run", False)
-        return False
-
-
-# 全局配置实例
-_config_manager: Optional[ConfigManager] = None
-
-
-def get_config() -> ConfigManager:
-    """获取全局配置管理器实例"""
-    global _config_manager
-    if _config_manager is None:
-        _config_manager = ConfigManager()
-    return _config_manager
-
-
-        env_val = os.getenv('AIJ_CAMERA_UPLOAD_DRY_RUN', '').lower()
-        if env_val in ('1', 'true', 'yes'):
-            return True
-        return self.get('simulation.camera_upload_dry_run', False)
-    
-    def reload(self):
-        """重新加载配置"""
-        self._load_config()
-    
-    def get_full_config(self) -> Dict[str, Any]:
-        """获取完整配置（用于调试）"""
-        return self._config.copy() if self._config else {}
-
-
-# 全局配置管理器实例
-config_manager = ConfigManager()
+    return config_manager

@@ -56,7 +56,7 @@ class SensorDataStreamTask(BaseTask):
             self.interval_seconds = interval_seconds
 
         self.dry_run = self.config.is_simulation_mode("upload")
-        self.timeout = api_config.get("timeout", 15)
+        self.timeout = api_config.get("timeout_seconds", 15)
 
         self._thread: Optional[threading.Thread] = None
         self._stop_event = threading.Event()
