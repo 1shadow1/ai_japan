@@ -1,13 +1,12 @@
 """
 SensorDataStreamTask
-一次启动、持续运行：按固定频率获取传感器数据并向服务端发送（表结构格式）。
+一次启动、持续运行：按固定频率获取传感器数据并向服务端发送（标准接口格式）。
 
 特性：
 - 通过 ScheduleType.ONCE 启动一次，内部线程持续运行
-- 支持环境变量控制：
-  - AIJ_UPLOAD_DRY_RUN=1 进行干运行（不实际请求，仅日志）
-  - AIJ_STREAM_API_URL 指定服务端接收URL（默认: http://8.216.33.92:5000/api/updata_sensor_data）
-  - AIJ_STREAM_INTERVAL 指定推送间隔秒数（默认: 10）
+- 使用统一配置管理
+- 支持环境变量控制
+- 使用服务端标准接口 /api/data/sensors
 """
 
 import os
@@ -17,14 +16,13 @@ import logging
 from datetime import datetime
 from typing import Dict, Any, Optional
 import threading
+import pytz
+import hashlib
 
 from src.scheduler.task_scheduler import BaseTask
 from src.services.sensor_data_service import SensorDataService
-
-try:
-    import requests
-except Exception:
-    requests = None  # 允许在干运行模式或无依赖时加载
+from src.config.config_manager import config_manager
+from src.services.api_client import api_client
 
 
 class SensorDataStreamTask(BaseTask):
@@ -39,27 +37,26 @@ class SensorDataStreamTask(BaseTask):
         super().__init__(
             task_id="sensor_data_stream",
             name="传感器数据流式上传",
-            description="持续按固定频率采集并上传传感器数据（表结构格式）",
+            description="持续按固定频率采集并上传传感器数据（标准接口格式）",
         )
 
         self.logger = logging.getLogger("SensorDataStreamTask")
+        self.config = config_manager
         self.service = service or SensorDataService()
 
-        # 环境变量配置
-        env_url = os.getenv("AIJ_STREAM_API_URL", "").strip()
-        # 默认对齐到生产接口
-        default_url = "http://8.216.33.92:5000/api/updata_sensor_data"
-        self.target_url = target_url or env_url or default_url
-        self.target_url = self._normalize_url(self.target_url)
+        # 获取API配置
+        api_config = self.config.get_api_config()
+        if target_url is None:
+            target_url = self.config.get_api_endpoint("sensor_data")
+        self.target_url = self._normalize_url(target_url)
 
-        env_interval = os.getenv("AIJ_STREAM_INTERVAL", "").strip()
-        try:
-            self.interval_seconds = int(interval_seconds or (int(env_interval) if env_interval else 10))
-        except Exception:
-            self.interval_seconds = 10
+        if interval_seconds is None:
+            self.interval_seconds = self.config.get("upload.stream_interval_seconds", 10)
+        else:
+            self.interval_seconds = interval_seconds
 
-        env_dry = os.getenv("AIJ_UPLOAD_DRY_RUN", "0").lower()
-        self.dry_run = env_dry in ("1", "true", "yes")
+        self.dry_run = self.config.is_simulation_mode("upload")
+        self.timeout = api_config.get("timeout", 15)
 
         self._thread: Optional[threading.Thread] = None
         self._stop_event = threading.Event()
@@ -84,19 +81,81 @@ class SensorDataStreamTask(BaseTask):
         except Exception:
             return s
 
-    def _format_payload(self, sensor_data: Dict[str, Any]) -> Dict[str, Any]:
-        """按“数据表结构”构造负载，字段对齐 CSV 标题。"""
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    def _generate_checksum(self, data: Dict) -> str:
+        """生成数据校验和"""
+        data_str = json.dumps(data, sort_keys=True, ensure_ascii=False)
+        return hashlib.md5(data_str.encode('utf-8')).hexdigest()
+
+    def _format_payload(self, sensor_data: Dict[str, Any], sensor_config: Dict) -> Dict[str, Any]:
+        """按服务端标准接口格式构造负载（已废弃，改用 api_client）"""
+        # 获取时间戳
+        now = datetime.now()
+        utc_tz = pytz.UTC
+        japan_tz = pytz.timezone(self.config.get("site.timezone", "Asia/Tokyo"))
+        utc_now = now.astimezone(utc_tz)
+        local_now = now.astimezone(japan_tz)
+        
+        # 获取站点配置
+        site_config = self.config.get_site_config()
+        
+        # 构建标准格式的负载
         payload = {
-            "时间": timestamp,
-            "溶解氧饱和度": sensor_data.get("dissolved_oxygen"),
-            "液位(mm)": sensor_data.get("liquid_level"),
-            "PH": sensor_data.get("ph"),
-            "PH温度(°C)": sensor_data.get("ph_temperature"),
-            "浊度(NTU)": sensor_data.get("turbidity"),
-            "浊度温度(°C)": sensor_data.get("turbidity_temperature"),
+            "sensor_id": sensor_config.get('sensor_id'),
+            "batch_id": site_config.get('batch_id'),
+            "pool_id": site_config.get('pool_id'),
+            "value": sensor_data.get(sensor_config.get('metric')),
+            "metric": sensor_config.get('metric'),
+            "unit": sensor_config.get('unit'),
+            "timestamp": int(utc_now.timestamp() * 1000),  # Unix时间戳（毫秒）
+            "type_name": sensor_config.get('name'),
+            "description": f"{site_config.get('pool_id')}号池 - {sensor_config.get('metric')}"
         }
+        
         return payload
+
+    def _upload_sensor_data(self, sensor_data: Dict, sensor_configs: Dict) -> bool:
+        """上传单个传感器的数据（使用 api_client）"""
+        success_count = 0
+        total_count = 0
+        
+        for sensor_type, config in sensor_configs.items():
+            metric = config.get('metric')
+            if metric not in sensor_data or sensor_data[metric] is None:
+                continue
+            
+            total_count += 1
+            sensor_id = config.get('sensor_id')
+            value = sensor_data[metric]
+            unit = config.get('unit', '')
+            type_name = config.get('name', '')
+            
+            # 优化 description 生成
+            pool_id = config.get('pool_id', self.config.get_pool_id())
+            batch_id = config.get('batch_id', self.config.get_batch_id())
+            description = f"{pool_id}号池 - {metric}"
+            if batch_id:
+                description += f" - 批次{batch_id}"
+            
+            try:
+                # 使用 api_client 发送数据（自动处理重试、元数据补充等）
+                api_client.send_sensor_data(
+                    sensor_id=sensor_id,
+                    value=value,
+                    metric=metric,
+                    unit=unit,
+                    type_name=type_name,
+                    description=description,
+                    dry_run_override=self.dry_run
+                )
+                self.logger.debug(f"✓ 传感器数据上传成功: sensor_id={sensor_id}, metric={metric}, value={value}")
+                success_count += 1
+            except Exception as e:
+                self.logger.error(f"✗ 传感器数据上传失败: sensor_id={sensor_id}, metric={metric}, error={e}")
+        
+        if total_count > 0:
+            self.logger.info(f"传感器数据上传完成: {success_count}/{total_count} 成功")
+            return success_count == total_count
+        return True
 
     def _stream_loop(self):
         """后台线程：循环采集并上传。"""
@@ -114,20 +173,12 @@ class SensorDataStreamTask(BaseTask):
                     except Exception as e:
                         self.logger.error(f"传感器服务启动失败: {e}")
 
-                # 获取当前数据并格式化负载
+                # 获取当前数据
                 sensor_data = self.service.get_current_data()
-                payload = self._format_payload(sensor_data)
-
-                if self.dry_run:
-                    self.logger.info(f"[DRY-RUN] 模拟发送: {json.dumps(payload, ensure_ascii=False)} -> {self.target_url}")
-                else:
-                    if requests is None:
-                        raise RuntimeError("requests 未安装，无法进行真实上传。请安装 requests 或开启干运行模式。")
-                    resp = requests.post(self.target_url, json=payload, timeout=15)
-                    if resp.status_code == 200:
-                        self.logger.info("✓ 数据上传成功")
-                    else:
-                        self.logger.error(f"✗ 上传失败 - 状态码: {resp.status_code}, 响应: {resp.text}")
+                sensor_configs = self.service.sensor_configs
+                
+                # 上传每个传感器的数据
+                self._upload_sensor_data(sensor_data, sensor_configs)
 
             except Exception as e:
                 self.logger.error(f"数据流上传异常: {e}")

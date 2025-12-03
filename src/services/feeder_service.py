@@ -21,12 +21,16 @@ from __future__ import annotations
 
 import os
 import logging
+import time
 from typing import Any, Dict, List, Optional
 
 try:
     import requests
 except Exception:
-    requests = None  # 允许在无 requests 依赖时加载模块
+    requests = None
+
+from src.config.config_manager import config_manager
+from src.services.api_client import api_client  # 允许在无 requests 依赖时加载模块
 
 
 class FeederService:
@@ -147,6 +151,7 @@ class FeederService:
         return None
 
     def feed(self, dev_id: str, count: int = 1) -> bool:
+        """执行喂食操作并记录数据"""
         if not self.authkey:
             if not self.login():
                 return False
@@ -164,9 +169,39 @@ class FeederService:
         data = result.get("data", {})
         if isinstance(data, dict) and data.get("status") == 1:
             self.logger.info(f"[喂食成功] 已发送 {count} 份喂食指令")
+            
+            # 上传喂食记录到服务器
+            try:
+                self._upload_feed_record(dev_id, count)
+            except Exception as e:
+                self.logger.warning(f"上传喂食记录失败: {e}")
+            
             return True
         self.logger.error(f"[喂食失败] {data}")
         return False
+    
+    def _upload_feed_record(self, dev_id: str, feed_count: int):
+        """上传喂食记录到服务器"""
+        # 从配置获取喂食机信息
+        feeder_config = config_manager.get_feeder_config()
+        feeder_id = feeder_config.get('device_id', dev_id)
+        
+        # 估算投喂量（根据配置，每份约17g）
+        feed_amount_g = feed_count * 17.0  # 可以根据实际情况调整
+        
+        # 估算运行时间（假设每份需要约30秒）
+        run_time_s = feed_count * 30
+        
+        timestamp_ms = int(time.time() * 1000)
+        
+        api_client.send_feeder_data(
+            feeder_id=feeder_id,
+            feed_amount_g=feed_amount_g,
+            run_time_s=run_time_s,
+            status="ok",
+            notes=f"定时投喂 {feed_count} 份",
+            timestamp=timestamp_ms
+        )
 
     # ------------------------ 辅助方法 ------------------------
     def get_ai_device_id(self, dev_name_env_default: str = "AI") -> Optional[str]:
