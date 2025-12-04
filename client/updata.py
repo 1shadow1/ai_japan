@@ -25,7 +25,7 @@ class UploadConfig:
         self.COLLECTED_IMAGES_DIR = r"C:\Users\37897\Desktop\japan_data\collected_images"
         
         # API配置
-        self.API_URL = "http://8.216.33.92:5000/api/updata_file"
+        self.API_URL = "http://8.216.33.92:5002/api/updata_file"
         self.REQUEST_TIMEOUT = 15
         
         # 上传配置

@@ -143,7 +143,7 @@
   },
   
   "api": {
-    "base_url": "http://8.216.33.92:5000",
+    "base_url": "http://8.216.33.92:5002",
     "endpoints": {
       "sensor_data": "/api/data/sensors",
       "feeder_data": "/api/data/feeders",

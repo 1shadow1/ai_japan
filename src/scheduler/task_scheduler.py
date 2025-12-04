@@ -501,7 +501,7 @@ class TaskScheduler:
         task.run_count += 1
         task.updated_at = datetime.now()
         
-        logging.info(f"开始执行任务: {task.name} (第{task.run_count}次)")
+        # logging.info(f"开始执行任务: {task.name} (第{task.run_count}次)")
         
         # 提交任务到线程池
         future = self.executor.submit(self._run_task_with_retry, task)
@@ -529,7 +529,7 @@ class TaskScheduler:
                     task.status = TaskStatus.COMPLETED
                     task.success_count += 1
                     task.last_error = None
-                    logging.info(f"任务执行成功: {task.name}")
+                    # logging.info(f"任务执行成功: {task.name}")
                     return
                 else:
                     if attempt < max_retries:

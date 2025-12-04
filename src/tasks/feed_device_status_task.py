@@ -30,7 +30,7 @@ class FeedDeviceStatusTask(BaseTask):
         self.logger = logging.getLogger("FeedDeviceStatusTask")
         self.service = service or FeederService()
         self.target_dev_name = os.getenv("AIJ_FEEDER_DEV_NAME", "AI").strip() or "AI"
-        self.status_url = os.getenv("AIJ_FEED_STATUS_URL", "http://8.216.33.92:5000/api/feed_device_status").strip()
+        self.status_url = os.getenv("AIJ_FEED_STATUS_URL", "http://8.216.33.92:5002/api/feed_device_status").strip()
         self.last_payload: Optional[Dict[str, Any]] = None
 
     def execute(self) -> bool:

@@ -82,7 +82,7 @@ class ConfigManager:
                 "schedule_check_interval_seconds": 60
             },
             "api": {
-                "base_url": "http://8.216.33.92:5000",
+                "base_url": "http://8.216.33.92:5002",
                 "endpoints": {
                     "sensor_data": "/api/data/sensors",
                     "feeder_data": "/api/data/feeders",
@@ -188,7 +188,7 @@ class ConfigManager:
     
     def get_api_base_url(self) -> str:
         """获取API基础URL"""
-        return self.get('api.base_url', 'http://8.216.33.92:5000')
+        return self.get('api.base_url', 'http://8.216.33.92:5002')
     
     def get_api_endpoint(self, endpoint_name: str) -> str:
         """获取API端点URL"""
