@@ -149,7 +149,8 @@
       "feeder_data": "/api/data/feeders",
       "operation_data": "/api/data/operations",
       "camera_data": "/api/data/cameras",
-      "camera_status": "/api/camera_device_status"
+      "camera_status": "/api/camera_device_status",
+      "batch_images": "/api/data/batch_images"
     },
     "timeout_seconds": 15,
     "retry_attempts": 3,
