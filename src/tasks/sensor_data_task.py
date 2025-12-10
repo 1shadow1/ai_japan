@@ -8,7 +8,7 @@ from datetime import datetime
 import logging
 
 from src.scheduler.task_scheduler import BaseTask
-from src.services.sensor_data_service import SensorDataService
+from src.services.sensor_data_service_v2 import SensorDataServiceV2
 
 
 class SensorDataTask(BaseTask):
@@ -18,14 +18,14 @@ class SensorDataTask(BaseTask):
     - 可在需要时调用 stop() 停止服务
     """
 
-    def __init__(self, service: SensorDataService | None = None):
+    def __init__(self, service: SensorDataServiceV2 | None = None):
         super().__init__(
             task_id="sensor_service",
             name="传感器数据采集服务",
             description="管理传感器服务的启动/健康检查/停止"
         )
         self.logger = logging.getLogger("SensorDataTask")
-        self.service = service or SensorDataService()
+        self.service = service or SensorDataServiceV2()
 
     def execute(self) -> bool:
         """启动或健康检查

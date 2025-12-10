@@ -347,8 +347,7 @@ class SensorDataService:
                                f"液位: {level_val if level_val is not None else 'N/A'}mm | "
                                f"pH: {ph_val if ph_val is not None else 'N/A'} | "
                                f"pH温度: {ph_temp if ph_temp is not None else 'N/A'}°C | "
-                               f"浊度: {turbidity_val if turbidity_val is not None else 'N/A'}NTU | "
-                               f"浊度温度: {turbidity_temp if turbidity_temp is not None else 'N/A'}°C")
+                               f"浊度: {turbidity_val if turbidity_val is not None else 'N/A'}NTU")
                 
                 # 记录数据到CSV（优先使用pandas，缺失时使用csv模块）
                 row = [timestamp, do_val, level_val, ph_val, ph_temp, turbidity_val, turbidity_temp]
@@ -377,8 +376,7 @@ class SensorDataService:
                         'water_level': level_val,
                         'ph': ph_val,
                         'ph_temperature': ph_temp,
-                        'turbidity': turbidity_val,
-                        'turbidity_temperature': turbidity_temp
+                        'turbidity': turbidity_val
                     },
                     timestamp_ms
                 )

@@ -296,8 +296,7 @@ HTML_TEMPLATE = """
                             液位: ${sensorData.liquid_level || 'N/A'} mm<br>
                             pH: ${sensorData.ph || 'N/A'}<br>
                             pH温度: ${sensorData.ph_temperature || 'N/A'} °C<br>
-                            浊度: ${sensorData.turbidity || 'N/A'} NTU<br>
-                            浊度温度: ${sensorData.turbidity_temperature || 'N/A'} °C
+                            浊度: ${sensorData.turbidity || 'N/A'} NTU
                         `;
                     } else {
                         dataHtml = '暂无数据';

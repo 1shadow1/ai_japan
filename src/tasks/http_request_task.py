@@ -61,7 +61,8 @@ class HttpRequestTask(BaseTask):
         turbidity_val = sensor_data.get('turbidity', 'N/A')
         turbidity_temp = sensor_data.get('turbidity_temperature', 'N/A')
         
-        return f" 溶解氧饱和度: {do_val}  液位: {level_val} mm  pH: {ph_val}  温度(pH): {ph_temp} °C  浊度: {turbidity_val} NTU  温度(浊度): {turbidity_temp} °C"
+-        return f" 溶解氧饱和度: {do_val}  液位: {level_val} mm  pH: {ph_val}  温度(pH): {ph_temp} °C  浊度: {turbidity_val} NTU  温度(浊度): {turbidity_temp} °C"
++        return f" 溶解氧饱和度: {do_val}  液位: {level_val} mm  pH: {ph_val}  温度(pH): {ph_temp} °C  浊度: {turbidity_val} NTU"
     
     def _determine_alert_level(self, sensor_data: Dict[str, Any]) -> Dict[str, Any]:
         """根据传感器数据确定告警级别和类型"""
@@ -160,7 +161,7 @@ class HttpRequestTask(BaseTask):
                     "ph": sensor_data.get('ph'),
                     "ph_temperature": sensor_data.get('ph_temperature'),
                     "turbidity": sensor_data.get('turbidity'),
-                    "turbidity_temperature": sensor_data.get('turbidity_temperature')
+-                    "turbidity_temperature": sensor_data.get('turbidity_temperature')
                 },
                 "recommended_actions": alert_info["recommended_actions"],
                 "severity": alert_info["severity"],

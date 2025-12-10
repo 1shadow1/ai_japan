@@ -12,12 +12,10 @@ from src.scheduler.task_scheduler import (
     TaskScheduler,
     ScheduleRule,
     ScheduleType,
-    create_data_upload_task,
 )
 
 from src.tasks.sensor_data_task import SensorDataTask
-from src.tasks.sensor_data_stream_task import SensorDataStreamTask
-from src.services.sensor_data_service import SensorDataService
+from src.services.sensor_data_service_v2 import SensorDataServiceV2
 from src.tasks.feed_device_status_task import FeedDeviceStatusTask
 from src.tasks.feed_device_schedule_task import FeedDeviceScheduleTask
 from src.tasks.camera_controller_task import CameraControllerTask
@@ -37,27 +35,13 @@ def register_tasks(scheduler: TaskScheduler):
     """注册各类任务到调度器"""
     config = config_manager
     
-    # 1) 传感器数据采集服务任务
-    sensor_sample_interval = config.get("sensors.sample_interval_seconds", 600)
-    sensor_service = SensorDataService(sample_interval_seconds=sensor_sample_interval)
+    # 1) 传感器数据采集服务任务（使用V2服务）
+    sensor_service = SensorDataServiceV2(simulate=True)
     sensor_task = SensorDataTask(service=sensor_service)
     health_check_interval = config.get("tasks.sensor_health_check_interval_seconds", 60)
     scheduler.add_task(sensor_task, ScheduleRule(ScheduleType.INTERVAL, seconds=health_check_interval))
 
-    # 2) 数据上传任务（批量上传）
-    upload_task = create_data_upload_task()
-    batch_upload_interval = config.get("upload.batch_upload_interval_seconds", 600)
-    scheduler.add_task(upload_task, ScheduleRule(ScheduleType.INTERVAL, seconds=batch_upload_interval))
-
-    # 3) 持续传感器数据流式上传任务：启动一次，后台线程按固定频率推送
-    stream_task = SensorDataStreamTask(
-        service=sensor_service,
-        interval_seconds=config.get("upload.stream_interval_seconds", 600),
-    )
-    # ONCE 任务需指定 run_at：设为当前时间+延迟，确保立即触发
-    start_delay = config.get("tasks.sensor_stream_start_delay_seconds", 1)
-    run_time = (datetime.now() + timedelta(seconds=start_delay)).isoformat()
-    scheduler.add_task(stream_task, ScheduleRule(ScheduleType.ONCE, run_at=run_time))
+    # 已移除 V1 的批量上传任务和流式上传任务，由 V2 服务内部处理上传逻辑
 
     # 4) 喂食机状态上报任务
     feeder_config = config.get_feeder_config()
@@ -85,7 +69,7 @@ def register_tasks(scheduler: TaskScheduler):
 
 def main():
     # 简单日志设置（调度器内部也会初始化日志）
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
+    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s')
 
     scheduler = setup_scheduler()
     register_tasks(scheduler)

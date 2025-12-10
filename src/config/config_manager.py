@@ -215,9 +215,9 @@ class ConfigManager:
         """获取路径配置"""
         return self.get('paths', {})
     
-    def get_path(self, path_key: str) -> str:
+    def get_path(self, path_key: str, default: str = "") -> str:
         """获取路径配置"""
-        return self.get(f"paths.{path_key}", "")
+        return self.get(f"paths.{path_key}", default)
     
     def get_simulation_config(self) -> Dict[str, Any]:
         """获取模拟配置"""
