@@ -45,7 +45,7 @@ class SensorDataTask(BaseTask):
                     do_val = filtered_data.pop('do', None)
                     if 'dissolved_oxygen' not in filtered_data and do_val is not None:
                         filtered_data['dissolved_oxygen'] = do_val
-                self.logger.info(f"传感器服务健康检查，当前数据: {filtered_data}")
+                # self.logger.info(f"传感器服务健康检查，当前数据: {filtered_data}")
             return True
         except Exception as e:
             self.logger.error(f"SensorDataTask 执行异常: {e}")
