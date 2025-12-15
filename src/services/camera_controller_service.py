@@ -65,6 +65,10 @@ class CameraControllerService:
 
         os.makedirs(self.output_dir, exist_ok=True)
         os.makedirs(self.extract_output_root, exist_ok=True)
+        try:
+            self._rename_existing_videos_to_datetime_format()
+        except Exception as e:
+            self.logger.warning(f"重命名历史视频文件时发生异常: {e}")
 
         self._thread: Optional[threading.Thread] = None
         self._running: bool = False
@@ -176,7 +180,8 @@ class CameraControllerService:
             frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)) or 480
 
             ts = int(time.time())
-            filename = f"camera_{camera_id}_{ts}.mp4"
+            date_str = datetime.now().strftime("%Y%m%d%H%M%S")
+            filename = f"camera_{camera_id}_{date_str}.mp4"
             filepath = os.path.join(self.output_dir, filename)
             fourcc = cv2.VideoWriter_fourcc(*'mp4v')
             out = cv2.VideoWriter(filepath, fourcc, target_fps, (frame_width, frame_height))
@@ -335,3 +340,35 @@ class CameraControllerService:
                 self.logger.info(f"上传成功: {image_path}")
             except Exception as e:
                 self.logger.error(f"上传异常 {image_path}: {e}")
+
+    def _rename_existing_videos_to_datetime_format(self) -> None:
+        """将 output_dir 中旧命名的文件 camera_<id>_<timestamp>.mp4 重命名为 camera_<id>_<YYYYMMDDHHMMSS>.mp4"""
+        for name in os.listdir(self.output_dir):
+            if not name.lower().endswith(".mp4"):
+                continue
+            base = os.path.splitext(name)[0]
+            parts = base.split("_")
+            if len(parts) == 3 and parts[0] == "camera":
+                camera_id_part = parts[1]
+                ts_part = parts[2]
+                try:
+                    ts_int = int(ts_part)
+                except ValueError:
+                    continue
+                try:
+                    dt_str = datetime.fromtimestamp(ts_int).strftime("%Y%m%d%H%M%S")
+                except Exception:
+                    continue
+                new_name = f"camera_{camera_id_part}_{dt_str}.mp4"
+                if new_name == name:
+                    continue
+                old_path = os.path.join(self.output_dir, name)
+                new_path = os.path.join(self.output_dir, new_name)
+                if os.path.exists(new_path):
+                    self.logger.info(f"新文件名已存在，跳过重命名: {new_name}")
+                    continue
+                try:
+                    os.rename(old_path, new_path)
+                    self.logger.info(f"重命名视频: {name} -> {new_name}")
+                except Exception as e:
+                    self.logger.warning(f"重命名失败 {name}: {e}")
