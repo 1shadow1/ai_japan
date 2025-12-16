@@ -171,21 +171,36 @@ class CameraControllerService:
             if cv2 is None or np is None:
                 self.logger.error("OpenCV/NumPy 不可用，无法录制")
                 return
-            cap = cv2.VideoCapture(cam_index)
+            # Windows 上优先使用 DirectShow 后端，有助于设置高分辨率
+            cap = cv2.VideoCapture(cam_index, cv2.CAP_DSHOW)
             if not cap.isOpened():
                 self.logger.error(f"无法打开摄像头 {cam_index}")
                 return
 
-            frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)) or 640
-            frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)) or 480
+            # 强制设置采集分辨率为 1080P
+            target_width, target_height = 1920, 1080
+            cap.set(cv2.CAP_PROP_FRAME_WIDTH, target_width)
+            cap.set(cv2.CAP_PROP_FRAME_HEIGHT, target_height)
+            # 部分摄像头在 MJPG 下更容易打开高分辨率
+            try:
+                cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
+            except Exception:
+                pass
 
+            # 读取实际采集到的分辨率
+            frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)) or target_width
+            frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)) or target_height
+            if frame_width != target_width or frame_height != target_height:
+                self.logger.warning(f"摄像头未能切换到 1080P，实际采集分辨率为 {frame_width}x{frame_height}，将输出统一为 1920x1080")
+        
             ts = int(time.time())
             date_str = datetime.now().strftime("%Y%m%d%H%M%S")
             filename = f"camera_{camera_id}_{date_str}.mp4"
             filepath = os.path.join(self.output_dir, filename)
             fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-            out = cv2.VideoWriter(filepath, fourcc, target_fps, (frame_width, frame_height))
-
+            # 固定输出为 1080P，如果采集分辨率不同，将在写入前缩放
+            out = cv2.VideoWriter(filepath, fourcc, target_fps, (target_width, target_height))
+        
             # 发送开始录制状态
             try:
                 api_client.send_camera_status(
@@ -214,8 +229,12 @@ class CameraControllerService:
                 elif last_frame is not None:
                     frame = last_frame
                 else:
-                    frame = np.zeros((frame_height, frame_width, 3), dtype=np.uint8)
+                    # 若一开始没有帧，用目标分辨率的黑屏填充，保证输出为 1080P
+                    frame = np.zeros((target_height, target_width, 3), dtype=np.uint8)
 
+                # 若采集分辨率与目标分辨率不一致，统一缩放到 1080P 后再写入
+                if frame.shape[1] != target_width or frame.shape[0] != target_height:
+                    frame = cv2.resize(frame, (target_width, target_height), interpolation=cv2.INTER_LINEAR)
                 out.write(frame)
                 if self.show_window:
                     try:
