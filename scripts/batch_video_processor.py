@@ -262,7 +262,8 @@ class BatchVideoProcessor:
                 image_paths=image_paths,
                 batch_id=self.batch_id,
                 pool_id=self.pool_id,
-                save_results=False  # 不保存检测结果图，节省空间
+                save_results=False,
+                source_video=os.path.basename(self.current_video_name) if hasattr(self, 'current_video_name') else None
             )
             
             if result.get('success'):
@@ -299,7 +300,7 @@ class BatchVideoProcessor:
         logger.info(f"{'='*60}")
         
         try:
-            # 1. 抽帧
+            self.current_video_name = video_path.name
             extract_result = self.extract_frames_from_video(video_path, self.camera_id)
             
             if extract_result.get('error'):

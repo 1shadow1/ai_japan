@@ -27,7 +27,8 @@ def send_batch_images_for_detection(
     pool_id: Optional[str] = None,
     conf: Optional[float] = None,
     iou: Optional[float] = None,
-    save_results: bool = False
+    save_results: bool = False,
+    source_video: Optional[str] = None
 ) -> Dict[str, Any]:
     """
     发送批量图片进行 YOLO 检测
@@ -101,6 +102,9 @@ def send_batch_images_for_detection(
             data['conf'] = str(conf)
         if iou is not None:
             data['iou'] = str(iou)
+        # 新增：来源视频文件名
+        if source_video:
+            data['source_video'] = source_video
         
         # 发送请求
         session = requests.Session()
