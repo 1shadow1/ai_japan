@@ -41,8 +41,6 @@ def register_tasks(scheduler: TaskScheduler):
     health_check_interval = config.get("tasks.sensor_health_check_interval_seconds", 60)
     scheduler.add_task(sensor_task, ScheduleRule(ScheduleType.INTERVAL, seconds=health_check_interval))
 
-    # 已移除 V1 的批量上传任务和流式上传任务，由 V2 服务内部处理上传逻辑
-
     # 4) 喂食机状态上报任务
     feeder_config = config.get_feeder_config()
     status_interval = feeder_config.get("status_check_interval_seconds", 600)
@@ -72,9 +70,8 @@ def register_tasks(scheduler: TaskScheduler):
 
 
 def main():
-    # 简单日志设置（调度器内部也会初始化日志）
-    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s')
-
+    # 日志由 TaskScheduler 统一配置，这里不再调用 basicConfig 以避免重复输出
+    # 如需调整日志级别/格式，请修改 src/scheduler/task_scheduler.py 的 _setup_logging
     scheduler = setup_scheduler()
     register_tasks(scheduler)
 

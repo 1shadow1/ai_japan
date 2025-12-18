@@ -22,6 +22,7 @@ from __future__ import annotations
 import os
 import logging
 import time
+import warnings
 from typing import Any, Dict, List, Optional
 
 try:
@@ -60,6 +61,16 @@ class FeederService:
 
         self.authkey: Optional[str] = None
         self._session: Optional[requests.Session] = requests.Session() if requests else None
+
+        # 当明确禁用证书校验时，关闭 urllib3 的 InsecureRequestWarning 告警
+        if self.verify is False:
+            try:
+                import urllib3
+                from urllib3.exceptions import InsecureRequestWarning
+                urllib3.disable_warnings(InsecureRequestWarning)
+                warnings.simplefilter('ignore', InsecureRequestWarning)
+            except Exception:
+                pass
 
         if not self.user_id or not self.password:
             self.logger.warning("FeederService: 配置文件 feeders.cloud 未提供用户凭证，后续调用可能失败")
@@ -207,7 +218,7 @@ class FeederService:
         return False
     
     def _upload_feed_record(self, dev_id: str, feed_count: int):
-        """上传喂食记录到服务器"""
+        """上传feed记录到服务器"""
         # 从配置获取喂食机信息
         feeder_config = config_manager.get_feeder_config()
         feeder_id = feeder_config.get('device_id', dev_id)

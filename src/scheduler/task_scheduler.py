@@ -336,9 +336,14 @@ class TaskScheduler:
         console_handler = logging.StreamHandler()
         console_handler.setFormatter(formatter)
         
-        # 配置根日志器
+        # 配置根日志器（先清理已有处理器以避免重复输出）
         root_logger = logging.getLogger()
         root_logger.setLevel(log_level)
+        for h in list(root_logger.handlers):
+            try:
+                root_logger.removeHandler(h)
+            except Exception:
+                pass
         root_logger.addHandler(file_handler)
         root_logger.addHandler(console_handler)
     
