@@ -1,10 +1,10 @@
 """
 FeedDeviceStatusTask
-每隔固定时间（默认10分钟）查询 devName='AI' 的喂食机状态，并发送到服务端。
+每隔固定时间（默认10分钟）查询配置中的设备名（feeders.device_name）的喂食机状态，并发送到服务端。
 
-环境变量：
-- AIJ_FEED_STATUS_URL: 状态上报URL（默认 http://8.216.33.92:5000/api/feed_device_status）
-- AIJ_FEEDER_DEV_NAME: 设备名（默认 "AI"）
+配置：
+- feeders.device_name: 设备名（默认 "AI"）
+- feeders.status_check_interval_seconds: 状态上报间隔（默认 600s）
 """
 
 from __future__ import annotations
@@ -29,8 +29,8 @@ class FeedDeviceStatusTask(BaseTask):
         )
         self.logger = logging.getLogger("FeedDeviceStatusTask")
         self.service = service or FeederService()
-        self.target_dev_name = os.getenv("AIJ_FEEDER_DEV_NAME", "AI").strip() or "AI"
-        self.status_url = os.getenv("AIJ_FEED_STATUS_URL", "http://8.216.33.92:5002/api/feed_device_status").strip()
+        feeder_cfg = config_manager.get_feeder_config() or {}
+        self.target_dev_name = str(feeder_cfg.get("device_name", "AI")).strip() or "AI"
         self.last_payload: Optional[Dict[str, Any]] = None
 
     def execute(self) -> bool:

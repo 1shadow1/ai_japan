@@ -48,16 +48,19 @@ def register_tasks(scheduler: TaskScheduler):
     status_interval = feeder_config.get("status_check_interval_seconds", 600)
     feed_status_task = FeedDeviceStatusTask()
     scheduler.add_task(feed_status_task, ScheduleRule(ScheduleType.INTERVAL, seconds=status_interval))
+    logging.info(f"已注册喂食机状态上报任务：interval={status_interval}s")
 
     # 5) 喂食机定时投喂任务
     schedule_check_interval = feeder_config.get("schedule_check_interval_seconds", 60)
     schedule = feeder_config.get("schedule", [])
+    logging.info(f"喂食机定时投喂注册：schedule_check_interval={schedule_check_interval}s, items={len(schedule)}")
     
     for idx, schedule_item in enumerate(schedule):
         feed_task = FeedDeviceScheduleTask()
         feed_task.task_id = f"feed_device_schedule_{idx}"
         feed_task.feed_count = schedule_item.get("feed_count", 1)
         feed_task.times = schedule_item.get("times", [])
+        logging.info(f"注册投喂计划[{idx}]：times={feed_task.times}, feed_count={feed_task.feed_count}")
         scheduler.add_task(feed_task, ScheduleRule(ScheduleType.INTERVAL, seconds=schedule_check_interval))
 
     # 6) 摄像头键盘控制服务：一次性任务启动持续后台线程
@@ -65,6 +68,7 @@ def register_tasks(scheduler: TaskScheduler):
     cam_start_delay = config.get("tasks.camera_service_start_delay_seconds", 1)
     run_time_cam = (datetime.now() + timedelta(seconds=cam_start_delay)).isoformat()
     scheduler.add_task(cam_task, ScheduleRule(ScheduleType.ONCE, run_at=run_time_cam))
+    logging.info(f"已注册摄像头控制任务：start_delay={cam_start_delay}s")
 
 
 def main():

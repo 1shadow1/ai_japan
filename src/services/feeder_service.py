@@ -47,14 +47,14 @@ class FeederService:
         timeout: Optional[int] = None,
     ):
         self.logger = logging.getLogger("FeederService")
-        self.user_id = user_id or os.getenv("AIJ_FEEDER_USER", "").strip()
-        self.password = password or os.getenv("AIJ_FEEDER_PASS", "").strip()
-        self.base_url = (base_url or os.getenv("AIJ_FEEDER_BASE_URL", "").strip() or self.DEFAULT_BASE_URL)
-
-        env_verify = os.getenv("AIJ_FEEDER_VERIFY", "1").lower().strip()
-        self.verify = True if env_verify in ("1", "true", "yes", "on", "") else False if env_verify in ("0", "false", "no", "off") else (verify if verify is not None else True)
+        # 从配置文件读取云端接口配置（不再从环境变量读取）
+        cloud_cfg = config_manager.get_feeder_cloud_config()
+        self.user_id = user_id or str(cloud_cfg.get("user_id", "")).strip()
+        self.password = password or str(cloud_cfg.get("password", "")).strip()
+        self.base_url = (base_url or str(cloud_cfg.get("base_url", self.DEFAULT_BASE_URL)).strip() or self.DEFAULT_BASE_URL)
+        self.verify = True if (verify if verify is not None else cloud_cfg.get("verify", True)) else False
         try:
-            self.timeout = int(timeout or int(os.getenv("AIJ_FEEDER_TIMEOUT", "15")))
+            self.timeout = int(timeout or int(cloud_cfg.get("timeout_seconds", 15)))
         except Exception:
             self.timeout = 15
 
@@ -62,7 +62,7 @@ class FeederService:
         self._session: Optional[requests.Session] = requests.Session() if requests else None
 
         if not self.user_id or not self.password:
-            self.logger.warning("FeederService: 未提供用户凭证（AIJ_FEEDER_USER/AIJ_FEEDER_PASS），后续调用可能失败")
+            self.logger.warning("FeederService: 配置文件 feeders.cloud 未提供用户凭证，后续调用可能失败")
 
     # ------------------------ 基础请求方法 ------------------------
     def _post(self, payload: Dict[str, Any]) -> Dict[str, Any]:
@@ -147,7 +147,19 @@ class FeederService:
                 return data.get("data", [None])[0]
             except Exception:
                 return None
+        # 首次失败，若可能为鉴权问题（例如状态码=6），尝试重新登录并重试一次
         self.logger.warning(f"[获取状态失败] {data}")
+        if isinstance(data, dict) and data.get("status") in (2, 6):
+            self.logger.info("尝试重新登录后重试设备状态查询...")
+            if self.login():
+                result = self._post(payload)
+                data = result.get("data", {}) if result.get("success") else {}
+                if isinstance(data, dict) and data.get("status") == 1:
+                    try:
+                        return data.get("data", [None])[0]
+                    except Exception:
+                        return None
+                self.logger.warning(f"[重试状态查询失败] {data}")
         return None
 
     def feed(self, dev_id: str, count: int = 1) -> bool:
@@ -174,10 +186,24 @@ class FeederService:
             try:
                 self._upload_feed_record(dev_id, count)
             except Exception as e:
-                self.logger.warning(f"上传喂食记录失败: {e}")
+                self.logger.warning(f"上传feed记录失败: {e}")
             
             return True
+        # 首次失败，若可能为鉴权问题（例如状态码=6），尝试重新登录并重试一次
         self.logger.error(f"[喂食失败] {data}")
+        if isinstance(data, dict) and data.get("status") in (2, 6):
+            self.logger.info("尝试重新登录后重试喂食...")
+            if self.login():
+                result = self._post(payload)
+                data = result.get("data", {}) if result.get("success") else {}
+                if isinstance(data, dict) and data.get("status") == 1:
+                    self.logger.info(f"[喂食成功-重试] 已发送 {count} 份喂食指令")
+                    try:
+                        self._upload_feed_record(dev_id, count)
+                    except Exception as e:
+                        self.logger.warning(f"上传feed记录失败: {e}")
+                    return True
+                self.logger.error(f"[喂食重试失败] {data}")
         return False
     
     def _upload_feed_record(self, dev_id: str, feed_count: int):
@@ -205,10 +231,20 @@ class FeederService:
 
     # ------------------------ 辅助方法 ------------------------
     def get_ai_device_id(self, dev_name_env_default: str = "AI") -> Optional[str]:
-        target_name = os.getenv("AIJ_FEEDER_DEV_NAME", dev_name_env_default).strip() or dev_name_env_default
+        # 仅从配置读取：优先使用 target_dev_id，其次使用 device_name 进行查找
+        cfg_dev_id = config_manager.get_feeder_target_dev_id()
+        if cfg_dev_id:
+            self.logger.info(f"使用配置的 target_dev_id={cfg_dev_id}")
+            return str(cfg_dev_id).strip()
+        feeder_cfg = config_manager.get_feeder_config() or {}
+        target_name = str(feeder_cfg.get("device_name", dev_name_env_default)).strip() or dev_name_env_default
+        self.logger.info(f"按设备名查找喂食机：{target_name}")
         dev = self.find_device_by_name(target_name)
         if dev and isinstance(dev, dict):
-            return dev.get("devID")
+            dev_id = dev.get("devID")
+            self.logger.info(f"已找到设备 {target_name}，devID={dev_id}")
+            return dev_id
+        self.logger.error(f"设备未找到：{target_name}")
         return None
 
     @staticmethod

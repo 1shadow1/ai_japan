@@ -181,6 +181,21 @@ class ConfigManager:
     def get_feeder_config(self) -> Dict[str, Any]:
         """获取喂食机配置"""
         return self.get('feeders', {})
+
+    def get_feeder_cloud_config(self) -> Dict[str, Any]:
+        """获取喂食机云端接口配置"""
+        feeders = self.get('feeders', {})
+        if isinstance(feeders, dict):
+            return feeders.get('cloud', {}) or {}
+        return {}
+
+    def get_feeder_target_dev_id(self) -> Optional[str]:
+        """获取喂食机目标设备ID（如果配置了）"""
+        feeders = self.get('feeders', {})
+        if isinstance(feeders, dict):
+            dev_id = feeders.get('target_dev_id')
+            return str(dev_id) if dev_id is not None else None
+        return None
     
     def get_api_config(self) -> Dict[str, Any]:
         """获取API配置"""

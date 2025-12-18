@@ -153,7 +153,16 @@
       }
     ],
     "status_check_interval_seconds": 600,
-    "schedule_check_interval_seconds": 60
+    "schedule_check_interval_seconds": 60,
+    "cloud": {
+      "base_url": "https://ffish.huaeran.cn:8081/commonRequest",
+      "user_id": "8619034657726",
+      "password": "123456789",
+      "verify": false,
+      "timeout_seconds": 15
+    },
+    "target_dev_id": "98f4abf5481e",
+    "force_feed_once": true
   },
   
   "api": {

@@ -208,7 +208,7 @@ class SensorDataServiceV2:
                 timestamp=ts,
                 type_name=type_name,
             )
-            logger.info(f"传感器数据上传成功: sensor_id={sensor_id}, metric={upload_metric}, value={value}, unit={upload_unit}, timestamp={ts}")
+            # logger.info(f"传感器数据上传成功: sensor_id={sensor_id}, metric={upload_metric}, value={value}, unit={upload_unit}, timestamp={ts}")
         except Exception as e:
             logger.error(f"传感器数据上传失败: sensor_id={sensor_id}, metric={upload_metric}, error={e}")
 
