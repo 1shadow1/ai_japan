@@ -104,7 +104,7 @@ if __name__ == "__main__":
         devices = feeder.get_devices()
         if devices:
             dev_id = devices[0]["devID"]
-            dev_id = "98f4abf5481e"
+            dev_id = "4417931292a9"
             print(f"devID:{dev_id}")
             feeder.get_device_status(dev_id)
-            # feeder.feed(dev_id, 1)  # 喂 5 份
+            #feeder.feed(dev_id, 1)  # 喂 5 份

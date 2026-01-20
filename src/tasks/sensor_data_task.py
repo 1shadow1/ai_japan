@@ -8,7 +8,7 @@ from datetime import datetime
 import logging
 
 from src.scheduler.task_scheduler import BaseTask
-from src.services.sensor_data_service import SensorDataService
+from src.services.sensor_data_service_v2 import SensorDataServiceV2
 
 
 class SensorDataTask(BaseTask):
@@ -18,14 +18,14 @@ class SensorDataTask(BaseTask):
     - 可在需要时调用 stop() 停止服务
     """
 
-    def __init__(self, service: SensorDataService | None = None):
+    def __init__(self, service: SensorDataServiceV2 | None = None):
         super().__init__(
             task_id="sensor_service",
             name="传感器数据采集服务",
             description="管理传感器服务的启动/健康检查/停止"
         )
         self.logger = logging.getLogger("SensorDataTask")
-        self.service = service or SensorDataService()
+        self.service = service or SensorDataServiceV2()
 
     def execute(self) -> bool:
         """启动或健康检查
@@ -40,7 +40,12 @@ class SensorDataTask(BaseTask):
             else:
                 # 简单健康检查：读取一次当前数据并记录
                 data = self.service.get_current_data()
-                self.logger.info(f"传感器服务健康检查，当前数据: {data}")
+                filtered_data = dict(data) if isinstance(data, dict) else data
+                if isinstance(filtered_data, dict):
+                    do_val = filtered_data.pop('do', None)
+                    if 'dissolved_oxygen' not in filtered_data and do_val is not None:
+                        filtered_data['dissolved_oxygen'] = do_val
+                # self.logger.info(f"传感器服务健康检查，当前数据: {filtered_data}")
             return True
         except Exception as e:
             self.logger.error(f"SensorDataTask 执行异常: {e}")

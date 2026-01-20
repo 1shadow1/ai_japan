@@ -5,17 +5,10 @@ CameraControllerService
 - 录制开始/结束会向状态监控URL发送通知；
 - 录制完成后按固定间隔抽帧生成图片，并将图片上传到指定URL；
 
-环境变量：
-- AIJ_CAMERA_KEYS: 键位到摄像头索引映射，例如 "0:0,1:1,2:2,3:3,4:4"
-- AIJ_CAMERA_RECORD_DURATION: 录制时长（秒），默认 60
-- AIJ_CAMERA_RECORD_FPS: 目标帧率，默认 30
-- AIJ_CAMERA_OUTPUT_DIR: 视频输出目录，默认 logs/videos
-- AIJ_CAMERA_STATUS_URL: 状态通知URL，默认 http://8.216.33.92:5000/api/camera_device_status
-- AIJ_EXTRACT_INTERVAL_SEC: 抽帧间隔秒，默认 1
-- AIJ_EXTRACT_OUTPUT_DIR: 抽帧输出根目录，默认 output
-- AIJ_CAMERA_UPLOAD_URL: 图片上传URL，默认 http://8.216.33.92:5000/api/updata_camera_data
-- AIJ_CAMERA_UPLOAD_DRY_RUN: 设为 1/true 开启上传干跑（不实际POST）
-- AIJ_CAMERA_SHOW: 设为 1/true 显示预览窗口（默认不显示）
+改造说明：
+- 使用配置管理模块（ConfigManager）
+- 使用API客户端（ApiClient）发送数据
+- 补充完整元数据（batch_id, pool_id等）
 """
 
 from __future__ import annotations
@@ -39,33 +32,44 @@ except Exception:
     cv2 = None
     np = None
 
-try:
-    import requests
-except Exception:
-    requests = None
+from src.config.config_manager import config_manager
+from src.services.api_client import api_client
 
 
 class CameraControllerService:
     def __init__(self):
         self.logger = logging.getLogger("CameraControllerService")
-        self.key_map: Dict[str, int] = self._parse_key_map(os.getenv("AIJ_CAMERA_KEYS", "0:0,1:1,2:2,3:3,4:4"))
-        self.duration: int = self._get_int_env("AIJ_CAMERA_RECORD_DURATION", 60)
-        self.target_fps: int = self._get_int_env("AIJ_CAMERA_RECORD_FPS", 30)
-        self.output_dir: str = os.getenv("AIJ_CAMERA_OUTPUT_DIR", os.path.join("logs", "videos")).strip()
-        self.status_url: str = os.getenv("AIJ_CAMERA_STATUS_URL", "http://8.216.33.92:5000/api/camera_device_status").strip()
-        # 网络超时可配置，便于在退出时避免长时间阻塞
-        self.status_timeout: int = self._get_int_env("AIJ_CAMERA_STATUS_TIMEOUT", 10)
-        self.extract_interval: int = self._get_int_env("AIJ_EXTRACT_INTERVAL_SEC", 1)
-        self.extract_output_root: str = os.getenv("AIJ_EXTRACT_OUTPUT_DIR", "output").strip()
-        self.upload_url: str = os.getenv("AIJ_CAMERA_UPLOAD_URL", "http://8.216.33.92:5000/api/updata_camera_data").strip()
-        self.upload_timeout: int = self._get_int_env("AIJ_CAMERA_UPLOAD_TIMEOUT", 15)
-        self.upload_dry_run: bool = self._get_bool_env("AIJ_CAMERA_UPLOAD_DRY_RUN", False)
-        self.show_window: bool = self._get_bool_env("AIJ_CAMERA_SHOW", False)
+        
+        # 从配置加载摄像头配置
+        self.camera_configs = self._load_camera_configs()
+        
+        # 从配置获取参数
+        camera_config = config_manager.get_camera_config()
+        self.duration: int = camera_config.get('record_duration_seconds', 60)
+        self.target_fps: int = camera_config.get('target_fps', 30)
+        self.extract_interval: int = camera_config.get('extract_interval_seconds', 1)
+        
+        # 从配置获取路径
+        paths_config = config_manager.get_paths_config()
+        self.output_dir: str = paths_config.get('camera_video_dir', os.path.join("logs", "videos"))
+        self.extract_output_root: str = paths_config.get('camera_extract_dir', "output")
+        
+        # 从配置获取API设置
+        api_config = config_manager.get_api_config()
+        self.upload_timeout: int = api_config.get('timeout_seconds', 15)
+        self.upload_dry_run: bool = config_manager.is_camera_upload_dry_run()
+        
+        # 显示窗口（从环境变量读取，保持兼容性）
+        show_env = os.getenv("AIJ_CAMERA_SHOW", "0").strip().lower()
+        self.show_window: bool = show_env in ("1", "true", "yes", "on")
 
         os.makedirs(self.output_dir, exist_ok=True)
         os.makedirs(self.extract_output_root, exist_ok=True)
+        try:
+            self._rename_existing_videos_to_datetime_format()
+        except Exception as e:
+            self.logger.warning(f"重命名历史视频文件时发生异常: {e}")
 
-        self._session = requests.Session() if requests else None
         self._thread: Optional[threading.Thread] = None
         self._running: bool = False
         self._is_recording: bool = False
@@ -74,38 +78,23 @@ class CameraControllerService:
             self.logger.error("keyboard 库不可用，无法进行按键监听")
         if cv2 is None:
             self.logger.error("opencv-python 不可用，无法进行摄像头录制与抽帧")
-
-    @staticmethod
-    def _get_int_env(key: str, default_val: int) -> int:
-        try:
-            return int(os.getenv(key, str(default_val)))
-        except Exception:
-            return default_val
-
-    @staticmethod
-    def _get_bool_env(key: str, default_val: bool) -> bool:
-        val = os.getenv(key, "" if default_val else "0").strip().lower()
-        if val in ("1", "true", "yes", "on"):
-            return True
-        if val in ("0", "false", "no", "off"):
-            return False
-        return default_val
-
-    @staticmethod
-    def _parse_key_map(value: str) -> Dict[str, int]:
-        mapping: Dict[str, int] = {}
-        for part in (value or "").split(','):
-            part = part.strip()
-            if not part:
-                continue
-            if ':' in part:
-                k, v = part.split(':', 1)
-                k = k.strip()
-                try:
-                    mapping[k] = int(v.strip())
-                except Exception:
-                    pass
-        return mapping
+    
+    def _load_camera_configs(self) -> Dict[str, Dict]:
+        """从配置加载摄像头配置，构建按键到摄像头配置的映射"""
+        camera_configs = {}
+        devices = config_manager.get_camera_devices()
+        
+        for device in devices:
+            key = device.get('key', str(device.get('index', 0)))
+            camera_configs[key] = {
+                'camera_id': device.get('camera_id'),
+                'name': device.get('name', f"摄像头{device.get('camera_id', 0)}"),
+                'index': device.get('index', 0),
+                'pool_id': device.get('pool_id', config_manager.get_pool_id()),
+                'batch_id': device.get('batch_id', config_manager.get_batch_id()),
+            }
+        
+        return camera_configs
 
     def start(self):
         if self._running:
@@ -156,11 +145,13 @@ class CameraControllerService:
         while self._running:
             try:
                 if not self._is_recording:
-                    for key, cam_index in self.key_map.items():
+                    for key, cam_config in self.camera_configs.items():
                         try:
                             if keyboard.is_pressed(key):
-                                self.logger.info(f"按键 {key} 被按下，打开摄像头 {cam_index}")
-                                self.record_camera(cam_index, self.duration, self.target_fps)
+                                camera_id = cam_config['camera_id']
+                                cam_index = cam_config['index']
+                                self.logger.info(f"按键 {key} 被按下，打开摄像头 {cam_index} (ID: {camera_id})")
+                                self.record_camera(cam_config, self.duration, self.target_fps)
                         except Exception:
                             # keyboard 在某些环境下可能抛出异常，忽略本次检测
                             pass
@@ -169,47 +160,60 @@ class CameraControllerService:
                 self.logger.error(f"服务循环异常: {e}")
                 time.sleep(0.2)
 
-    def _post_json(self, url: str, payload: Dict) -> Optional[int]:
-        if not requests or not self._session:
-            self.logger.warning("requests 不可用，跳过网络请求")
-            return None
-        try:
-            resp = self._session.post(url, json=payload, timeout=self.status_timeout)
-            return resp.status_code
-        except Exception as e:
-            self.logger.error(f"POST {url} 失败: {e}")
-            return None
-
-    def record_camera(self, cam_index: int, duration: int, target_fps: int) -> None:
+    def record_camera(self, cam_config: Dict, duration: int, target_fps: int) -> None:
+        """录制摄像头视频"""
         self._is_recording = True
+        camera_id = cam_config['camera_id']
+        cam_index = cam_config['index']
+        camera_name = cam_config['name']
+        
         try:
             if cv2 is None or np is None:
                 self.logger.error("OpenCV/NumPy 不可用，无法录制")
                 return
-            cap = cv2.VideoCapture(cam_index)
+            # Windows 上优先使用 DirectShow 后端，有助于设置高分辨率
+            cap = cv2.VideoCapture(cam_index, cv2.CAP_DSHOW)
             if not cap.isOpened():
                 self.logger.error(f"无法打开摄像头 {cam_index}")
                 return
 
-            frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)) or 640
-            frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)) or 480
+            # 强制设置采集分辨率为 1080P
+            target_width, target_height = 1920, 1080
+            cap.set(cv2.CAP_PROP_FRAME_WIDTH, target_width)
+            cap.set(cv2.CAP_PROP_FRAME_HEIGHT, target_height)
+            # 部分摄像头在 MJPG 下更容易打开高分辨率
+            try:
+                cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
+            except Exception:
+                pass
 
+            # 读取实际采集到的分辨率
+            frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)) or target_width
+            frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)) or target_height
+            if frame_width != target_width or frame_height != target_height:
+                self.logger.warning(f"摄像头未能切换到 1080P，实际采集分辨率为 {frame_width}x{frame_height}，将输出统一为 1920x1080")
+        
             ts = int(time.time())
-            filename = f"camera_{cam_index}_{ts}.mp4"
+            date_str = datetime.now().strftime("%Y%m%d%H%M%S")
+            filename = f"camera_{camera_id}_{date_str}.mp4"
             filepath = os.path.join(self.output_dir, filename)
             fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-            out = cv2.VideoWriter(filepath, fourcc, target_fps, (frame_width, frame_height))
-
-            start_payload = {
-                "camera_index": cam_index,
-                "event": "start_recording",
-                "duration": duration,
-                "fps": target_fps,
-                "filename": filename,
-                "timestamp": datetime.now().isoformat(),
-            }
-            self._post_json(self.status_url, start_payload)
-            self.logger.info(f"开始录制摄像头 {cam_index}，严格时长 {duration} 秒，保存为 {filepath}")
+            # 固定输出为 1080P，如果采集分辨率不同，将在写入前缩放
+            out = cv2.VideoWriter(filepath, fourcc, target_fps, (target_width, target_height))
+        
+            # 发送开始录制状态
+            try:
+                api_client.send_camera_status(
+                    camera_index=cam_index,
+                    event="start_recording",
+                    duration=duration,
+                    fps=target_fps,
+                    filename=filename
+                )
+            except Exception as e:
+                self.logger.warning(f"发送开始录制状态失败: {e}")
+            
+            self.logger.info(f"开始录制摄像头 {cam_index} (ID: {camera_id})，严格时长 {duration} 秒，保存为 {filepath}")
 
             total_frames = int(duration * target_fps)
             last_frame = None
@@ -225,12 +229,16 @@ class CameraControllerService:
                 elif last_frame is not None:
                     frame = last_frame
                 else:
-                    frame = np.zeros((frame_height, frame_width, 3), dtype=np.uint8)
+                    # 若一开始没有帧，用目标分辨率的黑屏填充，保证输出为 1080P
+                    frame = np.zeros((target_height, target_width, 3), dtype=np.uint8)
 
+                # 若采集分辨率与目标分辨率不一致，统一缩放到 1080P 后再写入
+                if frame.shape[1] != target_width or frame.shape[0] != target_height:
+                    frame = cv2.resize(frame, (target_width, target_height), interpolation=cv2.INTER_LINEAR)
                 out.write(frame)
                 if self.show_window:
                     try:
-                        cv2.imshow(f"Camera {cam_index}", frame)
+                        cv2.imshow(f"Camera {camera_id}", frame)
                         if cv2.waitKey(1) & 0xFF == ord('q'):
                             self.logger.info("收到 q，提前结束录制")
                             break
@@ -249,30 +257,36 @@ class CameraControllerService:
                 except Exception:
                     pass
 
-            finish_payload = {
-                "camera_index": cam_index,
-                "event": "finish_recording",
-                "duration": duration,
-                "fps": target_fps,
-                "filename": filename,
-                "timestamp": datetime.now().isoformat(),
-            }
-            self._post_json(self.status_url, finish_payload)
+            # 发送完成录制状态
+            try:
+                api_client.send_camera_status(
+                    camera_index=cam_index,
+                    event="finish_recording",
+                    duration=duration,
+                    fps=target_fps,
+                    filename=filename
+                )
+            except Exception as e:
+                self.logger.warning(f"发送完成录制状态失败: {e}")
+            
             self.logger.info(f"录制完成，文件时长严格为 {duration} 秒，帧率 {target_fps}fps")
 
             # 抽帧并上传
             try:
-                self.extract_and_upload(cam_index, filepath, self.extract_interval)
+                self.extract_and_upload(cam_config, filepath, self.extract_interval)
             except Exception as e:
                 self.logger.error(f"抽帧/上传流程异常: {e}")
 
         finally:
             self._is_recording = False
 
-    def extract_and_upload(self, cam_index: int, video_path: str, interval_sec: int) -> None:
+    def extract_and_upload(self, cam_config: Dict, video_path: str, interval_sec: int) -> None:
+        """从视频中抽帧并上传"""
         if cv2 is None:
             self.logger.error("OpenCV 不可用，无法抽帧")
             return
+        
+        camera_id = cam_config['camera_id']
         video_name = os.path.splitext(os.path.basename(video_path))[0]
         output_folder = os.path.join(self.extract_output_root, f"{video_name}_{interval_sec}")
         os.makedirs(output_folder, exist_ok=True)
@@ -294,7 +308,7 @@ class CameraControllerService:
             frame_interval = max(int(fps * interval_sec), 1)
 
         frame_count = 0
-        saved_paths: List[str] = []
+        saved_paths: List[Dict[str, any]] = []  # 存储路径和元数据
 
         while True:
             ret, frame = cap.read()
@@ -304,7 +318,12 @@ class CameraControllerService:
                 image_filename = os.path.join(output_folder, f"{video_name}_{interval_sec}_frame_{len(saved_paths):04d}.jpg")
                 try:
                     cv2.imwrite(image_filename, frame)
-                    saved_paths.append(image_filename)
+                    height, width = frame.shape[:2]
+                    saved_paths.append({
+                        'path': image_filename,
+                        'width': width,
+                        'height': height
+                    })
                 except Exception as e:
                     self.logger.error(f"保存帧失败 {image_filename}: {e}")
             frame_count += 1
@@ -313,28 +332,62 @@ class CameraControllerService:
         self.logger.info(f"共保存了 {len(saved_paths)} 张图片至 {output_folder}")
 
         # 上传图片
-        self._upload_images(cam_index, video_name, saved_paths)
+        self._upload_images(cam_config, saved_paths)
 
-    def _upload_images(self, cam_index: int, video_name: str, image_paths: List[str]) -> None:
-        if self.upload_dry_run:
-            self.logger.info(f"DRY-RUN: 跳过上传 {len(image_paths)} 张图片到 {self.upload_url}")
-            return
-        if not requests or not self._session:
-            self.logger.warning("requests 不可用，无法上传图片")
-            return
-        for p in image_paths:
+    def _upload_images(self, cam_config: Dict, image_info_list: List[Dict]) -> None:
+        """上传图片到服务端"""
+        camera_id = cam_config['camera_id']
+        
+        for img_info in image_info_list:
+            image_path = img_info['path']
+            width = img_info.get('width')
+            height = img_info.get('height')
+            
             try:
-                with open(p, 'rb') as f:
-                    files = {'file': (os.path.basename(p), f, 'image/jpeg')}
-                    data = {
-                        'camera_index': str(cam_index),
-                        'video_name': video_name,
-                        'timestamp': datetime.now().isoformat(),
-                    }
-                    resp = self._session.post(self.upload_url, files=files, data=data, timeout=self.upload_timeout)
-                    if resp.status_code in (200, 201):
-                        self.logger.info(f"上传成功: {p}")
-                    else:
-                        self.logger.warning(f"上传失败({resp.status_code}): {p} -> {resp.text[:200]}")
+                # 获取时间戳（毫秒）
+                timestamp_ms = int(time.time() * 1000)
+                
+                # 使用API客户端上传
+                api_client.send_camera_image(
+                    camera_id=camera_id,
+                    image_path=image_path,
+                    timestamp=timestamp_ms,
+                    width_px=width,
+                    height_px=height,
+                    format='jpg'
+                )
+                self.logger.info(f"上传成功: {image_path}")
             except Exception as e:
-                self.logger.error(f"上传异常 {p}: {e}")
+                self.logger.error(f"上传异常 {image_path}: {e}")
+
+    def _rename_existing_videos_to_datetime_format(self) -> None:
+        """将 output_dir 中旧命名的文件 camera_<id>_<timestamp>.mp4 重命名为 camera_<id>_<YYYYMMDDHHMMSS>.mp4"""
+        for name in os.listdir(self.output_dir):
+            if not name.lower().endswith(".mp4"):
+                continue
+            base = os.path.splitext(name)[0]
+            parts = base.split("_")
+            if len(parts) == 3 and parts[0] == "camera":
+                camera_id_part = parts[1]
+                ts_part = parts[2]
+                try:
+                    ts_int = int(ts_part)
+                except ValueError:
+                    continue
+                try:
+                    dt_str = datetime.fromtimestamp(ts_int).strftime("%Y%m%d%H%M%S")
+                except Exception:
+                    continue
+                new_name = f"camera_{camera_id_part}_{dt_str}.mp4"
+                if new_name == name:
+                    continue
+                old_path = os.path.join(self.output_dir, name)
+                new_path = os.path.join(self.output_dir, new_name)
+                if os.path.exists(new_path):
+                    self.logger.info(f"新文件名已存在，跳过重命名: {new_name}")
+                    continue
+                try:
+                    os.rename(old_path, new_path)
+                    self.logger.info(f"重命名视频: {name} -> {new_name}")
+                except Exception as e:
+                    self.logger.warning(f"重命名失败 {name}: {e}")

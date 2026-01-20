@@ -1,6 +1,7 @@
 """
 传感器数据采集服务
 基于原sensor_data_collection.py改造，支持优雅启动/停止和错误恢复
+使用统一配置管理
 """
 
 import threading
@@ -14,91 +15,66 @@ import signal
 import sys
 import random
 import csv
+import pytz
+from src.config.config_manager import config_manager
+from src.services.api_client import api_client
+
 
 class SensorDataService:
     """传感器数据采集服务类"""
     
     def __init__(
         self,
-        output_dir: str = "./output/sensor",
+        output_dir: Optional[str] = None,
         simulate: Optional[bool] = None,
         register_signals: bool = False,
         sample_interval_seconds: Optional[int] = None,
         logging_interval_seconds: Optional[int] = None,
     ):
-        self.output_dir = output_dir
-        self.csv_file = os.path.join(output_dir, "data_collection.csv")
+        # 加载配置
+        self.config = config_manager
+        
+        # 输出目录
+        self.output_dir = output_dir or self.config.get_path("sensor_data_dir") or "./output/sensor"
+        self.csv_file = os.path.join(self.output_dir, "data_collection.csv")
+        
         self.running = False
         self.threads = []
         self.data_lock = threading.Lock()
+        
         # 模拟模式：无硬件环境下生成模拟数据
         if simulate is None:
-            env_val = os.getenv("AIJ_SENSOR_SIMULATE", "0").lower()
-            self.simulate = env_val in ("1", "true", "yes")
+            self.simulate = self.config.is_simulation_mode("sensor")
         else:
             self.simulate = simulate
         
         # 采样/记录频率配置
-        try:
-            env_sample = os.getenv("AIJ_SENSOR_SAMPLE_INTERVAL", "").strip()
-            self.sample_interval_seconds = int(sample_interval_seconds or (int(env_sample) if env_sample else 10))
-        except Exception:
-            self.sample_interval_seconds = 10
+        if sample_interval_seconds is None:
+            self.sample_interval_seconds = self.config.get("sensors.sample_interval_seconds", 10)
+        else:
+            self.sample_interval_seconds = sample_interval_seconds
 
-        try:
-            env_log = os.getenv("AIJ_SENSOR_LOG_INTERVAL", "").strip()
-            self.logging_interval_seconds = int(logging_interval_seconds or (int(env_log) if env_log else max(5, self.sample_interval_seconds)))
-        except Exception:
-            self.logging_interval_seconds = max(5, self.sample_interval_seconds)
-
-        # 传感器配置
-        self.sensor_configs = {
-            'dissolved_oxygen': {
-                'port': 'COM18',
-                'baudrate': 4800,
-                'address': 0x0002,
-                'count': 2,
-                'slave': 0x01,
-                'process_func': self._process_dissolved_oxygen
-            },
-            'liquid_level': {
-                'port': 'COM25', 
-                'baudrate': 4800,
-                'address': 0x0004,
-                'count': 1,
-                'slave': 0x01,
-                'process_func': self._process_liquid_level
-            },
-            'ph': {
-                'port': 'COM4',
-                'baudrate': 4800, 
-                'address': 0x0000,
-                'count': 2,
-                'slave': 0x01,
-                'process_func': self._process_ph
-            },
-            'turbidity': {
-                'port': 'COM5',
-                'baudrate': 4800,
-                'address': 0x0000, 
-                'count': 2,
-                'slave': 0x01,
-                'process_func': self._process_turbidity
-            }
-        }
+        if logging_interval_seconds is None:
+            self.logging_interval_seconds = self.config.get("sensors.logging_interval_seconds", max(5, self.sample_interval_seconds))
+        else:
+            self.logging_interval_seconds = logging_interval_seconds
+        
+        # 从配置加载传感器设备
+        self.sensor_configs = self._load_sensor_configs()
         
         # 共享数据存储
-        self.sensor_data = {
-            'dissolved_oxygen': None,
-            'liquid_level': None,
-            'ph': None,
-            'ph_temperature': None,
-            'turbidity': None,
-            'turbidity_temperature': None
-        }
+        self.sensor_data = {}
+        for sensor_config in self.sensor_configs.values():
+            if 'metric' in sensor_config:
+                self.sensor_data[sensor_config['metric']] = None
+            # 处理温度字段
+            if sensor_config.get('type') == 'ph':
+                self.sensor_data['ph_temperature'] = None
+            elif sensor_config.get('type') == 'turbidity':
+                self.sensor_data['turbidity_temperature'] = None
         
         # 确保输出目录存在
-        os.makedirs(output_dir, exist_ok=True)
+        os.makedirs(self.output_dir, exist_ok=True)
 
         # 检查CSV文件是否存在
         self.file_exists = os.path.exists(self.csv_file)
@@ -127,9 +103,45 @@ class SensorDataService:
             signal.signal(signal.SIGINT, self._signal_handler)
             signal.signal(signal.SIGTERM, self._signal_handler)
     
+    def _load_sensor_configs(self) -> Dict:
+        """从配置文件加载传感器配置"""
+        sensor_configs = {}
+        devices = self.config.get_sensor_devices()
+        
+        for device in devices:
+            sensor_type = device.get('type')
+            if not sensor_type:
+                continue
+            
+            # 根据类型选择处理函数
+            process_func_map = {
+                'dissolved_oxygen': self._process_dissolved_oxygen,
+                'liquid_level': self._process_liquid_level,
+                'ph': self._process_ph,
+                'turbidity': self._process_turbidity,
+            }
+            
+            sensor_configs[sensor_type] = {
+                'sensor_id': device.get('sensor_id'),
+                'name': device.get('name'),
+                'type': sensor_type,
+                'metric': device.get('metric'),
+                'unit': device.get('unit'),
+                'port': device.get('port'),
+                'baudrate': device.get('baudrate', 4800),
+                'address': device.get('address', 0),
+                'count': device.get('count', 1),
+                'slave': device.get('slave', 1),
+                'pool_id': device.get('pool_id'),
+                'batch_id': device.get('batch_id'),
+                'process_func': process_func_map.get(sensor_type),
+            }
+        
+        return sensor_configs
+    
     def _setup_logging(self):
         """设置日志系统"""
-        log_dir = os.path.join(os.path.dirname(__file__), 'logs')
+        log_dir = self.config.get_path("log_dir") or os.path.join(os.path.dirname(__file__), 'logs')
         os.makedirs(log_dir, exist_ok=True)
         
         logging.basicConfig(
@@ -161,10 +173,10 @@ class SensorDataService:
         """处理液位数据"""
         try:
             level_raw = registers[0]
-            return {'liquid_level': level_raw}
+            return {'water_level': level_raw}
         except Exception as e:
             self.logger.error(f"液位数据处理失败: {e}")
-            return {'liquid_level': None}
+            return {'water_level': None}
     
     def _process_ph(self, registers: list) -> Dict[str, Optional[float]]:
         """处理pH数据"""
@@ -192,7 +204,7 @@ class SensorDataService:
     
     def _read_sensor_data(self, sensor_name: str):
         """读取单个传感器数据的线程函数"""
-        config = self.sensor_configs[sensor_name]
+        config_item = self.sensor_configs[sensor_name]
         
         # 在模拟模式下不创建Modbus客户端，直接生成数据
         client = None
@@ -202,8 +214,8 @@ class SensorDataService:
                 self.logger.warning(f"{sensor_name}未加载Modbus客户端，使用模拟模式")
             else:
                 client = self.ModbusClient(
-                port=config['port'],
-                baudrate=config['baudrate'],
+                port=config_item['port'],
+                baudrate=config_item['baudrate'],
                 stopbits=1,
                 bytesize=8,
                 parity='N',
@@ -219,10 +231,11 @@ class SensorDataService:
                     # 模拟数据生成
                     while self.running:
                         try:
+                            metric = config_item.get('metric', sensor_name)
                             if sensor_name == 'dissolved_oxygen':
-                                processed_data = {'dissolved_oxygen': round(random.uniform(6.5, 8.2), 3)}
+                                processed_data = {metric: round(random.uniform(6.5, 8.2), 3)}
                             elif sensor_name == 'liquid_level':
-                                processed_data = {'liquid_level': random.randint(900, 1100)}
+                                processed_data = {metric: random.randint(900, 1100)}
                             elif sensor_name == 'ph':
                                 ph = round(random.uniform(6.8, 7.6), 2)
                                 temp = round(random.uniform(24.0, 30.0), 1)
@@ -260,14 +273,14 @@ class SensorDataService:
                     while self.running:
                         try:
                             rr = client.read_holding_registers(
-                                address=config['address'],
-                                count=config['count'],
-                                slave=config['slave']
+                                address=config_item['address'],
+                                count=config_item['count'],
+                                slave=config_item['slave']
                             )
                             
                             if not rr.isError():
                                 # 处理数据
-                                processed_data = config['process_func'](rr.registers)
+                                processed_data = config_item['process_func'](rr.registers)
                                 
                                 # 更新共享数据
                                 with self.data_lock:
@@ -293,6 +306,17 @@ class SensorDataService:
         
         self.logger.info(f"{sensor_name}传感器线程已停止")
     
+    def _get_timestamps(self):
+        """获取UTC和本地时间戳"""
+        now = datetime.now()
+        # UTC时间
+        utc_tz = pytz.UTC
+        utc_now = now.astimezone(utc_tz)
+        # 本地时间（日本时区）
+        japan_tz = pytz.timezone(self.config.get("site.timezone", "Asia/Tokyo"))
+        local_now = now.astimezone(japan_tz)
+        return utc_now, local_now
+    
     def _data_logging_thread(self):
         """数据记录线程"""
         self.logger.info("数据记录线程启动")
@@ -300,9 +324,12 @@ class SensorDataService:
         while self.running:
             try:
                 with self.data_lock:
-                    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                    utc_now, local_now = self._get_timestamps()
+                    timestamp = local_now.strftime('%Y-%m-%d %H:%M:%S')
+                    
+                    # 获取所有传感器数据
                     do_val = self.sensor_data.get('dissolved_oxygen')
-                    level_val = self.sensor_data.get('liquid_level')
+                    level_val = self.sensor_data.get('water_level')
                     ph_val = self.sensor_data.get('ph')
                     ph_temp = self.sensor_data.get('ph_temperature')
                     turbidity_val = self.sensor_data.get('turbidity')
@@ -320,8 +347,7 @@ class SensorDataService:
                                f"液位: {level_val if level_val is not None else 'N/A'}mm | "
                                f"pH: {ph_val if ph_val is not None else 'N/A'} | "
                                f"pH温度: {ph_temp if ph_temp is not None else 'N/A'}°C | "
-                               f"浊度: {turbidity_val if turbidity_val is not None else 'N/A'}NTU | "
-                               f"浊度温度: {turbidity_temp if turbidity_temp is not None else 'N/A'}°C")
+                               f"浊度: {turbidity_val if turbidity_val is not None else 'N/A'}NTU")
                 
                 # 记录数据到CSV（优先使用pandas，缺失时使用csv模块）
                 row = [timestamp, do_val, level_val, ph_val, ph_temp, turbidity_val, turbidity_temp]
@@ -341,6 +367,19 @@ class SensorDataService:
                         self.file_exists = True
                 except Exception as e:
                     self.logger.error(f"写入CSV异常: {e}")
+                
+                # 上传数据到服务器
+                timestamp_ms = int(time.time() * 1000)
+                self._upload_sensor_data_batch(
+                    {
+                        'dissolved_oxygen': do_val,
+                        'water_level': level_val,
+                        'ph': ph_val,
+                        'ph_temperature': ph_temp,
+                        'turbidity': turbidity_val
+                    },
+                    timestamp_ms
+                )
 
                 time.sleep(self.logging_interval_seconds)  # 记录间隔
                 
@@ -349,6 +388,61 @@ class SensorDataService:
                 time.sleep(5)
         
         self.logger.info("数据记录线程已停止")
+    
+    def _upload_sensor_data_batch(self, data_dict: Dict[str, Optional[float]], timestamp_ms: int):
+        """批量上传传感器数据到服务器"""
+        # 映射数据键到传感器配置
+        metric_mapping = {
+            'dissolved_oxygen': ('dissolved_oxygen', 'do', 'mg/L'),
+            'water_level': ('liquid_level', 'water_level', 'mm'),
+            'ph': ('ph', 'ph', 'pH'),
+            'ph_temperature': ('ph', 'temperature', '°C'),
+            'turbidity': ('turbidity', 'turbidity', 'NTU'),
+            'turbidity_temperature': ('turbidity', 'temperature', '°C'),
+        }
+        
+        for data_key, value in data_dict.items():
+            if value is None:
+                continue
+            
+            # 找到对应的传感器配置
+            sensor_type, metric, unit = metric_mapping.get(data_key, (None, data_key, ''))
+            if not sensor_type:
+                continue
+            
+            # 查找对应的传感器配置
+            sensor_config = None
+            for config in self.sensor_configs.values():
+                if config['type'] == sensor_type:
+                    sensor_config = config
+                    break
+            
+            if not sensor_config:
+                continue
+            
+            sensor_id = sensor_config['sensor_id']
+            type_name = sensor_config.get('name', '')
+            pool_id = sensor_config.get('pool_id', self.config.get_pool_id())
+            batch_id = sensor_config.get('batch_id', self.config.get_batch_id())
+            
+            # 优化 description 生成：避免与 type_name 重复
+            description = f"{pool_id}号池 - {metric}"
+            if batch_id:
+                description += f" - 批次{batch_id}"
+            
+            try:
+                api_client.send_sensor_data(
+                    sensor_id=sensor_id,
+                    value=value,
+                    metric=metric,
+                    unit=unit,
+                    timestamp=timestamp_ms,
+                    type_name=type_name,
+                    description=description
+                )
+                self.logger.debug(f"传感器数据上传成功: sensor_id={sensor_id}, metric={metric}, value={value}")
+            except Exception as e:
+                self.logger.error(f"传感器数据上传失败: sensor_id={sensor_id}, metric={metric}, error={e}")
     
     def start(self):
         """启动传感器数据采集服务"""
@@ -406,6 +500,16 @@ class SensorDataService:
         """获取当前传感器数据"""
         with self.data_lock:
             return self.sensor_data.copy()
+    
+    def get_sensor_metadata(self) -> Dict:
+        """获取传感器元数据（用于数据上传）"""
+        site_config = self.config.get_site_config()
+        return {
+            'pool_id': site_config.get('pool_id'),
+            'batch_id': site_config.get('batch_id'),
+            'timezone': site_config.get('timezone', 'Asia/Tokyo'),
+        }
+
 
 def main():
     """主函数，用于独立运行传感器服务"""
@@ -427,3 +531,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
+

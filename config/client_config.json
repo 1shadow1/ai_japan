@@ -1,0 +1,210 @@
+{
+  "version": "1.0.0",
+  "description": "日本陆上养殖客户端配置文件",
+  "last_updated": "2025-01-XX",
+  
+  "site": {
+    "pool_id": "4",
+    "batch_id": 2,
+    "location": "日本陆上养殖实验室",
+    "timezone": "Asia/Tokyo"
+  },
+  
+  "sensors": {
+    "sample_interval_seconds": 600,
+    "logging_interval_seconds": 600,
+    "devices": [
+      {
+        "sensor_id": 1,
+        "name": "溶解氧传感器",
+        "type": "dissolved_oxygen",
+        "metric": "do",
+        "unit": "mg/L",
+        "port": "COM11",
+        "baudrate": 4800,
+        "address": 2,
+        "count": 2,
+        "slave": 1,
+        "pool_id": "4",
+        "batch_id": 2
+      },
+      {
+        "sensor_id": 2,
+        "name": "液位传感器",
+        "type": "liquid_level",
+        "metric": "water_level",
+        "unit": "mm",
+        "port": "COM10",
+        "baudrate": 4800,
+        "address": 4,
+        "count": 1,
+        "slave": 1,
+        "pool_id": "4",
+        "batch_id": 2
+      },
+      {
+        "sensor_id": 3,
+        "name": "pH传感器",
+        "type": "ph",
+        "metric": "ph",
+        "unit": "pH",
+        "port": "COM3",
+        "baudrate": 4800,
+        "address": 0,
+        "count": 2,
+        "slave": 1,
+        "pool_id": "4",
+        "batch_id": 2
+      },
+      {
+        "sensor_id": 4,
+        "name": "温度传感器",
+        "type": "temperature",
+        "metric": "temperature",
+        "unit": "°C",
+        "port": "COM3",
+        "baudrate": 4800,
+        "address": 0,
+        "count": 2,
+        "slave": 1,
+        "pool_id": "4",
+        "batch_id": 2
+      },
+      {
+        "sensor_id": 5,
+        "name": "浊度传感器",
+        "type": "turbidity",
+        "metric": "turbidity",
+        "unit": "NTU",
+        "port": "COM7",
+        "baudrate": 4800,
+        "address": 0,
+        "count": 2,
+        "slave": 1,
+        "pool_id": "4",
+        "batch_id": 2
+      }
+    ]
+  },
+  
+  "cameras": {
+    "devices": [
+      {
+        "camera_id": 1,
+        "name": "摄像头1",
+        "index": 0,
+        "key": "0",
+        "pool_id": "4",
+        "batch_id": 2
+      },
+      {
+        "camera_id": 2,
+        "name": "摄像头2",
+        "index": 1,
+        "key": "1",
+        "pool_id": "4",
+        "batch_id": 2
+      },
+      {
+        "camera_id": 3,
+        "name": "摄像头3",
+        "index": 2,
+        "key": "2",
+        "pool_id": "4",
+        "batch_id": 2
+      },
+      {
+        "camera_id": 4,
+        "name": "摄像头4",
+        "index": 3,
+        "key": "3",
+        "pool_id": "4",
+        "batch_id": 2
+      },
+      {
+        "camera_id": 5,
+        "name": "摄像头5",
+        "index": 4,
+        "key": "4",
+        "pool_id": "4",
+        "batch_id": 2
+      }
+    ],
+    "record_duration_seconds": 60,
+    "target_fps": 30,
+    "extract_interval_seconds": 1
+  },
+  
+  "feeders": {
+    "device_id": "AI",
+    "device_name": "AI",
+    "pool_id": "4",
+    "batch_id": 2,
+    "schedule": [
+      {
+        "times": ["04:00", "22:00"],
+        "feed_count": 4,
+        "description": "高份量投喂（约68g）"
+      },
+      {
+        "times": ["10:00", "16:00"],
+        "feed_count": 2,
+        "description": "低份量投喂（约34g）"
+      }
+    ],
+    "status_check_interval_seconds": 600,
+    "schedule_check_interval_seconds": 60,
+    "cloud": {
+      "base_url": "https://ffish.huaeran.cn:8081/commonRequest",
+      "user_id": "8619034657726",
+      "password": "123456789",
+      "verify": false,
+      "timeout_seconds": 15
+    },
+    "target_dev_id": "4417931292a9",
+    "force_feed_once": true
+  },
+  
+  "api": {
+    "base_url": "http://8.216.33.92:5002",
+    "endpoints": {
+      "sensor_data": "/api/data/sensors",
+      "feeder_data": "/api/data/feeders",
+      "operation_data": "/api/data/operations",
+      "camera_data": "/api/data/cameras",
+      "camera_status": "/api/camera_device_status",
+      "batch_images": "/api/data/batch_images"
+    },
+    "timeout_seconds": 15,
+    "retry_attempts": 3,
+    "retry_delay_seconds": 2
+  },
+  
+  "upload": {
+    "stream_interval_seconds": 600,
+    "batch_upload_interval_seconds": 600,
+    "last_interval_days": 61
+  },
+  
+  "tasks": {
+    "sensor_health_check_interval_seconds": 60,
+    "sensor_stream_start_delay_seconds": 1,
+    "camera_service_start_delay_seconds": 1
+  },
+  
+  "paths": {
+    "output_dir": "./output",
+    "sensor_data_dir": "./output/sensor",
+    "camera_video_dir": "./logs/videos",
+    "camera_extract_dir": "./output",
+    "log_dir": "./logs",
+    "upload_data_dir": "C:\\Users\\37897\\Desktop\\japan_data"
+  },
+  
+  "simulation": {
+    "sensor_simulate": false,
+    "upload_dry_run": false,
+    "camera_upload_dry_run": false
+  }
+}
+

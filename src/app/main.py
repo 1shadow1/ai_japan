@@ -1,10 +1,6 @@
 """
 应用入口：统一注册并启动任务调度器
-
-任务包括：
-- 传感器数据采集服务（后台线程，按固定间隔进行健康检查）
-- 数据上传任务（脚本任务，执行 client/updata.py）
-- 每小时HTTP告警任务（HttpRequestTask）
+使用统一配置管理
 """
 
 import os
@@ -16,16 +12,14 @@ from src.scheduler.task_scheduler import (
     TaskScheduler,
     ScheduleRule,
     ScheduleType,
-    create_data_upload_task,
 )
 
 from src.tasks.sensor_data_task import SensorDataTask
-from src.tasks.http_request_task import HttpRequestTask
-from src.tasks.sensor_data_stream_task import SensorDataStreamTask
-from src.services.sensor_data_service import SensorDataService
+from src.services.sensor_data_service_v2 import SensorDataServiceV2
 from src.tasks.feed_device_status_task import FeedDeviceStatusTask
 from src.tasks.feed_device_schedule_task import FeedDeviceScheduleTask
 from src.tasks.camera_controller_task import CameraControllerTask
+from src.config.config_manager import config_manager
 
 
 def setup_scheduler() -> TaskScheduler:
@@ -39,75 +33,45 @@ def setup_scheduler() -> TaskScheduler:
 
 def register_tasks(scheduler: TaskScheduler):
     """注册各类任务到调度器"""
-    # 1) 传感器数据采集服务任务：每30秒进行一次健康检查（若未运行则启动）
-    # 设置采样频率为60秒；日志记录频率跟随采样频率（可通过环境变量 AIJ_SENSOR_LOG_INTERVAL 单独控制）
-    sensor_service = SensorDataService(sample_interval_seconds=600)
+    config = config_manager
+    
+    # 1) 传感器数据采集服务任务（使用V2服务）
+    sensor_service = SensorDataServiceV2(simulate=True)
     sensor_task = SensorDataTask(service=sensor_service)
-    scheduler.add_task(sensor_task, ScheduleRule(ScheduleType.INTERVAL, seconds=60))
+    health_check_interval = config.get("tasks.sensor_health_check_interval_seconds", 60)
+    scheduler.add_task(sensor_task, ScheduleRule(ScheduleType.INTERVAL, seconds=health_check_interval))
 
-    # 2) 数据上传任务：每10分钟执行一次（后续可在配置文件或环境变量中调整）
-    upload_task = create_data_upload_task()
-    scheduler.add_task(upload_task, ScheduleRule(ScheduleType.INTERVAL, seconds=600))
-
-    # # # 3) 每小时HTTP请求告警任务
-    # # http_task = HttpRequestTask(target_url="http://localhost:5002/api/messages/", sensor_service=sensor_service)
-    # # scheduler.add_task(http_task, ScheduleRule(ScheduleType.INTERVAL, seconds=3600))
-
-    # 4) 持续传感器数据流式上传任务：启动一次，后台线程按固定频率推送
-    stream_task = SensorDataStreamTask(
-        service=sensor_service,
-        # 可由环境变量 AIJ_STREAM_API_URL 指定，或在此处显式设置
-        # target_url="http://8.216.33.92:5000/api/sensor_stream",
-        interval_seconds=600,  # 指定数据上传/请求频率为60秒
-    )
-    # ONCE 任务需指定 run_at：设为当前时间+1秒，确保立即触发
-    run_time = (datetime.now() + timedelta(seconds=1)).isoformat()
-    scheduler.add_task(stream_task, ScheduleRule(ScheduleType.ONCE, run_at=run_time))
-
-    # 5) 喂食机状态上报任务：默认每10分钟执行一次（可通过环境变量 AIJ_FEED_STATUS_INTERVAL 秒数覆盖）
-    try:
-        status_interval = int(os.getenv("AIJ_FEED_STATUS_INTERVAL", "600"))
-    except Exception:
-        status_interval = 600
+    # 4) 喂食机状态上报任务
+    feeder_config = config.get_feeder_config()
+    status_interval = feeder_config.get("status_check_interval_seconds", 600)
     feed_status_task = FeedDeviceStatusTask()
     scheduler.add_task(feed_status_task, ScheduleRule(ScheduleType.INTERVAL, seconds=status_interval))
+    logging.info(f"已注册喂食机状态上报任务：interval={status_interval}s")
 
-    # 6) 喂食机定时投喂任务：以固定间隔检查是否到达指定时间点（默认每60秒检查一次）
-    try:
-        schedule_check_interval = int(os.getenv("AIJ_FEED_SCHEDULE_CHECK_INTERVAL", "60"))
-    except Exception:
-        schedule_check_interval = 60
+    # 5) 喂食机定时投喂任务
+    schedule_check_interval = feeder_config.get("schedule_check_interval_seconds", 60)
+    schedule = feeder_config.get("schedule", [])
+    logging.info(f"喂食机定时投喂注册：schedule_check_interval={schedule_check_interval}s, items={len(schedule)}")
+    
+    for idx, schedule_item in enumerate(schedule):
+        feed_task = FeedDeviceScheduleTask()
+        feed_task.task_id = f"feed_device_schedule_{idx}"
+        feed_task.feed_count = schedule_item.get("feed_count", 1)
+        feed_task.times = schedule_item.get("times", [])
+        logging.info(f"注册投喂计划[{idx}]：times={feed_task.times}, feed_count={feed_task.feed_count}")
+        scheduler.add_task(feed_task, ScheduleRule(ScheduleType.INTERVAL, seconds=schedule_check_interval))
 
-    feed_task_test = FeedDeviceScheduleTask()
-    feed_task_test.task_id = "feed_device_schedule_test"
-    feed_task_test.feed_count = 1
-    feed_task_test.times = ["16:12"]
-    scheduler.add_task(feed_task_test, ScheduleRule(ScheduleType.INTERVAL, seconds=schedule_check_interval))
-
-    # 高份量：04:00 和 22:00 各喂 4 份（约 68g）
-    feed_task_high = FeedDeviceScheduleTask()
-    feed_task_high.task_id = "feed_device_schedule_high"
-    feed_task_high.feed_count = 4
-    feed_task_high.times = ["04:00", "22:00"]
-    scheduler.add_task(feed_task_high, ScheduleRule(ScheduleType.INTERVAL, seconds=schedule_check_interval))
-
-    # 低份量：10:00 和 16:00 各喂 2 份（约 34g）
-    feed_task_low = FeedDeviceScheduleTask()
-    feed_task_low.task_id = "feed_device_schedule_low"
-    feed_task_low.feed_count = 2
-    feed_task_low.times = ["10:00", "16:00"]
-    scheduler.add_task(feed_task_low, ScheduleRule(ScheduleType.INTERVAL, seconds=schedule_check_interval))
-
-    # 7) 摄像头键盘控制服务：一次性任务启动持续后台线程
+    # 6) 摄像头键盘控制服务：一次性任务启动持续后台线程
     cam_task = CameraControllerTask()
-    run_time_cam = (datetime.now() + timedelta(seconds=1)).isoformat()
+    cam_start_delay = config.get("tasks.camera_service_start_delay_seconds", 1)
+    run_time_cam = (datetime.now() + timedelta(seconds=cam_start_delay)).isoformat()
     scheduler.add_task(cam_task, ScheduleRule(ScheduleType.ONCE, run_at=run_time_cam))
+    logging.info(f"已注册摄像头控制任务：start_delay={cam_start_delay}s")
 
 
 def main():
-    # 简单日志设置（调度器内部也会初始化日志）
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
-
+    # 日志由 TaskScheduler 统一配置，这里不再调用 basicConfig 以避免重复输出
+    # 如需调整日志级别/格式，请修改 src/scheduler/task_scheduler.py 的 _setup_logging
     scheduler = setup_scheduler()
     register_tasks(scheduler)
 

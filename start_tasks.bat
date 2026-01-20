@@ -21,7 +21,7 @@ rem Enable simulation and dry-run switches (set to 0 to disable if needed)
 set AIJ_SENSOR_SIMULATE=0
 set AIJ_UPLOAD_DRY_RUN=0
 rem Configure streaming upload target and interval
-set AIJ_STREAM_API_URL=http://8.216.33.92:5000/api/updata_sensor_data
+set AIJ_STREAM_API_URL=http://8.216.33.92:5002/api/updata_sensor_data
 set AIJ_STREAM_INTERVAL=10
 
 rem ================= Feeder Cloud Config =================
@@ -48,7 +48,7 @@ rem set AIJ_CAMERA_RECORD_FPS=30
 rem set AIJ_CAMERA_OUTPUT_DIR=logs\videos
 rem set AIJ_EXTRACT_INTERVAL_SEC=1
 rem set AIJ_EXTRACT_OUTPUT_DIR=output
-rem set AIJ_CAMERA_UPLOAD_URL=http://8.216.33.92:5000/api/updata_camera_data
+rem set AIJ_CAMERA_UPLOAD_URL=http://8.216.33.92:5002/api/updata_camera_data
 rem set AIJ_CAMERA_UPLOAD_DRY_RUN=1
 rem set AIJ_CAMERA_SHOW=0
 
